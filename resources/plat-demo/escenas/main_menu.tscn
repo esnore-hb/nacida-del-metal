@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://dotr2mwfpkk38"]
+
+[ext_resource type="Script" uid="uid://cccagjxj15vpi" path="res://escenas/main_menu.gd" id="1_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://b1puh1nrmxuew" path="res://assets/Castle/layer_1.png" id="2_qe12f"]
+[ext_resource type="Texture2D" uid="uid://64y0lfxlf28r" path="res://assets/Castle/layer_2.png" id="3_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://v0yb7y0uamms" path="res://assets/Castle/layer_3.png" id="4_dy7ct"]
+[ext_resource type="FontFile" uid="uid://dly0g66exxgsd" path="res://assets/Castle/Animated Decorations/candle_2/MedievalSharp-Regular.ttf" id="5_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://deuv7vlpijfys" path="res://assets/64x64 weapons final.png" id="6_0k4wn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5v2v"]
+bg_color = Color(0.16470589, 0.16470589, 0.2901961, 0.7607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotk1"]
+bg_color = Color(0.16470589, 0.16470589, 0.2901961, 0.7607843)
+
+[node name="MainMenu" type="Control" unique_id=357618072]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nlkkf")
+
+[node name="Moon" type="Sprite2D" parent="." unique_id=2060850509]
+position = Vector2(426.00003, 240.25)
+scale = Vector2(2.719445, 2.7194445)
+texture = ExtResource("2_qe12f")
+
+[node name="Town" type="Sprite2D" parent="." unique_id=1656036515]
+position = Vector2(428, 312)
+scale = Vector2(2.7026968, 2.7026973)
+texture = ExtResource("3_8qtwp")
+
+[node name="Fire" type="Sprite2D" parent="." unique_id=86606187]
+position = Vector2(436.00003, 443)
+scale = Vector2(2.75, 2.75)
+texture = ExtResource("4_dy7ct")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=612347325]
+light_mask = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.575
+anchor_top = 0.8
+anchor_right = 17.81255
+anchor_bottom = 4.5750017
+offset_right = -0.00012207031
+offset_bottom = -6.1035156e-05
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.050980393, 0.050980393, 0.101960786, 0.8039216)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=967825858]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.675
+anchor_top = 2.6750002
+anchor_right = 22.175001
+anchor_bottom = 5.425
+offset_left = -261.0
+offset_top = -58.000008
+offset_right = -155.00006
+offset_bottom = -54.0
+theme_override_colors/font_color = Color(0.9098039, 0.8784314, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_0o4t1")
+theme_override_font_sizes/font_size = 90
+text = "Death  March"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2021073612]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 290.0
+offset_top = 282.0
+offset_right = 508.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=740673267]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9098039, 0.8784314, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0.9098039, 0.8784314, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_0o4t1")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_j5v2v")
+text = "Play"
+
+[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1274495684]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9098039, 0.8784314, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0.9098039, 0.8784314, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_0o4t1")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_j5v2v")
+text = "Credits"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=32221819]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9098039, 0.8784314, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_0o4t1")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_iotk1")
+text = "Exit
+"
+
+[node name="Sword" type="Sprite2D" parent="." unique_id=1566137426]
+position = Vector2(416, 110.00001)
+rotation = 3.1415927
+scale = Vector2(1.4641047, 1.4641047)
+texture = ExtResource("6_0k4wn")
+region_enabled = true
+region_rect = Rect2(1.0000305, 0, 32.799988, 102)
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://db65tj2dtq5j"]
+
+[ext_resource type="FontFile" uid="uid://dly0g66exxgsd" path="res://assets/Castle/Animated Decorations/candle_2/MedievalSharp-Regular.ttf" id="1_5bjgx"]
+[ext_resource type="Script" uid="uid://uafdfr1i2ayu" path="res://escenas/game_over.gd" id="1_8d5yl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8d5yl"]
+bg_color = Color(0.16470589, 0.16470589, 0.2901961, 0.7607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mkai"]
+bg_color = Color(0.16470589, 0.16470589, 0.2901961, 0.7607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51qs2"]
+bg_color = Color(0.16470589, 0.16470589, 0.2901961, 0.7607843)
+
+[node name="GameOver" type="Control" unique_id=1506342346]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8d5yl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=501581217]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 900.4792
+offset_bottom = 503.0
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="Label" type="Label" parent="." unique_id=1304606906]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 111.0
+offset_right = 559.0
+offset_bottom = 166.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_5bjgx")
+theme_override_font_sizes/font_size = 48
+text = "GAME OVER"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=682544920]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 219.0
+offset_right = 522.0
+offset_bottom = 420.0
+
+[node name="Restart" type="Button" parent="VBoxContainer" unique_id=470630647]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5bjgx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_8d5yl")
+text = "Restart"
+
+[node name="Main Menu" type="Button" parent="VBoxContainer" unique_id=654175494]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5bjgx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_2mkai")
+text = "Main Menu"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=2146594120]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5bjgx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_51qs2")
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

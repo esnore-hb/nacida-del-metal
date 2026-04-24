@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://blqmcwkbggt2e"]
+
+[ext_resource type="PackedScene" uid="uid://dd23mgp8lqevh" path="res://escenas/jugador.tscn" id="1_wx555"]
+[ext_resource type="PackedScene" uid="uid://bc4sb0oerni4j" path="res://escenas/enemigo.tscn" id="2_ul41a"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2ak8i"]
+size = Vector2(426, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wx555"]
+size = Vector2(426, 32)
+
+[node name="Nivel" type="Node2D" unique_id=1701470066]
+
+[node name="Suelo" type="StaticBody2D" parent="." unique_id=1390487599]
+position = Vector2(213, 224)
+
+[node name="Sprite2D" type="Sprite2D" parent="Suelo" unique_id=1830769968]
+texture = SubResource("PlaceholderTexture2D_2ak8i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo" unique_id=2036303326]
+shape = SubResource("RectangleShape2D_wx555")
+
+[node name="Jugador" parent="." unique_id=523298009 instance=ExtResource("1_wx555")]
+position = Vector2(213, 100)
+
+[node name="Enemigo" parent="." unique_id=1745550985 instance=ExtResource("2_ul41a")]
+position = Vector2(300, 192)
