@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cpip3ok031tyh"]
+
+[ext_resource type="Script" uid="uid://bq5jhpniqmf6o" path="res://scenes/characters/nacida.gd" id="1_aqvq8"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_bksbc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aqvq8"]
+height = 48.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bl2qp"]
+blend_mode = 1
+
+[node name="Nacida" type="CharacterBody2D" unique_id=2106607450]
+script = ExtResource("1_aqvq8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1164809245]
+shape = SubResource("CapsuleShape2D_aqvq8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=667046950]
+material = SubResource("CanvasItemMaterial_bl2qp")
+scale = Vector2(0.140625, 0.375)
+texture = ExtResource("1_bksbc")
