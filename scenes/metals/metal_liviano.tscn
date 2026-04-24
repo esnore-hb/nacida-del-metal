@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bhunfd0178boo"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_k5x6p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uofkl"]
+radius = 24.186773
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jrxvm"]
+blend_mode = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rga8s"]
+radius = 75.00667
+
+[node name="MetalLiviano" type="Node2D" unique_id=141134533]
+
+[node name="Metal" type="RigidBody2D" parent="." unique_id=1349044579]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Metal" unique_id=1771256471]
+shape = SubResource("CircleShape2D_uofkl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Metal" unique_id=1377722399]
+material = SubResource("CanvasItemMaterial_jrxvm")
+scale = Vector2(0.28125, 0.28125)
+texture = ExtResource("1_k5x6p")
+
+[node name="Anclaje" type="Area2D" parent="." unique_id=181151792]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anclaje" unique_id=1769979906]
+shape = SubResource("CircleShape2D_rga8s")
