@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cj6j1gwndw0nq"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_ksju7"]
+[ext_resource type="PackedScene" uid="uid://cpip3ok031tyh" path="res://scenes/characters/nacida.tscn" id="2_6iamk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6iamk"]
+size = Vector2(152, 16)
+
+[node name="Level1" type="Node2D" unique_id=1715129173]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=985820690]
+position = Vector2(600, 600)
+scale = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1181225073]
+shape = SubResource("RectangleShape2D_6iamk")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=187147863]
+scale = Vector2(1.1875001, 0.12499999)
+texture = ExtResource("1_ksju7")
+
+[node name="Nacida" parent="." unique_id=2106607450 instance=ExtResource("2_6iamk")]
+position = Vector2(618, 290)
