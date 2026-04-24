@@ -20,3 +20,12 @@ Codigo fuente del juego "Nacida del metal"
 └── textures - :v \
     └── characters \
         └── img-y-texturas.txt \
+
+
+### Autoloads
+
+Debug.gd -> nos permite mostrar las acciones en pantalla se usa de la siguient forma:
+
+```python
+Debug.log(...)
+```
