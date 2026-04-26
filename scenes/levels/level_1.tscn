@@ -20,8 +20,8 @@ shape = SubResource("RectangleShape2D_6iamk")
 scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_ksju7")
 
-[node name="Nacida" parent="." unique_id=2106607450 instance=ExtResource("2_6iamk")]
-position = Vector2(618, 290)
-
 [node name="MetalLiviano" parent="." unique_id=141134533 instance=ExtResource("3_nsrm0")]
-position = Vector2(907, 257)
+position = Vector2(614, 273)
+
+[node name="Nacida" parent="." unique_id=2106607450 instance=ExtResource("2_6iamk")]
+position = Vector2(124, 288)
