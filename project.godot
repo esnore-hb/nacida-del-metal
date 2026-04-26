@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Nacida"
 run/main_scene="uid://cj6j1gwndw0nq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Debug="*uid://bcgkciqidov03"
 
 [input]
 

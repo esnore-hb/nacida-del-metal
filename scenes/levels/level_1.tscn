@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cpip3ok031tyh" path="res://scenes/characters/nacida.tscn" id="2_6iamk"]
+[ext_resource type="PackedScene" uid="uid://bhunfd0178boo" path="res://scenes/metals/metal_liviano.tscn" id="3_nsrm0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iamk"]
 size = Vector2(152, 16)
@@ -21,3 +22,6 @@ texture = ExtResource("1_ksju7")
 
 [node name="Nacida" parent="." unique_id=2106607450 instance=ExtResource("2_6iamk")]
 position = Vector2(618, 290)
+
+[node name="MetalLiviano" parent="." unique_id=141134533 instance=ExtResource("3_nsrm0")]
+position = Vector2(907, 257)
