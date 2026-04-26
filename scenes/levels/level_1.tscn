@@ -24,4 +24,4 @@ texture = ExtResource("1_ksju7")
 position = Vector2(618, 290)
 
 [node name="MetalLiviano" parent="." unique_id=141134533 instance=ExtResource("3_nsrm0")]
-position = Vector2(871, 324)
+position = Vector2(907, 257)

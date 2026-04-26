@@ -1,10 +1,11 @@
 class_name Nacida
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+signal pulling(direction, nacida_pos)
+signal pushing(direction, nacida_pos)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -31,10 +32,10 @@ func _physics_process(delta: float) -> void:
 	
 	# Mouse in viewport coordinates.
 	if Input.is_action_pressed("nacida_pull"):
-		velocity = direction_metal.normalized() * 500
-		print("MBL Click/Unclick at: ", velocity)
+		pulling.emit(direction_metal.normalized(), pos)
+		print("nacida tira")
 	elif Input.is_action_pressed("nacida_push"):
-		velocity = direction_metal.normalized() * -500
-		print("MBR Click/Unclick at: ", velocity)
+		pushing.emit(direction_metal.normalized(), pos)
+		print("nacida empuja")
 
 	move_and_slide()
