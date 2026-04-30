@@ -16,6 +16,8 @@ blend_mode = 2
 script = ExtResource("1_uofkl")
 
 [node name="Metal" type="RigidBody2D" parent="." unique_id=1349044579]
+contact_monitor = true
+max_contacts_reported = 5
 
 [node name="Anclaje" type="Area2D" parent="Metal" unique_id=181151792]
 
