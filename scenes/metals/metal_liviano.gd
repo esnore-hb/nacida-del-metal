@@ -15,12 +15,16 @@ func _ready() -> void:
 	anclaje.mouse_entered.connect(_on_mouse_enter)
 	anclaje.mouse_exited.connect(_on_mouse_exit)
 	
+	
+	# Aegurarse que la nacida esta en el nivel
 	if Game.nacida:
 		Game.nacida.pulling.connect(_pull_metal)
 		Game.nacida.pushing.connect(_push_metal)
 	else:
 		Game.nacida_set.connect(_nacida_generada)
 
+# Si se genero despues de que se generara la moneda, nos conectamos
+# a ella
 func _nacida_generada():
 	Game.nacida.pulling.connect(_pull_metal)
 	Game.nacida.pushing.connect(_push_metal)
