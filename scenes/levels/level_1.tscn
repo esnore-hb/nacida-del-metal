@@ -25,3 +25,15 @@ position = Vector2(614, 273)
 
 [node name="Nacida" parent="." unique_id=2106607450 instance=ExtResource("2_6iamk")]
 position = Vector2(124, 288)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=486318797]
+position = Vector2(1200, 500)
+rotation = 1.5707964
+scale = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=723214394]
+shape = SubResource("RectangleShape2D_6iamk")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=210154477]
+scale = Vector2(1.1875001, 0.12499999)
+texture = ExtResource("1_ksju7")
