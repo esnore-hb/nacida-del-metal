@@ -32,9 +32,9 @@ func _physics_process(delta: float) -> void:
 	var pos: Vector2 = global_position
 	var direction_metal = mouse_vec - pos
 	
-	if Input.is_action_just_pressed("nacida_pull"):
+	if Input.is_action_pressed("nacida_pull"):
 		pulling.emit(direction_metal.normalized(), pos)
-	elif Input.is_action_just_pressed("nacida_push"):
+	elif Input.is_action_pressed("nacida_push"):
 		pushing.emit(direction_metal.normalized(), pos)
 
 	move_and_slide()
