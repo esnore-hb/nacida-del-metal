@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cug75cg8o06e0"]
+
+[ext_resource type="Script" uid="uid://bg60qtny62y2e" path="res://ui/main_menu/main_menu.gd" id="1_mu8pm"]
+[ext_resource type="Theme" uid="uid://jrbc1cs3wk32" path="res://resources/theme.tres" id="2_omy8q"]
+
+[node name="MainMenu" type="Control" unique_id=788497428]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mu8pm")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1056144406]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=996757997]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_omy8q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=769434277]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=13521552]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Nacida del metal"
+
+[node name="Start" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1294192926]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start"
+
+[node name="Credits" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1703088918]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Credits"
+
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1901140297]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
