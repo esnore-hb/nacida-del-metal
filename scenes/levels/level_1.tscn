@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bwe1j5ivaryd5" path="res://resources/tile_set.tres" id="1_6iamk"]
 [ext_resource type="PackedScene" uid="uid://cpip3ok031tyh" path="res://scenes/characters/nacida.tscn" id="2_nsrm0"]
+[ext_resource type="PackedScene" uid="uid://5oamr728074d" path="res://ui/pause_menu/pause_menu.tscn" id="3_nsrm0"]
 
 [node name="level_2" type="Node2D" unique_id=913683024]
 
@@ -17,3 +18,7 @@ tile_set = ExtResource("1_6iamk")
 
 [node name="Nacida" parent="." unique_id=2106607450 instance=ExtResource("2_nsrm0")]
 position = Vector2(78, 57)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1208072394]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1973677921 instance=ExtResource("3_nsrm0")]
