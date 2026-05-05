@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c61jv66chn3op"]
 
 [ext_resource type="Script" uid="uid://j3a4cywsqas8" path="res://credits.gd" id="1_nm7lk"]
+[ext_resource type="FontFile" uid="uid://ci3v1ex0htoyl" path="res://fonts/Cobblestone.ttf" id="2_c1t8d"]
 
 [node name="Credits" type="Control" unique_id=1759278737]
 layout_mode = 3
@@ -18,17 +19,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_c1t8d")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "[center][font_size=100]Credits[center]
-[font_size=30]
+text = "[center][font_size=80]
+Credits[center]
+[font_size=40]
 [center]Authors[center]
-Hector Bonilla (esnore-hb)
-Rakhel Gomez (Rachel1214)
+Héctor Bonilla (esnore-hb)
+Rakhel Gómez (Rachel1214)
 Beatriz Oyarzo (puchabea)
 
 [center]Fonts[center]
+Cobblestone 
+by stormgold
 
 [center]Assets[center]
+GothicVania Church 
+by ansimuz
+
+Free - Hero's Journey - Moon Graveyard
+by Anokolisa
 
 [center]Sounds & Music[center]
 
