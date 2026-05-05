@@ -1,4 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://jrbc1cs3wk32"]
 
+[ext_resource type="FontFile" uid="uid://ci3v1ex0htoyl" path="res://fonts/Cobblestone.ttf" id="1_d4nwg"]
+
 [resource]
+default_font = ExtResource("1_d4nwg")
 default_font_size = 32
