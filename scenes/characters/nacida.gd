@@ -1,6 +1,10 @@
 class_name Nacida
 extends CharacterBody2D
 
+# puede que termine utilizando esta implementacion de 
+# ridigbody en ves de characterbody
+# https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#using-rigidbody2d
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -1000.0
 

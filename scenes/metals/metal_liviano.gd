@@ -55,12 +55,11 @@ func _process(delta: float) -> void:
 		metal.apply_impulse( direc_nacida * 500 * delta)
 		metal.gravity_scale = 0
 		Debug.log("empujando")
-	elif is_pushing and is_mouse and metal.linear_velocity.is_zero_approx():
-		# tenemos que empujar a la nacida, pero depues de resolver
-		# con el profe las fisicas necesarias
-		# Game.nacida.apply_impulse(-direc_nacida * 500 * delta)
-		Debug.log("empujando a la nacida")
+		if abs(metal.angular_velocity) < 0.01:
+			Game.nacida.velocity = (-direc_nacida * 500)
+			Debug.log("empujando a la nacida")
 	else:
 		metal.gravity_scale = 1
 		is_pulling = false
 		is_pushing = false
+	print(metal.angular_velocity)
