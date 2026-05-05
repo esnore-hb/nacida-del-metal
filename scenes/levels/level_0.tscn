@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cj6j1gwndw0nq"]
+[gd_scene format=3 uid="uid://byccns6wwfcya"]
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_osc7o"]
 [ext_resource type="PackedScene" uid="uid://bhunfd0178boo" path="res://scenes/metals/metal_liviano.tscn" id="2_wjk5u"]
