@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c61jv66chn3op"]
+
+[ext_resource type="Script" uid="uid://j3a4cywsqas8" path="res://credits.gd" id="1_nm7lk"]
+
+[node name="Credits" type="Control" unique_id=1759278737]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nm7lk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1320387634]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center][font_size=100]Credits[center]
+[font_size=30]
+[center]Authors[center]
+Hector Bonilla (esnore-hb)
+Rakhel Gomez (Rachel1214)
+Beatriz Oyarzo (puchabea)
+
+[center]Fonts[center]
+
+[center]Assets[center]
+
+[center]Sounds & Music[center]
+
+
+"
