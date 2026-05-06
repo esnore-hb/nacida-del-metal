@@ -16,8 +16,6 @@ scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAEAAUAAAAHAAQAAAAFAAUAAAAIAAQAAAAKAAUAAAAMAAoAAAAMAAQAAAAHAAQAAAANAAQAAAAIAAQAAAAOAAQAAAAHAAQAAAAPAAQAAAAIAAQAAAAQAAQAAAAHAAQAAAARAAQAAAAIAAQAAAA=")
 tile_set = ExtResource("1_6iamk")
 
-[node name="Nacida" parent="." unique_id=2106607450 instance=ExtResource("2_nsrm0")]
-position = Vector2(78, 57)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1208072394]
 
