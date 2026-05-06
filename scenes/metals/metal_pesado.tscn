@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://sl138gik63pi"]
+
+[ext_resource type="Script" uid="uid://bnlcyp467rr4q" path="res://scenes/metals/metal_pesado.gd" id="1_k8cew"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_3ek6k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acu6d"]
+size = Vector2(162, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_douuk"]
+size = Vector2(208, 58)
+
+[node name="MetalPesado" type="Node2D" unique_id=1273372991]
+script = ExtResource("1_k8cew")
+
+[node name="Metal" type="StaticBody2D" parent="." unique_id=705056153]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Metal" unique_id=2142775643]
+shape = SubResource("RectangleShape2D_acu6d")
+
+[node name="Anclaje" type="Area2D" parent="Metal" unique_id=1793796119]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Metal/Anclaje" unique_id=1775394685]
+shape = SubResource("RectangleShape2D_douuk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Metal" unique_id=2001825010]
+scale = Vector2(1.25, 0.265625)
+texture = ExtResource("2_3ek6k")
