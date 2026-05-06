@@ -1,10 +1,14 @@
-[gd_scene format=3 uid="uid://cpip3ok031tyh"]
+[gd_scene format=3 uid="uid://c0hwyqge8clpn"]
 
-[ext_resource type="Script" uid="uid://bq5jhpniqmf6o" path="res://scenes/characters/nacida.gd" id="1_aqvq8"]
-[ext_resource type="Texture2D" uid="uid://y67gb53dk1s6" path="res://assets/sprites/nacida_movments/idle/idle.png" id="2_aqvq8"]
+[ext_resource type="Script" uid="uid://cko2gl18h7a0h" path="res://scenes/characters/nacida.gd" id="1_aqvq8"]
+[ext_resource type="Texture2D" uid="uid://y67gb53dk1s6" path="res://assets/sprites/nacida_movments/idle/idle.png" id="1_jbv1q"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aqvq8"]
-height = 48.0
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e6abf"]
+rough = true
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6abf"]
+radius = 17.0
+height = 58.0
 
 [sub_resource type="Animation" id="Animation_bl2qp"]
 length = 0.001
@@ -18,7 +22,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_aqvq8")]
+"values": [ExtResource("1_jbv1q")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -60,7 +64,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_aqvq8")]
+"values": [ExtResource("1_jbv1q")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -87,7 +91,7 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_c3spl"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_38nc8"]
 _data = {
 &"RESET": SubResource("Animation_bl2qp"),
 &"idle": SubResource("Animation_g0rh5")
@@ -99,25 +103,31 @@ animation = &"idle"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bl2qp"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_g0rh5"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_id3k6"]
 states/Start/position = Vector2(184, 107)
 states/idle/node = SubResource("AnimationNodeAnimation_aqvq8")
 states/idle/position = Vector2(326, 51)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_bl2qp")]
 
-[node name="Nacida" type="CharacterBody2D" unique_id=2106607450]
+[node name="Nacida" type="RigidBody2D" unique_id=1352471129]
+physics_material_override = SubResource("PhysicsMaterial_e6abf")
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 20)
 script = ExtResource("1_aqvq8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1164809245]
-shape = SubResource("CapsuleShape2D_aqvq8")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516519694]
+shape = SubResource("CapsuleShape2D_e6abf")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=667046950]
-texture = ExtResource("2_aqvq8")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2052855167]
+texture = ExtResource("1_jbv1q")
 hframes = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17322638]
-libraries/ = SubResource("AnimationLibrary_c3spl")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=611534758]
+libraries/ = SubResource("AnimationLibrary_38nc8")
 
-[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1279653560]
-tree_root = SubResource("AnimationNodeStateMachine_g0rh5")
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1461023963]
+tree_root = SubResource("AnimationNodeStateMachine_id3k6")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1580242991]
+target_position = Vector2(0, 31)
