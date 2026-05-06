@@ -2,12 +2,25 @@
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_osc7o"]
 [ext_resource type="PackedScene" uid="uid://bhunfd0178boo" path="res://scenes/metals/metal_liviano.tscn" id="2_wjk5u"]
-[ext_resource type="PackedScene" uid="uid://cpip3ok031tyh" path="res://scenes/characters/nacida.tscn" id="3_xy1qu"]
+[ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="4_wjk5u"]
+[ext_resource type="PackedScene" uid="uid://sl138gik63pi" path="res://scenes/metals/metal_pesado.tscn" id="5_xy1qu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iamk"]
 size = Vector2(152, 16)
 
 [node name="Level0" type="Node2D" unique_id=1715129173]
+
+[node name="MetalLiviano" parent="." unique_id=141134533 instance=ExtResource("2_wjk5u")]
+position = Vector2(749, 495)
+
+[node name="MetalPesado" parent="." unique_id=1413381205 instance=ExtResource("5_xy1qu")]
+position = Vector2(860, 44)
+
+[node name="MetalPesado2" parent="." unique_id=1273372991 instance=ExtResource("5_xy1qu")]
+position = Vector2(282, 501)
+
+[node name="Nacida2" parent="." unique_id=1352471129 instance=ExtResource("4_wjk5u")]
+position = Vector2(45, 55)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=985820690]
 position = Vector2(600, 600)
@@ -20,12 +33,6 @@ shape = SubResource("RectangleShape2D_6iamk")
 scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
-[node name="MetalLiviano" parent="." unique_id=141134533 instance=ExtResource("2_wjk5u")]
-position = Vector2(614, 273)
-
-[node name="Nacida" parent="." unique_id=2106607450 instance=ExtResource("3_xy1qu")]
-position = Vector2(124, 288)
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=486318797]
 position = Vector2(1200, 500)
 rotation = 1.5707964
@@ -35,5 +42,52 @@ scale = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_6iamk")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=210154477]
+scale = Vector2(1.1875001, 0.12499999)
+texture = ExtResource("1_osc7o")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=5938693]
+position = Vector2(-50, 500)
+rotation = 1.5707964
+scale = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1359348854]
+shape = SubResource("RectangleShape2D_6iamk")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=91753206]
+scale = Vector2(1.1875001, 0.12499999)
+texture = ExtResource("1_osc7o")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=211516784]
+position = Vector2(581, -53)
+scale = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=713906272]
+shape = SubResource("RectangleShape2D_6iamk")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4" unique_id=1976558644]
+scale = Vector2(1.1875001, 0.12499999)
+texture = ExtResource("1_osc7o")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1357681725]
+position = Vector2(837, 1091)
+rotation = -1.5707964
+scale = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=1541082117]
+shape = SubResource("RectangleShape2D_6iamk")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5" unique_id=784294383]
+scale = Vector2(1.1875001, 0.12499999)
+texture = ExtResource("1_osc7o")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=1899246887]
+position = Vector2(660, 1091)
+rotation = -1.5707964
+scale = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=884514794]
+shape = SubResource("RectangleShape2D_6iamk")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D6" unique_id=2087365154]
 scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
