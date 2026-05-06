@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_k5x6p"]
 [ext_resource type="Script" uid="uid://d0r1h1cmle3kj" path="res://scenes/metals/metal_liviano.gd" id="1_uofkl"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rga8s"]
-radius = 46.010868
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_uofkl"]
 radius = 24.186773
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rga8s"]
+radius = 40.112343
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jrxvm"]
 blend_mode = 2
@@ -16,14 +16,15 @@ blend_mode = 2
 script = ExtResource("1_uofkl")
 
 [node name="Metal" type="RigidBody2D" parent="." unique_id=1349044579]
+max_contacts_reported = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Metal" unique_id=1771256471]
+shape = SubResource("CircleShape2D_uofkl")
 
 [node name="Anclaje" type="Area2D" parent="Metal" unique_id=181151792]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Metal/Anclaje" unique_id=1769979906]
 shape = SubResource("CircleShape2D_rga8s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Metal" unique_id=1771256471]
-shape = SubResource("CircleShape2D_uofkl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Metal" unique_id=1377722399]
 material = SubResource("CanvasItemMaterial_jrxvm")

@@ -1,40 +1,72 @@
 class_name Nacida
-extends CharacterBody2D
+extends RigidBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -1000.0
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var ray_cast_2d: RayCast2D = $RayCast2D
+
+const MOVE_SPEED = 50
+const MAX_SPEED = 50
+const JUMP_FORCE = -500
 
 signal pulling(direction_metal, pos)
 signal pushing(direction_metal, pos)
 
+var metal_pushing = false
+var mouse_vec: Vector2
+var pos: Vector2
+var direction_metal: Vector2
+
 func _ready():
 	Game.nacida = self
 
+
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	var direction = Input.get_axis("nacida_left", "nacida_right")
+	var force = Vector2.ZERO
+	
+	if direction and _on_floor():
+		force.x = MOVE_SPEED * direction
+		if abs(linear_velocity.x) > MAX_SPEED:
+			linear_velocity.x = MAX_SPEED * direction
 
-	# Handle jump.
-	if Input.is_action_just_pressed("nacida_jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		Debug.log("salte")
+	if _on_floor() and  Input.is_action_just_pressed("nacida_jump"):
+		force.y = JUMP_FORCE
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("nacida_left", "nacida_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	var mouse_vec: Vector2 = get_global_mouse_position()
-	var pos: Vector2 = global_position
-	var direction_metal = mouse_vec - pos
+	mouse_vec = get_global_mouse_position()
+	pos = global_position
+	direction_metal = mouse_vec - pos
 	
 	if Input.is_action_pressed("nacida_pull"):
 		pulling.emit(direction_metal.normalized(), pos)
 	elif Input.is_action_pressed("nacida_push"):
 		pushing.emit(direction_metal.normalized(), pos)
 
-	move_and_slide()
+	_set_animation(direction)
+	apply_central_impulse(force)
+
+
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	rotation_degrees = 0
+
+
+func _set_animation(direction):
+	if direction > 0: sprite_2d.flip_h = false
+	elif direction < 0: sprite_2d.flip_h = true
+	
+	if not _on_floor():
+		# animacion de estar en el aire
+		# sprite_2d.play("jump")
+		pass
+	elif abs(linear_velocity.x) > 0.1:
+		# para la animacion de caminar
+		# sprite_2d.play("run")
+		pass
+	else:
+		# para la animacion de estar quieto
+		# sprite_2d.play("idle")
+		pass
+
+
+func _on_floor():
+	if ray_cast_2d.is_colliding():
+		return true

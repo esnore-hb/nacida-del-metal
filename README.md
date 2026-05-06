@@ -1,8 +1,8 @@
-Codigo fuente del juego "Nacida del metal"
+# Codigo fuente del juego "Nacida del metal"
 
 ---
 
-### Estructura del proyecto
+## Estructura del proyecto
 
 ├── icon.svg \
 ├── icon.svg.import \
@@ -21,7 +21,6 @@ Codigo fuente del juego "Nacida del metal"
     └── characters \
         └── img-y-texturas.txt \
 
-
 ### Autoloads
 
 Debug.gd -> nos permite mostrar las acciones en pantalla se usa de la siguient forma:
@@ -29,3 +28,6 @@ Debug.gd -> nos permite mostrar las acciones en pantalla se usa de la siguient f
 ```python
 Debug.log(...)
 ```
+
+Game.gd -> en este script, la nacida se genera globalmente, y asi los metales pueden
+interactuar con ella.
