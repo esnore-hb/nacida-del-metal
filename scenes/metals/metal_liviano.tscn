@@ -1,16 +1,13 @@
 [gd_scene format=3 uid="uid://bhunfd0178boo"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_k5x6p"]
 [ext_resource type="Script" uid="uid://d0r1h1cmle3kj" path="res://scenes/metals/metal_liviano.gd" id="1_uofkl"]
+[ext_resource type="Texture2D" uid="uid://c4pbqk1jhr632" path="res://resources/Free - Raven Fantasy Icons (1)/Free - Raven Fantasy Icons/Separated Files/64x64/fc130.png" id="2_uofkl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uofkl"]
 radius = 24.186773
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rga8s"]
 radius = 40.112343
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jrxvm"]
-blend_mode = 2
 
 [node name="MetalLiviano" type="Node2D" unique_id=141134533]
 script = ExtResource("1_uofkl")
@@ -27,6 +24,6 @@ shape = SubResource("CircleShape2D_uofkl")
 shape = SubResource("CircleShape2D_rga8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="Metal" unique_id=1377722399]
-material = SubResource("CanvasItemMaterial_jrxvm")
-scale = Vector2(0.28125, 0.28125)
-texture = ExtResource("1_k5x6p")
+position = Vector2(-0.50000286, -0.5)
+scale = Vector2(0.8281249, 0.82812494)
+texture = ExtResource("2_uofkl")

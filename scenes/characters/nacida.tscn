@@ -6,9 +6,8 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e6abf"]
 rough = true
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6abf"]
-radius = 17.0
-height = 58.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqvq8"]
+size = Vector2(24, 39)
 
 [sub_resource type="Animation" id="Animation_bl2qp"]
 length = 0.001
@@ -116,7 +115,8 @@ center_of_mass = Vector2(0, 20)
 script = ExtResource("1_aqvq8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516519694]
-shape = SubResource("CapsuleShape2D_e6abf")
+position = Vector2(2, 9.5)
+shape = SubResource("RectangleShape2D_aqvq8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2052855167]
 texture = ExtResource("1_jbv1q")
