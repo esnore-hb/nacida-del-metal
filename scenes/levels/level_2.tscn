@@ -16,3 +16,4 @@ tile_set = ExtResource("2_g2h2n")
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1973677921 instance=ExtResource("3_ra442")]
 
 [node name="Nacida" parent="." unique_id=1352471129 instance=ExtResource("1_j2425")]
+position = Vector2(44, 389)
