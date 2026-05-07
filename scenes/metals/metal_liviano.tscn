@@ -17,6 +17,7 @@ script = ExtResource("1_uofkl")
 PUSHING_REACTION_FORCE = 1000
 
 [node name="Metal" type="RigidBody2D" parent="." unique_id=1349044579]
+mass = 0.5
 max_contacts_reported = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Metal" unique_id=1771256471]
