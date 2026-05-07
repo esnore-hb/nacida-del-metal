@@ -4,9 +4,9 @@ extends RigidBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 
-const MOVE_SPEED = 50
-const MAX_SPEED = 50
-const JUMP_FORCE = -500
+@export var MOVE_SPEED = 50
+@export var MAX_SPEED = 50
+@export var JUMP_FORCE = -500
 
 signal pulling(direction_metal, pos)
 signal pushing(direction_metal, pos)
