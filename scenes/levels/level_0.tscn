@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_osc7o"]
 [ext_resource type="PackedScene" uid="uid://bhunfd0178boo" path="res://scenes/metals/metal_liviano.tscn" id="2_wjk5u"]
 [ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="4_wjk5u"]
-[ext_resource type="PackedScene" uid="uid://sl138gik63pi" path="res://scenes/metals/metal_pesado.tscn" id="5_xy1qu"]
+[ext_resource type="PackedScene" uid="uid://biyndlmf5ayyw" path="res://goal.tscn" id="5_jjvta"]
+[ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="5_xy1qu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iamk"]
 size = Vector2(152, 16)
@@ -12,6 +13,7 @@ size = Vector2(152, 16)
 
 [node name="Nacida2" parent="." unique_id=1352471129 instance=ExtResource("4_wjk5u")]
 position = Vector2(45, 55)
+MOVE_SPEED = 100
 
 [node name="MetalLiviano" parent="." unique_id=141134533 instance=ExtResource("2_wjk5u")]
 position = Vector2(742, 596)
@@ -21,6 +23,7 @@ position = Vector2(814, 28)
 
 [node name="MetalPesado2" parent="." unique_id=1273372991 instance=ExtResource("5_xy1qu")]
 position = Vector2(294, 615)
+rotation = -3.1415927
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=985820690]
 position = Vector2(600, 697)
@@ -113,3 +116,7 @@ shape = SubResource("RectangleShape2D_6iamk")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D8" unique_id=226814128]
 scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
+
+[node name="Goal" parent="." unique_id=670407063 instance=ExtResource("5_jjvta")]
+position = Vector2(56, 581)
+scale = Vector2(2, 2)

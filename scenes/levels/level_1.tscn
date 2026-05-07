@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://biyndlmf5ayyw" path="res://goal.tscn" id="4_x42e6"]
 [ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="5_6761a"]
 [ext_resource type="PackedScene" uid="uid://dn5sf2488apqf" path="res://pip.tscn" id="6_sk5k4"]
+[ext_resource type="AudioStream" uid="uid://ci356i4pw12bl" path="res://music/08 - DavidKBD - Belmont Chronicles Pack - The Dungeons.ogg" id="7_oc4kc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6761a"]
 size = Vector2(165, 684)
@@ -76,3 +77,7 @@ shape = SubResource("RectangleShape2D_sk5k4")
 
 [node name="Area2D" parent="." unique_id=1848357944 instance=ExtResource("6_sk5k4")]
 position = Vector2(322, 261)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1340701065]
+stream = ExtResource("7_oc4kc")
+autoplay = true
