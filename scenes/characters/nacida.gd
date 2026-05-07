@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	var direction = Input.get_axis("nacida_left", "nacida_right")
 	var force = Vector2.ZERO
 	
-	if direction and _on_floor():
+	if direction:
 		force.x = MOVE_SPEED * direction
 		if abs(linear_velocity.x) > MAX_SPEED:
 			linear_velocity.x = MAX_SPEED * direction
@@ -37,7 +37,9 @@ func _physics_process(delta: float) -> void:
 	direction_metal = mouse_vec - pos
 	
 	if Input.is_action_pressed("nacida_pull"):
+		# azul hierro tira
 		pulling.emit(direction_metal.normalized(), pos)
+		
 	elif Input.is_action_pressed("nacida_push"):
 		pushing.emit(direction_metal.normalized(), pos)
 
