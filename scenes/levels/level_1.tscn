@@ -3,8 +3,17 @@
 [ext_resource type="TileSet" uid="uid://bwe1j5ivaryd5" path="res://resources/tile_set.tres" id="1_6iamk"]
 [ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="2_6iamk"]
 [ext_resource type="PackedScene" uid="uid://5oamr728074d" path="res://ui/pause_menu/pause_menu.tscn" id="3_nsrm0"]
+[ext_resource type="PackedScene" uid="uid://biyndlmf5ayyw" path="res://goal.tscn" id="4_x42e6"]
+[ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="5_6761a"]
+[ext_resource type="PackedScene" uid="uid://dn5sf2488apqf" path="res://pip.tscn" id="6_sk5k4"]
 
-[node name="level_3" type="Node2D" unique_id=913683024]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6761a"]
+size = Vector2(165, 684)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sk5k4"]
+size = Vector2(1183, 101)
+
+[node name="level_1" type="Node2D" unique_id=913683024]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1756285353]
 scale = Vector2(4, 4)
@@ -19,5 +28,51 @@ tile_set = ExtResource("1_6iamk")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1208072394]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1973677921 instance=ExtResource("3_nsrm0")]
+visible = false
 
 [node name="Nacida" parent="." unique_id=1352471129 instance=ExtResource("2_6iamk")]
+position = Vector2(53, 411)
+MOVE_SPEED = 50
+MAX_SPEED = 50
+
+[node name="Goal" parent="." unique_id=670407063 instance=ExtResource("4_x42e6")]
+position = Vector2(1103, 244)
+scale = Vector2(2, 2)
+
+[node name="MetalPesado" parent="." unique_id=1273372991 instance=ExtResource("5_6761a")]
+position = Vector2(316, 19)
+
+[node name="pared" type="StaticBody2D" parent="." unique_id=1947646282]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared" unique_id=1906065659]
+position = Vector2(-80, 335)
+shape = SubResource("RectangleShape2D_6761a")
+
+[node name="Sprite2D" type="Sprite2D" parent="pared/CollisionShape2D" unique_id=1901691838]
+
+[node name="pared2" type="StaticBody2D" parent="." unique_id=1542756010]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared2" unique_id=2009488964]
+position = Vector2(1238, 329)
+shape = SubResource("RectangleShape2D_6761a")
+
+[node name="Sprite2D" type="Sprite2D" parent="pared2/CollisionShape2D" unique_id=164175560]
+
+[node name="piso" type="StaticBody2D" parent="." unique_id=1747787252]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso" unique_id=1802100225]
+position = Vector2(-636, 513)
+shape = SubResource("RectangleShape2D_sk5k4")
+
+[node name="Sprite2D" type="Sprite2D" parent="piso/CollisionShape2D" unique_id=1892110028]
+
+[node name="techo" type="StaticBody2D" parent="." unique_id=1789962261]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="techo" unique_id=53310249]
+position = Vector2(567, -58)
+shape = SubResource("RectangleShape2D_sk5k4")
+
+[node name="Sprite2D" type="Sprite2D" parent="techo/CollisionShape2D" unique_id=1495409833]
+
+[node name="Area2D" parent="." unique_id=1848357944 instance=ExtResource("6_sk5k4")]
+position = Vector2(322, 261)

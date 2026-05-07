@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://biyndlmf5ayyw"]
+
+[ext_resource type="Script" uid="uid://bssnotdulq4as" path="res://goal.gd" id="1_0qle8"]
+[ext_resource type="Texture2D" uid="uid://jpcbx2gn1vew" path="res://resources/Castle/puerta.png" id="2_p20yd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gcynx"]
+radius = 20.0
+height = 56.0
+
+[node name="Goal" type="Area2D" unique_id=670407063]
+script = ExtResource("1_0qle8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=55643129]
+shape = SubResource("CapsuleShape2D_gcynx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=290398745]
+position = Vector2(1, 1.4999999)
+scale = Vector2(0.962963, 0.9178082)
+texture = ExtResource("2_p20yd")

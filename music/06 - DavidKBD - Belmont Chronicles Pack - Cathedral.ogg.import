@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bdml2v3iskju1"
+path="res://.godot/imported/06 - DavidKBD - Belmont Chronicles Pack - Cathedral.ogg-82225dffa43c4345d2b0f630e9cef167.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/06 - DavidKBD - Belmont Chronicles Pack - Cathedral.ogg"
+dest_files=["res://.godot/imported/06 - DavidKBD - Belmont Chronicles Pack - Cathedral.ogg-82225dffa43c4345d2b0f630e9cef167.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
