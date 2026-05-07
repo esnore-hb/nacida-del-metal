@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j3a4cywsqas8" path="res://credits.gd" id="1_nm7lk"]
 [ext_resource type="FontFile" uid="uid://ci3v1ex0htoyl" path="res://fonts/Cobblestone.ttf" id="2_c1t8d"]
+[ext_resource type="AudioStream" uid="uid://cxhxbtivbq5xh" path="res://music/02 - DavidKBD - Belmont Chronicles Pack - The Mystic Forest.ogg" id="3_g4wvt"]
 
 [node name="Credits" type="Control" unique_id=1759278737]
 layout_mode = 3
@@ -48,3 +49,7 @@ by brullov
 
 
 "
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=532820228]
+stream = ExtResource("3_g4wvt")
+autoplay = true

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="4_fiq81"]
 [ext_resource type="PackedScene" uid="uid://biyndlmf5ayyw" path="res://goal.tscn" id="5_qpwj6"]
 [ext_resource type="PackedScene" uid="uid://dn5sf2488apqf" path="res://pip.tscn" id="6_ibugp"]
+[ext_resource type="AudioStream" uid="uid://gh3drre7l75w" path="res://music/05 - DavidKBD - Belmont Chronicles Pack - Abandoned Church.ogg" id="7_ibugp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra442"]
 size = Vector2(165, 684)
@@ -76,4 +77,8 @@ position = Vector2(775, 273)
 position = Vector2(467, 267)
 
 [node name="Area2D3" parent="." unique_id=2104119136 instance=ExtResource("6_ibugp")]
-position = Vector2(944, 79)
+position = Vector2(935, 107)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1259585916]
+stream = ExtResource("7_ibugp")
+autoplay = true
