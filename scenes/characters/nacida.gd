@@ -11,6 +11,10 @@ extends RigidBody2D
 
 ## Línea visual utilizada al tirar metales.
 @onready var enlace_metalico_tirar: Line2D = $EnlaceMetalicoTirar
+@export var MOVE_SPEED = 50
+@export var MAX_SPEED = 50
+@export var JUMP_FORCE = -500
+@export var is_dead = false
 
 ## Línea visual utilizada al empujar metales.
 @onready var enlace_metalico_empujar: Line2D = $EnlaceMetalicoEmpujar
@@ -134,3 +138,10 @@ func _on_floor() -> bool:
 		return true
 
 	return false
+		
+func take_damage() -> void:
+	is_dead = true
+	#velocity = Vector2.ZERO
+	#playback.travel("dead_" + last_direction)
+	#await get_tree().create_timer(1).timeout
+	queue_free()

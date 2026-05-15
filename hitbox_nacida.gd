@@ -1,0 +1,2 @@
+class_name HitboxNacida
+extends Area2D
