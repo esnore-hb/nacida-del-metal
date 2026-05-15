@@ -113,6 +113,7 @@ physics_material_override = SubResource("PhysicsMaterial_e6abf")
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 20)
 script = ExtResource("1_aqvq8")
+MAX_SPEED = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516519694]
 position = Vector2(2, 9.5)

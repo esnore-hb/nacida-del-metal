@@ -3,27 +3,30 @@
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_osc7o"]
 [ext_resource type="PackedScene" uid="uid://bhunfd0178boo" path="res://scenes/metals/metal_liviano.tscn" id="2_wjk5u"]
 [ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="4_wjk5u"]
-[ext_resource type="PackedScene" uid="uid://sl138gik63pi" path="res://scenes/metals/metal_pesado.tscn" id="5_xy1qu"]
+[ext_resource type="PackedScene" uid="uid://biyndlmf5ayyw" path="res://goal.tscn" id="5_jjvta"]
+[ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="5_xy1qu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iamk"]
 size = Vector2(152, 16)
 
 [node name="Level0" type="Node2D" unique_id=1715129173]
 
-[node name="MetalLiviano" parent="." unique_id=141134533 instance=ExtResource("2_wjk5u")]
-position = Vector2(749, 495)
-
-[node name="MetalPesado" parent="." unique_id=1413381205 instance=ExtResource("5_xy1qu")]
-position = Vector2(860, 44)
-
-[node name="MetalPesado2" parent="." unique_id=1273372991 instance=ExtResource("5_xy1qu")]
-position = Vector2(282, 501)
-
 [node name="Nacida2" parent="." unique_id=1352471129 instance=ExtResource("4_wjk5u")]
 position = Vector2(45, 55)
+MOVE_SPEED = 100
+
+[node name="MetalLiviano" parent="." unique_id=141134533 instance=ExtResource("2_wjk5u")]
+position = Vector2(742, 596)
+
+[node name="MetalPesado" parent="." unique_id=1413381205 instance=ExtResource("5_xy1qu")]
+position = Vector2(814, 28)
+
+[node name="MetalPesado2" parent="." unique_id=1273372991 instance=ExtResource("5_xy1qu")]
+position = Vector2(294, 615)
+rotation = -3.1415927
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=985820690]
-position = Vector2(600, 600)
+position = Vector2(600, 697)
 scale = Vector2(8, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1181225073]
@@ -69,7 +72,7 @@ scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1357681725]
-position = Vector2(837, 1091)
+position = Vector2(831, 1201)
 rotation = -1.5707964
 scale = Vector2(8, 8)
 
@@ -81,7 +84,7 @@ scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=1899246887]
-position = Vector2(660, 1091)
+position = Vector2(654, 1200)
 rotation = -1.5707964
 scale = Vector2(8, 8)
 
@@ -91,3 +94,29 @@ shape = SubResource("RectangleShape2D_6iamk")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D6" unique_id=2087365154]
 scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=411995456]
+position = Vector2(1602, 313)
+scale = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=1228700224]
+shape = SubResource("RectangleShape2D_6iamk")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D7" unique_id=112730937]
+scale = Vector2(1.1875001, 0.12499999)
+texture = ExtResource("1_osc7o")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="." unique_id=1593338136]
+position = Vector2(-482, 315)
+scale = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" unique_id=825787537]
+shape = SubResource("RectangleShape2D_6iamk")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D8" unique_id=226814128]
+scale = Vector2(1.1875001, 0.12499999)
+texture = ExtResource("1_osc7o")
+
+[node name="Goal" parent="." unique_id=670407063 instance=ExtResource("5_jjvta")]
+position = Vector2(56, 581)
+scale = Vector2(2, 2)

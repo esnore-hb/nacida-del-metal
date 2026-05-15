@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dn5sf2488apqf"]
+
+[ext_resource type="Script" uid="uid://cweagsfey3gy2" path="res://pip.gd" id="1_2foya"]
+[ext_resource type="Texture2D" uid="uid://bql86rdw8qoyv" path="res://resources/Free - Raven Fantasy Icons (1)/Free - Raven Fantasy Icons/Separated Files/64x64/fc236.png" id="2_46jm3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6fdkq"]
+radius = 27.018513
+
+[node name="Area2D" type="Area2D" unique_id=1848357944]
+script = ExtResource("1_2foya")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1566215452]
+shape = SubResource("CircleShape2D_6fdkq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=812990330]
+position = Vector2(0, -1.0000002)
+scale = Vector2(0.484375, 0.4843751)
+texture = ExtResource("2_46jm3")

@@ -4,9 +4,9 @@ extends RigidBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 
-const MOVE_SPEED = 50
-const MAX_SPEED = 50
-const JUMP_FORCE = -500
+@export var MOVE_SPEED = 50
+@export var MAX_SPEED = 50
+@export var JUMP_FORCE = -500
 
 signal pulling(direction_metal, pos)
 signal pushing(direction_metal, pos)
@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	var direction = Input.get_axis("nacida_left", "nacida_right")
 	var force = Vector2.ZERO
 	
-	if direction and _on_floor():
+	if direction:
 		force.x = MOVE_SPEED * direction
 		if abs(linear_velocity.x) > MAX_SPEED:
 			linear_velocity.x = MAX_SPEED * direction
@@ -37,7 +37,9 @@ func _physics_process(delta: float) -> void:
 	direction_metal = mouse_vec - pos
 	
 	if Input.is_action_pressed("nacida_pull"):
+		# azul hierro tira
 		pulling.emit(direction_metal.normalized(), pos)
+		
 	elif Input.is_action_pressed("nacida_push"):
 		pushing.emit(direction_metal.normalized(), pos)
 

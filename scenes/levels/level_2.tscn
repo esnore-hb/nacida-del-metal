@@ -3,6 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="1_j2425"]
 [ext_resource type="TileSet" uid="uid://bwmbs1to1cjm5" path="res://resources/tile_set_castle.tres" id="1_ra442"]
 [ext_resource type="PackedScene" uid="uid://5oamr728074d" path="res://ui/pause_menu/pause_menu.tscn" id="3_ra442"]
+[ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="4_fiq81"]
+[ext_resource type="PackedScene" uid="uid://biyndlmf5ayyw" path="res://goal.tscn" id="5_qpwj6"]
+[ext_resource type="PackedScene" uid="uid://dn5sf2488apqf" path="res://pip.tscn" id="6_ibugp"]
+[ext_resource type="AudioStream" uid="uid://gh3drre7l75w" path="res://music/05 - DavidKBD - Belmont Chronicles Pack - Abandoned Church.ogg" id="7_ibugp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra442"]
+size = Vector2(165, 684)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fiq81"]
+size = Vector2(165, 684)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l37oo"]
+size = Vector2(1183, 101)
 
 [node name="level_2" type="Node2D" unique_id=913683024]
 
@@ -23,3 +36,49 @@ visible = false
 
 [node name="Nacida" parent="." unique_id=1352471129 instance=ExtResource("1_j2425")]
 position = Vector2(282, 275)
+MOVE_SPEED = 50
+MAX_SPEED = 50
+
+[node name="pared" type="StaticBody2D" parent="." unique_id=867097639]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared" unique_id=142705370]
+position = Vector2(-80, 335)
+shape = SubResource("RectangleShape2D_ra442")
+
+[node name="Sprite2D" type="Sprite2D" parent="pared/CollisionShape2D" unique_id=329010162]
+
+[node name="pared2" type="StaticBody2D" parent="." unique_id=529533901]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared2" unique_id=1100587244]
+position = Vector2(1238, 329)
+shape = SubResource("RectangleShape2D_fiq81")
+
+[node name="Sprite2D" type="Sprite2D" parent="pared2/CollisionShape2D" unique_id=1516476356]
+
+[node name="techo" type="StaticBody2D" parent="." unique_id=367426344]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="techo" unique_id=741533359]
+position = Vector2(567, -58)
+shape = SubResource("RectangleShape2D_l37oo")
+
+[node name="Sprite2D" type="Sprite2D" parent="techo/CollisionShape2D" unique_id=1337552664]
+
+[node name="MetalPesado" parent="." unique_id=1273372991 instance=ExtResource("4_fiq81")]
+position = Vector2(649, 78)
+
+[node name="Goal" parent="." unique_id=670407063 instance=ExtResource("5_qpwj6")]
+position = Vector2(1110, 264)
+scale = Vector2(2, 2)
+
+[node name="Area2D" parent="." unique_id=1848357944 instance=ExtResource("6_ibugp")]
+position = Vector2(775, 273)
+
+[node name="Area2D2" parent="." unique_id=123486330 instance=ExtResource("6_ibugp")]
+position = Vector2(467, 267)
+
+[node name="Area2D3" parent="." unique_id=2104119136 instance=ExtResource("6_ibugp")]
+position = Vector2(935, 107)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1259585916]
+stream = ExtResource("7_ibugp")
+autoplay = true

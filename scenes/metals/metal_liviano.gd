@@ -3,14 +3,17 @@ extends Node2D
 @onready var anclaje: Area2D = $Metal/Anclaje
 @onready var metal: RigidBody2D = $Metal
 
-var is_pulling: bool = false
-var is_pushing: bool = false
+var pulling_active: bool = false
+var pushing_active: bool = false
 var is_mouse = false
 var direc_nacida
 var posit_nacida
 
+@export var PULLING_FORCE = 500
+@export var PUSHING_FORCE = 500
+@export var PUSHING_REACTION_FORCE = 50
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	anclaje.mouse_entered.connect(_on_mouse_enter)
 	anclaje.mouse_exited.connect(_on_mouse_exit)
@@ -29,13 +32,11 @@ func _nacida_generada():
 
 
 func _pull_metal(direction_nacida: Vector2, pos_nacida: Vector2) -> void:
-	is_pulling = true
 	direc_nacida = direction_nacida
 	posit_nacida = pos_nacida
 
 
 func _push_metal(direction_nacida: Vector2, pos_nacida: Vector2) -> void:
-	is_pushing = true
 	direc_nacida = direction_nacida
 	posit_nacida = pos_nacida
 
@@ -48,19 +49,19 @@ func _on_mouse_exit() -> void:
 	is_mouse = false
 
 
-func _process(delta: float) -> void:
-	if is_pulling and is_mouse:
+func _physics_process(delta: float) -> void:
+	pulling_active = Input.is_action_pressed("nacida_pull") and is_mouse
+	pushing_active = Input.is_action_pressed("nacida_push") and is_mouse
+
+	if pulling_active:
 		metal.gravity_scale = 0
-		metal.apply_impulse(-direc_nacida * 500 * delta)
-		
-	elif is_pushing and is_mouse:
+		metal.apply_impulse(-direc_nacida * PULLING_FORCE * delta)
+	elif pushing_active:
 		metal.gravity_scale = 0
-		metal.apply_impulse( direc_nacida * 500 * delta)
+		metal.apply_impulse(direc_nacida * PUSHING_FORCE * delta)
 		if abs(metal.angular_velocity) < 0.01:
 			Game.nacida.gravity_scale = 0
-			Game.nacida.apply_impulse(-direc_nacida * 40)
+			Game.nacida.apply_impulse(-direc_nacida * PUSHING_REACTION_FORCE * delta)
 	else:
 		Game.nacida.gravity_scale = 1
 		metal.gravity_scale = 1
-		is_pulling = false
-		is_pushing = false
