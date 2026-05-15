@@ -7,6 +7,7 @@ extends RigidBody2D
 @export var MOVE_SPEED = 50
 @export var MAX_SPEED = 50
 @export var JUMP_FORCE = -500
+@export var is_dead = false
 
 signal pulling(direction_metal, pos)
 signal pushing(direction_metal, pos)
@@ -72,3 +73,10 @@ func _set_animation(direction):
 func _on_floor():
 	if ray_cast_2d.is_colliding():
 		return true
+		
+func take_damage() -> void:
+	is_dead = true
+	#velocity = Vector2.ZERO
+	#playback.travel("dead_" + last_direction)
+	#await get_tree().create_timer(1).timeout
+	queue_free()
