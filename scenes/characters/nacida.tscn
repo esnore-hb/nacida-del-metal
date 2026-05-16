@@ -2,12 +2,27 @@
 
 [ext_resource type="Script" uid="uid://cko2gl18h7a0h" path="res://scenes/characters/nacida.gd" id="1_aqvq8"]
 [ext_resource type="Texture2D" uid="uid://y67gb53dk1s6" path="res://assets/sprites/nacida_movments/idle/idle.png" id="1_jbv1q"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_bl2qp"]
+[ext_resource type="Texture2D" uid="uid://r4as75b1tsj6" path="res://icon.jpg" id="3_g0rh5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e6abf"]
 rough = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqvq8"]
 size = Vector2(24, 39)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_c3spl"]
+frames = 2
+frame_0/texture = ExtResource("2_bl2qp")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("3_g0rh5")
+frame_1/duration = 0.1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_kn3so"]
+frames = 2
+frame_0/texture = ExtResource("2_bl2qp")
+frame_1/texture = ExtResource("3_g0rh5")
+frame_1/duration = 1.0
 
 [sub_resource type="Animation" id="Animation_bl2qp"]
 length = 0.001
@@ -113,11 +128,20 @@ physics_material_override = SubResource("PhysicsMaterial_e6abf")
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 20)
 script = ExtResource("1_aqvq8")
-MAX_SPEED = 100
+MAX_SPEED = 150.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516519694]
 position = Vector2(2, 9.5)
 shape = SubResource("RectangleShape2D_aqvq8")
+
+[node name="EnlaceMetalicoTirar" type="Line2D" parent="." unique_id=1352970157]
+texture = SubResource("AnimatedTexture_c3spl")
+texture_mode = 2
+
+[node name="EnlaceMetalicoEmpujar" type="Line2D" parent="." unique_id=864244906]
+modulate = Color(0, 0, 1, 1)
+texture = SubResource("AnimatedTexture_kn3so")
+texture_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2052855167]
 texture = ExtResource("1_jbv1q")

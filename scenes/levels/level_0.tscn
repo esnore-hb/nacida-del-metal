@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="4_wjk5u"]
 [ext_resource type="PackedScene" uid="uid://biyndlmf5ayyw" path="res://goal.tscn" id="5_jjvta"]
 [ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="5_xy1qu"]
+[ext_resource type="PackedScene" uid="uid://g17oxwuxh8kx" path="res://ui/ui_metales/ui_metales.tscn" id="6_jjvta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iamk"]
 size = Vector2(152, 16)
@@ -12,22 +13,21 @@ size = Vector2(152, 16)
 [node name="Level0" type="Node2D" unique_id=1715129173]
 
 [node name="Nacida2" parent="." unique_id=1352471129 instance=ExtResource("4_wjk5u")]
-position = Vector2(45, 55)
-MOVE_SPEED = 100
+position = Vector2(232, 677)
 
 [node name="MetalLiviano" parent="." unique_id=141134533 instance=ExtResource("2_wjk5u")]
-position = Vector2(742, 596)
+position = Vector2(1590, 1304)
 
 [node name="MetalPesado" parent="." unique_id=1413381205 instance=ExtResource("5_xy1qu")]
-position = Vector2(814, 28)
+position = Vector2(1875, 44)
 
 [node name="MetalPesado2" parent="." unique_id=1273372991 instance=ExtResource("5_xy1qu")]
-position = Vector2(294, 615)
+position = Vector2(774, 1353)
 rotation = -3.1415927
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=985820690]
-position = Vector2(600, 697)
-scale = Vector2(8, 8)
+position = Vector2(1321, 1439)
+scale = Vector2(17.560001, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1181225073]
 shape = SubResource("RectangleShape2D_6iamk")
@@ -37,9 +37,9 @@ scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=486318797]
-position = Vector2(1200, 500)
+position = Vector2(2605, 695)
 rotation = 1.5707964
-scale = Vector2(8, 8)
+scale = Vector2(10.4, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=723214394]
 shape = SubResource("RectangleShape2D_6iamk")
@@ -49,9 +49,9 @@ scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=5938693]
-position = Vector2(-50, 500)
+position = Vector2(-45, 707)
 rotation = 1.5707964
-scale = Vector2(8, 8)
+scale = Vector2(9.480001, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1359348854]
 shape = SubResource("RectangleShape2D_6iamk")
@@ -61,8 +61,8 @@ scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=211516784]
-position = Vector2(581, -53)
-scale = Vector2(8, 8)
+position = Vector2(1287, -53)
+scale = Vector2(17.599997, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=713906272]
 shape = SubResource("RectangleShape2D_6iamk")
@@ -72,7 +72,7 @@ scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1357681725]
-position = Vector2(831, 1201)
+position = Vector2(1679, 1909)
 rotation = -1.5707964
 scale = Vector2(8, 8)
 
@@ -84,7 +84,7 @@ scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=1899246887]
-position = Vector2(654, 1200)
+position = Vector2(1502, 1908)
 rotation = -1.5707964
 scale = Vector2(8, 8)
 
@@ -96,7 +96,7 @@ scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=411995456]
-position = Vector2(1602, 313)
+position = Vector2(2754, 683)
 scale = Vector2(8, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=1228700224]
@@ -107,7 +107,7 @@ scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="." unique_id=1593338136]
-position = Vector2(-482, 315)
+position = Vector2(-83, 878)
 scale = Vector2(8, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" unique_id=825787537]
@@ -118,5 +118,13 @@ scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
 [node name="Goal" parent="." unique_id=670407063 instance=ExtResource("5_jjvta")]
-position = Vector2(56, 581)
+position = Vector2(71, 759)
 scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1984451553]
+anchor_mode = 0
+zoom = Vector2(0.5, 0.5)
+
+[node name="UiMetales" parent="Camera2D" unique_id=851810691 instance=ExtResource("6_jjvta")]
+offset_top = 1440.0
+offset_bottom = 1440.0

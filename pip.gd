@@ -5,6 +5,7 @@ extends Area2D
 
 func _ready() -> void:
 	#animated_sprite_2d.play("coin_roll")
+	Game.pips += 1
 	body_entered.connect(_on_body_entered)
 	
 func _on_body_entered(body: Node2D) -> void:
@@ -12,7 +13,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if player:
 		set_deferred("monitoring", false)
 		#pick_up_sound.play()
-		#Game.coins += 1
+		Game.pips -= 1
 		#animated_sprite_2d.play("pick_up")
 		#await animated_sprite_2d.animation_finished
 		queue_free()
+	# En el script del Pip

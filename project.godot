@@ -14,8 +14,8 @@ config/name="Nacida"
 config/version="0.1.1"
 run/main_scene="uid://cug75cg8o06e0"
 config/features=PackedStringArray("4.6", "Forward Plus")
-boot_splash/image="uid://r4as75b1tsj6"
-config/icon="uid://r4as75b1tsj6"
+boot_splash/image="uid://pwmijwqmfwjb"
+config/icon="uid://pwmijwqmfwjb"
 boot_splash/minimum_display_time=300
 
 [autoload]
@@ -26,7 +26,10 @@ LevelManager="*uid://d0lni5p7md1ge"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/mode=2
+window/stretch/mode="canvas_items"
 
 [input]
 
@@ -73,6 +76,12 @@ menu={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="nacida"
+2d_physics/layer_2="pinchos"
+2d_physics/layer_3="enemigos"
 
 [physics]
 
