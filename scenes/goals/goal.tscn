@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bpush45toq7yp"]
 
-[ext_resource type="Script" path="res://goal.gd" id="1_0qle8"]
+[ext_resource type="Script" uid="uid://bssnotdulq4as" path="res://scenes/goals/goal.gd" id="1_0qle8"]
 [ext_resource type="Texture2D" uid="uid://jpcbx2gn1vew" path="res://resources/Castle/puerta.png" id="2_p20yd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gcynx"]
