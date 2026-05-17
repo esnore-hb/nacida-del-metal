@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cko2gl18h7a0h" path="res://scenes/characters/nacida.gd" id="1_aqvq8"]
 [ext_resource type="Texture2D" uid="uid://y67gb53dk1s6" path="res://assets/sprites/nacida_movments/idle/idle.png" id="1_jbv1q"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_bl2qp"]
-[ext_resource type="Texture2D" uid="uid://r4as75b1tsj6" path="res://icon.jpg" id="3_g0rh5"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://textures/icon.svg" id="2_bl2qp"]
+[ext_resource type="Texture2D" uid="uid://r4as75b1tsj6" path="res://textures/Game_Icon/game_icon.jpg" id="3_g0rh5"]
+[ext_resource type="PackedScene" uid="uid://bk80ngdotxkql" path="res://Damage/hurtbox/hurtbox_component.tscn" id="5_c3spl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e6abf"]
 rough = true
@@ -149,10 +150,6 @@ modulate = Color(0, 0, 1, 1)
 texture = SubResource("AnimatedTexture_kn3so")
 texture_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2052855167]
-texture = ExtResource("1_jbv1q")
-hframes = 5
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=611534758]
 libraries/ = SubResource("AnimationLibrary_38nc8")
 
@@ -162,3 +159,11 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1580242991]
 target_position = Vector2(0, 31)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2052855167]
+texture = ExtResource("1_jbv1q")
+hframes = 5
+
+[node name="HurtBoxEnemys" parent="." unique_id=678540153 instance=ExtResource("5_c3spl")]
+position = Vector2(-3, 0)
+scale = Vector2(1.5, 1.5)
