@@ -1,10 +1,13 @@
 extends Area2D
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_tree: AnimationTree = $AnimationTree
 @onready var sprite_2d: Sprite2D = $Sprite2D
-#@onready var pick_up_sound: AudioStreamPlayer = $PickUp
 
 func _ready() -> void:
-	#animated_sprite_2d.play("coin_roll")
+	animation_tree.active = true
+	var state_machine = animation_tree.get("parameters/playback")
+	state_machine.travel("idle")
 	Game.pips += 1
 	body_entered.connect(_on_body_entered)
 	
@@ -14,7 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 		set_deferred("monitoring", false)
 		#pick_up_sound.play()
 		Game.pips -= 1
-		#animated_sprite_2d.play("pick_up")
-		#await animated_sprite_2d.animation_finished
+		var state_machine = animation_tree.get("parameters/playback")
+		state_machine.travel("pick_up")
+		await get_tree().create_timer(0.20).timeout
 		queue_free()
-	# En el script del Pip
