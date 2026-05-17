@@ -105,10 +105,16 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
+[sub_resource type="Animation" id="Animation_c3spl"]
+resource_name = "walk"
+length = 0.6
+step = 0.1
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_38nc8"]
 _data = {
 &"RESET": SubResource("Animation_bl2qp"),
-&"idle": SubResource("Animation_g0rh5")
+&"idle": SubResource("Animation_g0rh5"),
+&"walk": SubResource("Animation_c3spl")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aqvq8"]
