@@ -18,6 +18,12 @@ frame_0/duration = 0.1
 frame_1/texture = ExtResource("3_g0rh5")
 frame_1/duration = 0.1
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_kn3so"]
+frames = 2
+frame_0/texture = ExtResource("2_bl2qp")
+frame_1/texture = ExtResource("3_g0rh5")
+frame_1/duration = 1.0
+
 [sub_resource type="Animation" id="Animation_bl2qp"]
 length = 0.001
 tracks/0/type = "value"
@@ -99,10 +105,16 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
+[sub_resource type="Animation" id="Animation_c3spl"]
+resource_name = "walk"
+length = 0.6
+step = 0.1
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_38nc8"]
 _data = {
 &"RESET": SubResource("Animation_bl2qp"),
-&"idle": SubResource("Animation_g0rh5")
+&"idle": SubResource("Animation_g0rh5"),
+&"walk": SubResource("Animation_c3spl")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aqvq8"]
@@ -122,18 +134,20 @@ physics_material_override = SubResource("PhysicsMaterial_e6abf")
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 20)
 script = ExtResource("1_aqvq8")
-MAX_SPEED = 100
+MAX_SPEED = 150.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516519694]
 position = Vector2(2, 9.5)
 shape = SubResource("RectangleShape2D_aqvq8")
 
 [node name="EnlaceMetalicoTirar" type="Line2D" parent="." unique_id=1352970157]
-modulate = Color(0, 0, 1, 1)
 texture = SubResource("AnimatedTexture_c3spl")
 texture_mode = 2
 
 [node name="EnlaceMetalicoEmpujar" type="Line2D" parent="." unique_id=864244906]
+modulate = Color(0, 0, 1, 1)
+texture = SubResource("AnimatedTexture_kn3so")
+texture_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2052855167]
 texture = ExtResource("1_jbv1q")

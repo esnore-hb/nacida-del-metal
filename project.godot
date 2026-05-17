@@ -14,8 +14,8 @@ config/name="Nacida"
 config/version="0.1.1"
 run/main_scene="uid://cug75cg8o06e0"
 config/features=PackedStringArray("4.6", "Forward Plus")
-boot_splash/image="uid://r4as75b1tsj6"
-config/icon="uid://r4as75b1tsj6"
+boot_splash/image="uid://pwmijwqmfwjb"
+config/icon="uid://pwmijwqmfwjb"
 boot_splash/minimum_display_time=300
 
 [autoload]
@@ -26,7 +26,10 @@ LevelManager="*uid://d0lni5p7md1ge"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/mode=2
+window/stretch/mode="canvas_items"
 
 [input]
 

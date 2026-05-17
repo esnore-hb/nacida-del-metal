@@ -27,6 +27,19 @@ extends RigidBody2D
 ## Fuerza aplicada al saltar.
 @export var JUMP_FORCE: float = -500.0
 
+## Limite de metal de Hierro (para tirar)
+@export var LIMITE_HIERRO: int = 1000
+
+## Limite de metal de Acero (para empujar)
+@export var LIMITE_ACERO: int = 1000
+
+
+## Cantidad de metal de Hierro (para tirar)
+var hierro = LIMITE_HIERRO
+
+## Cantidad de metal de Acero (para empujar)
+var acero = LIMITE_ACERO
+
 
 ## Señal emitida al tirar de un metal.
 ## direction_metal: dirección normalizada hacia el metal.
@@ -85,6 +98,8 @@ func _physics_process(delta: float) -> void:
 
 		enlace_metalico_tirar.points[1] = direction_metal
 		enlace_metalico_tirar.show()
+		
+		hierro -= 1 if hierro else 0
 
 	elif Input.is_action_pressed("nacida_push"):
 		# Acero: empujar metal.
@@ -92,6 +107,8 @@ func _physics_process(delta: float) -> void:
 
 		enlace_metalico_empujar.points[1] = direction_metal
 		enlace_metalico_empujar.show()
+		
+		acero -= 1 if acero else 0
 
 	else:
 		enlace_metalico_tirar.hide()
