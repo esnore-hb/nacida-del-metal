@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://coub6p5tbcxk"]
 
-[ext_resource type="Script" path="res://scenes/metals/metal_pesado.gd" id="1_k8cew"]
+[ext_resource type="Script" uid="uid://bnlcyp467rr4q" path="res://scenes/metals/metal_pesado.gd" id="1_k8cew"]
 [ext_resource type="Texture2D" uid="uid://cuvfk6mqmiide" path="res://resources/Trap and Weapon/Trap and Weapon/31.png" id="2_k8cew"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acu6d"]
