@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cjk35mv4as3td"]
 
-[ext_resource type="Script" path="res://pip.gd" id="1_2foya"]
+[ext_resource type="Script" uid="uid://cweagsfey3gy2" path="res://scenes/pips/pip.gd" id="1_t1si7"]
 [ext_resource type="Texture2D" uid="uid://bql86rdw8qoyv" path="res://resources/Free - Raven Fantasy Icons (1)/Free - Raven Fantasy Icons/Separated Files/64x64/fc236.png" id="2_46jm3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6fdkq"]
 radius = 27.018513
 
 [node name="Area2D" type="Area2D" unique_id=1848357944]
-script = ExtResource("1_2foya")
+script = ExtResource("1_t1si7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1566215452]
 shape = SubResource("CircleShape2D_6fdkq")

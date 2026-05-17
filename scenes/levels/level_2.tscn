@@ -64,8 +64,11 @@ shape = SubResource("RectangleShape2D_l37oo")
 [node name="Sprite2D" type="Sprite2D" parent="techo/CollisionShape2D" unique_id=1337552664]
 
 [node name="MetalPesado" parent="." unique_id=1273372991 instance=ExtResource("4_fiq81")]
-position = Vector2(643, 492.00003)
-scale = Vector2(2, 2)
+position = Vector2(636.00006, 494.00006)
+scale = Vector2(2.5, 2.5)
+
+[node name="Sprite2D" parent="MetalPesado/Metal" parent_id_path=PackedInt32Array(1273372991, 705056153) index="2" unique_id=2001825010]
+visible = false
 
 [node name="Goal" parent="." unique_id=670407063 instance=ExtResource("5_qpwj6")]
 position = Vector2(1110, 264)
@@ -91,7 +94,9 @@ collision_layer = 5
 collision_mask = 0
 
 [node name="HitBoxEnemys2" parent="." unique_id=703622267 instance=ExtResource("8_8qukl")]
-position = Vector2(416, 453)
+position = Vector2(419, 456)
 scale = Vector2(4, 4)
 collision_layer = 5
 collision_mask = 0
+
+[editable path="MetalPesado"]
