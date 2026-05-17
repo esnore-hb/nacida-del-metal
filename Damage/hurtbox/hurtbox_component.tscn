@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://bk80ngdotxkql"]
 
-[ext_resource type="Script" path="res://hurtbox_component.gd" id="1_f5427"]
+[ext_resource type="Script" uid="uid://cwwseaau5ic1" path="res://Damage/hurtbox/hurtbox_component.gd" id="1_x0glt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjwml"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x0glt"]
+radius = 14.0
+height = 48.0
 
-[node name="Area2D" type="Area2D" unique_id=678540153]
-collision_layer = 7
-collision_mask = 7
-script = ExtResource("1_f5427")
+[node name="HurtBox" type="Area2D" unique_id=678540153]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_x0glt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1366346152]
-shape = SubResource("RectangleShape2D_mjwml")
+position = Vector2(2, 0)
+shape = SubResource("CapsuleShape2D_x0glt")

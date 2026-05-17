@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://bexcspuh4isbr"]
 
-[ext_resource type="Script" uid="uid://dfh2cujfr072y" path="res://Damage/hitbox/hitbox_nacida.gd" id="1_vry1e"]
+[ext_resource type="Script" uid="uid://dfh2cujfr072y" path="res://Damage/hitbox/hitbox_nacida.gd" id="1_yq5sj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcn5e"]
+size = Vector2(22, 34)
 
-[node name="Area2D" type="Area2D" unique_id=729922740]
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("1_vry1e")
+[node name="HitBoxNacida" type="Area2D" unique_id=729922740]
+collision_layer = 6
+script = ExtResource("1_yq5sj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1791785366]
+position = Vector2(1, 7)
 shape = SubResource("RectangleShape2D_dcn5e")
