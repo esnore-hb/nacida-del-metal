@@ -9,6 +9,7 @@ var current_level: int = 0
 
 func start() -> void:
 	current_level = 0
+	Game.pips = 0
 	if not levels.is_empty():
 		get_tree().change_scene_to_packed(levels[0])
 
