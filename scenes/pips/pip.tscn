@@ -1,144 +1,18 @@
-[gd_scene format=3 uid="uid://dn5sf2488apqf"]
+[gd_scene format=3 uid="uid://cjk35mv4as3td"]
 
-[ext_resource type="Script" uid="uid://cweagsfey3gy2" path="res://pip.gd" id="1_2foya"]
-[ext_resource type="Texture2D" uid="uid://bihvgpemo77n3" path="res://assets/sprites/moneda/moneda_1-sheet.png" id="2_46jm3"]
-[ext_resource type="Texture2D" uid="uid://b237trprlbuau" path="res://assets/sprites/moneda/moneda_desaparece.png" id="3_6fdkq"]
+[ext_resource type="Script" path="res://pip.gd" id="1_2foya"]
+[ext_resource type="Texture2D" uid="uid://bql86rdw8qoyv" path="res://resources/Free - Raven Fantasy Icons (1)/Free - Raven Fantasy Icons/Separated Files/64x64/fc236.png" id="2_46jm3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6fdkq"]
 radius = 27.018513
 
-[sub_resource type="Animation" id="Animation_nw8sw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("idle:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [9]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("idle:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("desaparece:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("desaparece:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_0085j"]
-resource_name = "desaparece"
-length = 0.5
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("desaparece:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("desaparece:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4]
-}
-
-[sub_resource type="Animation" id="Animation_qarjv"]
-resource_name = "idle"
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("idle:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [9]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("idle:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xl0j2"]
-_data = {
-&"RESET": SubResource("Animation_nw8sw"),
-&"desaparece": SubResource("Animation_0085j"),
-&"idle": SubResource("Animation_qarjv")
-}
-
-[node name="pip" type="Area2D" unique_id=1848357944]
+[node name="Area2D" type="Area2D" unique_id=1848357944]
 script = ExtResource("1_2foya")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1566215452]
 shape = SubResource("CircleShape2D_6fdkq")
 
-[node name="idle" type="Sprite2D" parent="." unique_id=812990330]
-visible = false
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=812990330]
 position = Vector2(0, -1.0000002)
 scale = Vector2(0.484375, 0.4843751)
 texture = ExtResource("2_46jm3")
-hframes = 9
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=171754798]
-libraries/ = SubResource("AnimationLibrary_xl0j2")
-
-[node name="desaparece" type="Sprite2D" parent="." unique_id=1056523760]
-texture = ExtResource("3_6fdkq")
-hframes = 6

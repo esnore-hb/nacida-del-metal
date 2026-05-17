@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c61jv66chn3op"]
+[gd_scene format=3 uid="uid://dt4gkekemo2sg"]
 
-[ext_resource type="Script" uid="uid://j3a4cywsqas8" path="res://credits.gd" id="1_nm7lk"]
+[ext_resource type="Script" path="res://credits.gd" id="1_nm7lk"]
 [ext_resource type="FontFile" uid="uid://ci3v1ex0htoyl" path="res://fonts/Cobblestone.ttf" id="2_c1t8d"]
 [ext_resource type="AudioStream" uid="uid://cxhxbtivbq5xh" path="res://music/02 - DavidKBD - Belmont Chronicles Pack - The Mystic Forest.ogg" id="3_g4wvt"]
 

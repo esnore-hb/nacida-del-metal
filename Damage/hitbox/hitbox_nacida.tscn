@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b6b5k7wpi7skr"]
+[gd_scene format=3 uid="uid://bexcspuh4isbr"]
 
-[ext_resource type="Script" uid="uid://dfh2cujfr072y" path="res://hitbox_nacida.gd" id="1_vry1e"]
+[ext_resource type="Script" uid="uid://dfh2cujfr072y" path="res://Damage/hitbox/hitbox_nacida.gd" id="1_vry1e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcn5e"]
 
