@@ -156,7 +156,13 @@ func _on_floor() -> bool:
 		
 func take_damage() -> void:
 	is_dead = true
+	die()
 	#velocity = Vector2.ZERO
 	#playback.travel("dead_" + last_direction)
 	#await get_tree().create_timer(1).timeout
 	queue_free()
+
+func die() -> void:
+	is_dead = true
+	# Reproducir animación de muerte, sonidos, etc.
+	LevelManager.game_over()

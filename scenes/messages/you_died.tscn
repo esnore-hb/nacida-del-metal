@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b2wavodb4owr7"]
+
+[ext_resource type="Script" uid="uid://ba7dx6t7342qd" path="res://scenes/messages/you_died.gd" id="1_a0srs"]
+[ext_resource type="FontFile" uid="uid://ci3v1ex0htoyl" path="res://fonts/Cobblestone.ttf" id="1_bmmms"]
+[ext_resource type="Theme" uid="uid://jrbc1cs3wk32" path="res://resources/theme.tres" id="3_c422a"]
+
+[sub_resource type="Theme" id="Theme_a0srs"]
+
+[node name="YouDied" type="Control" unique_id=1524427010]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_a0srs")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=81107842]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a0srs")
+theme_override_fonts/normal_font = ExtResource("1_bmmms")
+theme_override_fonts/bold_font = ExtResource("1_bmmms")
+bbcode_enabled = true
+text = "[center][font_size=100]
+You died[center]"
+scroll_active = false
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1469593186]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_c422a")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=834494219]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_c422a")
+
+[node name="Message" type="Label" parent="PanelContainer/MarginContainer" unique_id=1359058663]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "You died"
