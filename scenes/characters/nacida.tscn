@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cko2gl18h7a0h" path="res://scenes/characters/nacida.gd" id="1_aqvq8"]
 [ext_resource type="Texture2D" uid="uid://y67gb53dk1s6" path="res://assets/sprites/nacida_movments/idle/idle.png" id="1_jbv1q"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://textures/icon.svg" id="2_bl2qp"]
+[ext_resource type="PackedScene" uid="uid://bhunfd0178boo" path="res://scenes/metals/metal_liviano.tscn" id="2_kn3so"]
 [ext_resource type="Texture2D" uid="uid://r4as75b1tsj6" path="res://textures/Game_Icon/game_icon.jpg" id="3_g0rh5"]
 [ext_resource type="PackedScene" uid="uid://bk80ngdotxkql" path="res://Damage/hurtbox/hurtbox_component.tscn" id="5_c3spl"]
 
@@ -135,9 +136,11 @@ physics_material_override = SubResource("PhysicsMaterial_e6abf")
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 20)
 script = ExtResource("1_aqvq8")
+monedas = ExtResource("2_kn3so")
 MAX_SPEED = 150.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516519694]
+light_mask = 3
 position = Vector2(2, 9.5)
 shape = SubResource("RectangleShape2D_aqvq8")
 

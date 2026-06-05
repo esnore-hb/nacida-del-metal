@@ -9,6 +9,8 @@ var is_mouse = false
 var direc_nacida
 var posit_nacida
 
+signal pickup_coin
+
 @export var PULLING_FORCE = 500
 @export var PUSHING_FORCE = 500
 @export var PUSHING_REACTION_FORCE = 50
@@ -65,3 +67,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		Game.nacida.gravity_scale = 1
 		metal.gravity_scale = 1
+
+	print(anclaje.overlaps_area(Game.nacida.hurt_box_enemys))
+
+	if anclaje.overlaps_area(Game.nacida.hurt_box_enemys):
+		pickup_coin.emit()
+		queue_free()

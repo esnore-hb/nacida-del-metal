@@ -15,8 +15,17 @@ extends RigidBody2D
 ## Línea visual utilizada al empujar metales.
 @onready var enlace_metalico_empujar: Line2D = $EnlaceMetalicoEmpujar
 
+## Cuerpo de colision de la nacida
+@onready var hurt_box_enemys: HurtboxComponent = $HurtBoxEnemys
+
+## Escena guardada para los metales livianos.
+@export var monedas: PackedScene
+
 ## Atributo de muerte de la nacida.
 @export var is_dead = false
+
+## Cantidad de Monedaas que posee la nacida.
+@export var cantidad_monedas: int = 0
 
 ## Fuerza horizontal aplicada cada frame de física.
 @export var MOVE_SPEED: float = 50.0
@@ -32,7 +41,6 @@ extends RigidBody2D
 
 ## Limite de metal de Acero (para empujar)
 @export var LIMITE_ACERO: int = 1000
-
 
 ## Cantidad de metal de Hierro (para tirar)
 var hierro = LIMITE_HIERRO
@@ -50,6 +58,9 @@ signal pulling(direction_metal: Vector2, pos: Vector2)
 ## direction_metal: dirección normalizada hacia el metal.
 ## pos: posición global de la Nacida.
 signal pushing(direction_metal: Vector2, pos: Vector2)
+
+## Señal recibida de un Metal liviano al ser recogida
+signal pickup_coin
 
 
 ## Indica si actualmente se está empujando metal.
@@ -73,6 +84,8 @@ func _ready() -> void:
 
 	enlace_metalico_empujar.points = [Vector2.ZERO, Vector2.ZERO]
 	enlace_metalico_empujar.hide()
+	
+	pickup_coin.connect(_increase_coin)
 
 
 func _physics_process(_delta: float) -> void:
@@ -122,6 +135,9 @@ func _physics_process(_delta: float) -> void:
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	# Evita que el personaje rote por físicas.
 	rotation_degrees = 0.0
+
+func _increase_coin() -> void:
+	cantidad_monedas += 1
 
 
 ## Actualiza la orientación y animación del personaje.
