@@ -75,7 +75,7 @@ func _ready() -> void:
 	enlace_metalico_empujar.hide()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction: float = Input.get_axis("nacida_left", "nacida_right")
 	var force: Vector2 = Vector2.ZERO
 
@@ -119,7 +119,7 @@ func _physics_process(delta: float) -> void:
 	apply_central_impulse(force)
 
 
-func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	# Evita que el personaje rote por físicas.
 	rotation_degrees = 0.0
 
