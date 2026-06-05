@@ -59,6 +59,7 @@ shape = SubResource("RectangleShape2D_6761a")
 [node name="Sprite2D" type="Sprite2D" parent="pared2/CollisionShape2D" unique_id=164175560]
 
 [node name="piso" type="StaticBody2D" parent="." unique_id=1747787252]
+position = Vector2(1228, 182)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piso" unique_id=1802100225]
 position = Vector2(-636, 513)
