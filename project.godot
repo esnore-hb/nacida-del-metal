@@ -32,6 +32,10 @@ window/size/viewport_height=720
 window/size/mode=2
 window/stretch/mode="canvas_items"
 
+[editor]
+
+movie_writer/movie_file="/home/esnore/Videos/Screencasts/testing.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
