@@ -12,11 +12,11 @@ extends RigidBody2D
 ## Línea visual utilizada al tirar metales.
 @onready var enlace_metalico_tirar: Line2D = $EnlaceMetalicoTirar
 
-
-@export var is_dead = false
-
 ## Línea visual utilizada al empujar metales.
 @onready var enlace_metalico_empujar: Line2D = $EnlaceMetalicoEmpujar
+
+## Atributo de muerte de la nacida.
+@export var is_dead = false
 
 ## Fuerza horizontal aplicada cada frame de física.
 @export var MOVE_SPEED: float = 50.0
