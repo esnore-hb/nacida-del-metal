@@ -33,6 +33,7 @@ visible = false
 
 [node name="Nacida" parent="." unique_id=1352471129 instance=ExtResource("2_6iamk")]
 position = Vector2(53, 411)
+monedas = null
 MAX_SPEED = 50.0
 
 [node name="MetalPesado" parent="." unique_id=1273372991 instance=ExtResource("5_6761a")]
@@ -75,7 +76,7 @@ shape = SubResource("RectangleShape2D_sk5k4")
 
 [node name="Sprite2D" type="Sprite2D" parent="techo/CollisionShape2D" unique_id=1495409833]
 
-[node name="Area2D" parent="." unique_id=1848357944 instance=ExtResource("6_oc4kc")]
+[node name="pip" parent="." unique_id=1848357944 instance=ExtResource("6_oc4kc")]
 position = Vector2(321, 219)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1340701065]
