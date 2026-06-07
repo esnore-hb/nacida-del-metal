@@ -3,6 +3,11 @@
 class_name Nacida
 extends RigidBody2D
 
+@onready var animation_player = $AnimationPlayer
+
+@onready var animation_tree = $AnimationTree
+@onready var state_machine = animation_tree.get("parameters/playback")
+
 ## Componente de salud de la nacida
 @onready var health_component: HealthComponent = $HealthComponent
 
@@ -187,12 +192,14 @@ func _set_animation(direction: float) -> void:
 
 	elif abs(linear_velocity.x) > 0.1:
 		# Animación de caminar.
-		# sprite_2d.play("run")
+		#animation_player.play("walk")
+		state_machine.travel("walk")
 		pass
 
 	else:
 		# Animación idle.
 		# sprite_2d.play("idle")
+		state_machine.travel("idle")
 		pass
 
 
