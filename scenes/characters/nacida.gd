@@ -3,6 +3,14 @@
 class_name Nacida
 extends RigidBody2D
 
+@onready var animation_player = $AnimationPlayer
+
+@onready var animation_tree = $AnimationTree
+@onready var state_machine = animation_tree.get("parameters/playback")
+
+## Componente de salud de la nacida
+@onready var health_component: HealthComponent = $HealthComponent
+
 ## Sprite principal del personaje.
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
@@ -17,6 +25,9 @@ extends RigidBody2D
 
 ## Cuerpo de colision de la nacida
 @onready var hurt_box_enemys: HurtboxComponent = $HurtBoxEnemys
+
+## Bullet es la moneda que tira la nacida
+@onready var bullet_spawn_mark: Marker2D = $BulletSpawnMark
 
 ## Escena guardada para los metales livianos.
 @export var monedas: PackedScene
@@ -41,6 +52,9 @@ extends RigidBody2D
 
 ## Limite de metal de Acero (para empujar)
 @export var LIMITE_ACERO: int = 1000
+
+## Escena guardada para las balas(monedas)
+@export var bullet_scene: PackedScene
 
 ## Cantidad de metal de Hierro (para tirar)
 var hierro = LIMITE_HIERRO
@@ -86,6 +100,10 @@ func _ready() -> void:
 	enlace_metalico_empujar.hide()
 	
 	pickup_coin.connect(_increase_coin)
+	
+	if health_component:
+		health_component.died.connect(_on_death)
+
 
 
 func _physics_process(_delta: float) -> void:
@@ -104,6 +122,9 @@ func _physics_process(_delta: float) -> void:
 	mouse_vec = get_global_mouse_position()
 	pos = global_position
 	direction_metal = mouse_vec - pos
+	
+	if Input.is_action_just_pressed("fire"):
+		fire()
 
 	if Input.is_action_pressed("nacida_pull"):
 		# Hierro: tirar del metal.
@@ -138,6 +159,23 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 
 func _increase_coin() -> void:
 	cantidad_monedas += 1
+	
+func fire() -> void:
+	if not bullet_scene:
+		Debug.log("ERROR: Me olvide poner la bala en el inspector")
+		return
+		
+	var bullet_inst = bullet_scene.instantiate()
+	
+	get_parent().add_child(bullet_inst)
+	
+	if not bullet_spawn_mark:
+		return
+		
+	bullet_inst.global_position = bullet_spawn_mark.global_position
+	
+	var mouse_direction = bullet_spawn_mark.global_position.direction_to(get_global_mouse_position())
+	bullet_inst.global_rotation = mouse_direction.angle()
 
 
 ## Actualiza la orientación y animación del personaje.
@@ -154,12 +192,14 @@ func _set_animation(direction: float) -> void:
 
 	elif abs(linear_velocity.x) > 0.1:
 		# Animación de caminar.
-		# sprite_2d.play("run")
+		#animation_player.play("walk")
+		state_machine.travel("walk")
 		pass
 
 	else:
 		# Animación idle.
 		# sprite_2d.play("idle")
+		state_machine.travel("idle")
 		pass
 
 
@@ -170,15 +210,28 @@ func _on_floor() -> bool:
 
 	return false
 		
-func take_damage() -> void:
+
+func take_damage(amount: int = 1) -> void:
+	if is_dead: 
+		return
+	if health_component:
+		health_component.take_damage(amount)
+
+func _on_death() -> void:
+	if is_dead: 
+		return 
+		
 	is_dead = true
-	die()
-	#velocity = Vector2.ZERO
-	#playback.travel("dead_" + last_direction)
-	#await get_tree().create_timer(1).timeout
+	# Si tienes una animación de Nacida muriendo, actívala aquí (ej. die())
+	
+	# La MAGIA: Esperamos 1.5 segundos para que se alcance a reproducir 
+	
+	await get_tree().create_timer(0.3).timeout
+	
+	# Ahora sí, llamamos al Game Over y eliminamos a Nacida
+	LevelManager.game_over()
 	queue_free()
 
 func die() -> void:
 	is_dead = true
-	# Reproducir animación de muerte, sonidos, etc.
 	LevelManager.game_over()
