@@ -18,6 +18,9 @@ extends RigidBody2D
 ## Cuerpo de colision de la nacida
 @onready var hurt_box_enemys: HurtboxComponent = $HurtBoxEnemys
 
+## Bullet es la moneda que tira la nacida
+@onready var bullet_spawn_mark: Marker2D = $BulletSpawnMark
+
 ## Escena guardada para los metales livianos.
 @export var monedas: PackedScene
 
@@ -41,6 +44,9 @@ extends RigidBody2D
 
 ## Limite de metal de Acero (para empujar)
 @export var LIMITE_ACERO: int = 1000
+
+## Escena guardada para las balas(monedas)
+@export var bullet_scene: PackedScene
 
 ## Cantidad de metal de Hierro (para tirar)
 var hierro = LIMITE_HIERRO
@@ -104,6 +110,9 @@ func _physics_process(_delta: float) -> void:
 	mouse_vec = get_global_mouse_position()
 	pos = global_position
 	direction_metal = mouse_vec - pos
+	
+	if Input.is_action_just_pressed("fire"):
+		fire()
 
 	if Input.is_action_pressed("nacida_pull"):
 		# Hierro: tirar del metal.
@@ -138,6 +147,23 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 
 func _increase_coin() -> void:
 	cantidad_monedas += 1
+	
+func fire() -> void:
+	if not bullet_scene:
+		Debug.log("ERROR: Me olvide poner la bala en el inspector")
+		return
+		
+	var bullet_inst = bullet_scene.instantiate()
+	
+	get_parent().add_child(bullet_inst)
+	
+	if not bullet_spawn_mark:
+		return
+		
+	bullet_inst.global_position = bullet_spawn_mark.global_position
+	
+	var mouse_direction = bullet_spawn_mark.global_position.direction_to(get_global_mouse_position())
+	bullet_inst.global_rotation = mouse_direction.angle()
 
 
 ## Actualiza la orientación y animación del personaje.

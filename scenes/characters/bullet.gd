@@ -1,7 +1,6 @@
-class_name HitboxNacida
-extends Area2D
+extends HitboxComponent
 
-@export var speed: int = 600
+@export var speed: int = 300
 
 func _physics_process(delta: float) -> void:
 	var direction = global_transform.x

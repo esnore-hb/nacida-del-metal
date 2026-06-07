@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://textures/icon.svg" id="2_bl2qp"]
 [ext_resource type="PackedScene" uid="uid://bhunfd0178boo" path="res://scenes/metals/metal_liviano.tscn" id="2_kn3so"]
 [ext_resource type="Texture2D" uid="uid://r4as75b1tsj6" path="res://textures/Game_Icon/game_icon.jpg" id="3_g0rh5"]
+[ext_resource type="PackedScene" uid="uid://b0xu0enlvmmbi" path="res://scenes/characters/bullet.tscn" id="3_wh4rq"]
 [ext_resource type="PackedScene" uid="uid://bk80ngdotxkql" path="res://Damage/hurtbox/hurtbox_component.tscn" id="5_c3spl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e6abf"]
@@ -12,19 +13,6 @@ rough = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqvq8"]
 size = Vector2(24, 39)
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_c3spl"]
-frames = 2
-frame_0/texture = ExtResource("2_bl2qp")
-frame_0/duration = 0.1
-frame_1/texture = ExtResource("3_g0rh5")
-frame_1/duration = 0.1
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_kn3so"]
-frames = 2
-frame_0/texture = ExtResource("2_bl2qp")
-frame_1/texture = ExtResource("3_g0rh5")
-frame_1/duration = 1.0
 
 [sub_resource type="Animation" id="Animation_bl2qp"]
 length = 0.001
@@ -131,6 +119,19 @@ states/idle/node = SubResource("AnimationNodeAnimation_aqvq8")
 states/idle/position = Vector2(326, 51)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_bl2qp")]
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_c3spl"]
+frames = 2
+frame_0/texture = ExtResource("2_bl2qp")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("3_g0rh5")
+frame_1/duration = 0.1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_kn3so"]
+frames = 2
+frame_0/texture = ExtResource("2_bl2qp")
+frame_1/texture = ExtResource("3_g0rh5")
+frame_1/duration = 1.0
+
 [node name="Nacida" type="RigidBody2D" unique_id=1352471129]
 physics_material_override = SubResource("PhysicsMaterial_e6abf")
 center_of_mass_mode = 1
@@ -138,11 +139,19 @@ center_of_mass = Vector2(0, 20)
 script = ExtResource("1_aqvq8")
 monedas = ExtResource("2_kn3so")
 MAX_SPEED = 150.0
+bullet_scene = ExtResource("3_wh4rq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1516519694]
 light_mask = 3
 position = Vector2(2, 9.5)
 shape = SubResource("RectangleShape2D_aqvq8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=611534758]
+libraries/ = SubResource("AnimationLibrary_38nc8")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1461023963]
+tree_root = SubResource("AnimationNodeStateMachine_id3k6")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="EnlaceMetalicoTirar" type="Line2D" parent="." unique_id=1352970157]
 texture = SubResource("AnimatedTexture_c3spl")
@@ -152,13 +161,6 @@ texture_mode = 2
 modulate = Color(0, 0, 1, 1)
 texture = SubResource("AnimatedTexture_kn3so")
 texture_mode = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=611534758]
-libraries/ = SubResource("AnimationLibrary_38nc8")
-
-[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1461023963]
-tree_root = SubResource("AnimationNodeStateMachine_id3k6")
-anim_player = NodePath("../AnimationPlayer")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1580242991]
 target_position = Vector2(0, 31)
@@ -170,3 +172,6 @@ hframes = 5
 [node name="HurtBoxEnemys" parent="." unique_id=678540153 instance=ExtResource("5_c3spl")]
 position = Vector2(-3, 0)
 scale = Vector2(1.3, 1.3)
+
+[node name="BulletSpawnMark" type="Marker2D" parent="." unique_id=1469858374]
+position = Vector2(19, 1)
