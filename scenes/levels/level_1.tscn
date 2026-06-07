@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bpush45toq7yp" path="res://scenes/goals/goal.tscn" id="5_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://cjk35mv4as3td" path="res://scenes/pips/pip.tscn" id="6_oc4kc"]
 [ext_resource type="AudioStream" uid="uid://ci356i4pw12bl" path="res://music/08 - DavidKBD - Belmont Chronicles Pack - The Dungeons.ogg" id="7_oc4kc"]
+[ext_resource type="PackedScene" uid="uid://b5lxra7g6ls4d" path="res://ui/ui_levels/hud.tscn" id="8_s8va5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6761a"]
 size = Vector2(165, 684)
@@ -35,6 +36,7 @@ visible = false
 position = Vector2(53, 411)
 monedas = null
 MAX_SPEED = 50.0
+bullet_scene = null
 
 [node name="MetalPesado" parent="." unique_id=1273372991 instance=ExtResource("5_6761a")]
 position = Vector2(316, 19)
@@ -82,3 +84,5 @@ position = Vector2(321, 219)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1340701065]
 stream = ExtResource("7_oc4kc")
 autoplay = true
+
+[node name="HUD" parent="." unique_id=1642216878 instance=ExtResource("8_s8va5")]
