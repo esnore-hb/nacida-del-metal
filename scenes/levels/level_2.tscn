@@ -37,6 +37,7 @@ visible = false
 
 [node name="Nacida" parent="." unique_id=1352471129 instance=ExtResource("1_j2425")]
 position = Vector2(282, 275)
+monedas = null
 MAX_SPEED = 50.0
 
 [node name="pared" type="StaticBody2D" parent="." unique_id=867097639]

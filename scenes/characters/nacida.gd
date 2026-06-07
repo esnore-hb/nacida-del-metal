@@ -3,6 +3,9 @@
 class_name Nacida
 extends RigidBody2D
 
+## Componente de salud de la nacida
+@onready var health_component: HealthComponent = $HealthComponent
+
 ## Sprite principal del personaje.
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
@@ -86,6 +89,10 @@ func _ready() -> void:
 	enlace_metalico_empujar.hide()
 	
 	pickup_coin.connect(_increase_coin)
+	
+	if health_component:
+		health_component.died.connect(_on_death)
+
 
 
 func _physics_process(_delta: float) -> void:
@@ -170,15 +177,23 @@ func _on_floor() -> bool:
 
 	return false
 		
-func take_damage() -> void:
+
+func take_damage(amount: int = 1) -> void:
+	if is_dead: 
+		return
+	if health_component:
+		health_component.take_damage(amount)
+
+func _on_death() -> void:
+	if is_dead: 
+		return 
+		
 	is_dead = true
 	die()
-	#velocity = Vector2.ZERO
-	#playback.travel("dead_" + last_direction)
-	#await get_tree().create_timer(1).timeout
+	# playback.travel("dead_" + last_direction)
+	# await get_tree().create_timer(1).timeout
 	queue_free()
 
 func die() -> void:
 	is_dead = true
-	# Reproducir animación de muerte, sonidos, etc.
 	LevelManager.game_over()
