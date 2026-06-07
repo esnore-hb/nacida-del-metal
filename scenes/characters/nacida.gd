@@ -215,9 +215,14 @@ func _on_death() -> void:
 		return 
 		
 	is_dead = true
-	die()
-	# playback.travel("dead_" + last_direction)
-	# await get_tree().create_timer(1).timeout
+	# Si tienes una animación de Nacida muriendo, actívala aquí (ej. die())
+	
+	# La MAGIA: Esperamos 1.5 segundos para que se alcance a reproducir 
+	
+	await get_tree().create_timer(0.3).timeout
+	
+	# Ahora sí, llamamos al Game Over y eliminamos a Nacida
+	LevelManager.game_over()
 	queue_free()
 
 func die() -> void:
