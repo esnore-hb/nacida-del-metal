@@ -2,10 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cko2gl18h7a0h" path="res://scenes/characters/nacida.gd" id="1_aqvq8"]
 [ext_resource type="Texture2D" uid="uid://y67gb53dk1s6" path="res://assets/sprites/nacida_movments/idle/idle.png" id="1_jbv1q"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://textures/icon.svg" id="2_bl2qp"]
 [ext_resource type="PackedScene" uid="uid://bhunfd0178boo" path="res://scenes/metals/metal_liviano.tscn" id="2_kn3so"]
-[ext_resource type="Texture2D" uid="uid://r4as75b1tsj6" path="res://textures/Game_Icon/game_icon.jpg" id="3_g0rh5"]
+[ext_resource type="Texture2D" uid="uid://wphh8jpsxaq" path="res://resources/Enlaces metalicos/tirar_frame1.png" id="3_73vjx"]
+[ext_resource type="Texture2D" uid="uid://r5rhiqg5ebtb" path="res://resources/Enlaces metalicos/tirar_frame2.png" id="4_fprvp"]
 [ext_resource type="PackedScene" uid="uid://bk80ngdotxkql" path="res://Damage/hurtbox/hurtbox_component.tscn" id="5_c3spl"]
+[ext_resource type="Texture2D" uid="uid://dec70s4fhku7e" path="res://resources/Enlaces metalicos/tirar_frame3.png" id="5_nmtds"]
+[ext_resource type="Texture2D" uid="uid://daaf0eia8bpg3" path="res://resources/Enlaces metalicos/tirar_frame4.png" id="6_g33u0"]
+[ext_resource type="Texture2D" uid="uid://5mhuc077sm7d" path="res://resources/Enlaces metalicos/empujar_frame1.png" id="7_u31nt"]
+[ext_resource type="Texture2D" uid="uid://5bxe8r1xs4iw" path="res://resources/Enlaces metalicos/empujar_frame2.png" id="8_5i06p"]
+[ext_resource type="Texture2D" uid="uid://ufjfottq6lh7" path="res://resources/Enlaces metalicos/empujar_frame3.png" id="9_s2mnx"]
+[ext_resource type="Texture2D" uid="uid://b27wuwotkpq8" path="res://resources/Enlaces metalicos/empujar_frame4.png" id="10_6hgo0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e6abf"]
 rough = true
@@ -14,17 +20,26 @@ rough = true
 size = Vector2(24, 39)
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_c3spl"]
-frames = 2
-frame_0/texture = ExtResource("2_bl2qp")
+frames = 4
+frame_0/texture = ExtResource("3_73vjx")
 frame_0/duration = 0.1
-frame_1/texture = ExtResource("3_g0rh5")
+frame_1/texture = ExtResource("4_fprvp")
 frame_1/duration = 0.1
+frame_2/texture = ExtResource("5_nmtds")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("6_g33u0")
+frame_3/duration = 0.1
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_kn3so"]
-frames = 2
-frame_0/texture = ExtResource("2_bl2qp")
-frame_1/texture = ExtResource("3_g0rh5")
-frame_1/duration = 1.0
+frames = 4
+frame_0/texture = ExtResource("7_u31nt")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("8_5i06p")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("9_s2mnx")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("10_6hgo0")
+frame_3/duration = 0.1
 
 [sub_resource type="Animation" id="Animation_bl2qp"]
 length = 0.001
@@ -145,11 +160,13 @@ position = Vector2(2, 9.5)
 shape = SubResource("RectangleShape2D_aqvq8")
 
 [node name="EnlaceMetalicoTirar" type="Line2D" parent="." unique_id=1352970157]
+width = 100.0
 texture = SubResource("AnimatedTexture_c3spl")
 texture_mode = 2
 
 [node name="EnlaceMetalicoEmpujar" type="Line2D" parent="." unique_id=864244906]
 modulate = Color(0, 0, 1, 1)
+width = 100.0
 texture = SubResource("AnimatedTexture_kn3so")
 texture_mode = 2
 

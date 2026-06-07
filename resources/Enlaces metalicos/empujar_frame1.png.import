@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwvkkjaunwmx4"
-path="res://.godot/imported/lightning_skill1_frame1.png-eeb183a2bef82cef6f0c0350d5973a46.ctex"
+uid="uid://5mhuc077sm7d"
+path="res://.godot/imported/empujar_frame1.png-84cc10e7d8c41edd0a8cbc08614d113a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Pixel Art Skill Animations - Lightning/VFX1/Frames/lightning_skill1_frame1.png"
-dest_files=["res://.godot/imported/lightning_skill1_frame1.png-eeb183a2bef82cef6f0c0350d5973a46.ctex"]
+source_file="res://resources/Enlaces metalicos/empujar_frame1.png"
+dest_files=["res://.godot/imported/empujar_frame1.png-84cc10e7d8c41edd0a8cbc08614d113a.ctex"]
 
 [params]
 
