@@ -36,10 +36,10 @@ extends RigidBody2D
 @export var cantidad_monedas: int = 0
 
 ## Fuerza horizontal aplicada cada frame de física.
-@export var MOVE_SPEED: float = 50.0
+@export var MOVE_SPEED: float = 150.0
 
 ## Velocidad horizontal máxima permitida.
-@export var MAX_SPEED: float = 50.0
+@export var MAX_SPEED: float = 200.0
 
 ## Fuerza aplicada al saltar.
 @export var JUMP_FORCE: float = -500.0
