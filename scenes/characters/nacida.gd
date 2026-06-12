@@ -27,10 +27,7 @@ extends RigidBody2D
 @onready var hurt_box_enemys: HurtboxComponent = $HurtBoxEnemys
 
 ## Bullet es la moneda que tira la nacida
-@onready var bullet_spawn_mark: Marker2D = $BulletSpawnMark
-
-## Escena guardada para los metales livianos.
-@export var monedas: PackedScene
+@onready var bullet_spawn_mark: Marker2D = $Pivot/BulletSpawnMark
 
 ## Atributo de muerte de la nacida.
 @export var is_dead = false
@@ -39,10 +36,10 @@ extends RigidBody2D
 @export var cantidad_monedas: int = 0
 
 ## Fuerza horizontal aplicada cada frame de física.
-@export var MOVE_SPEED: float = 50.0
+@export var MOVE_SPEED: float = 150.0
 
 ## Velocidad horizontal máxima permitida.
-@export var MAX_SPEED: float = 50.0
+@export var MAX_SPEED: float = 200.0
 
 ## Fuerza aplicada al saltar.
 @export var JUMP_FORCE: float = -500.0
@@ -54,7 +51,7 @@ extends RigidBody2D
 @export var LIMITE_ACERO: int = 1000
 
 ## Escena guardada para las balas(monedas)
-@export var bullet_scene: PackedScene
+@export var bullet_scene = load("res://scenes/metals/metal_liviano.tscn")
 
 ## Cantidad de metal de Hierro (para tirar)
 var hierro = LIMITE_HIERRO
@@ -89,6 +86,9 @@ var pos: Vector2 = Vector2.ZERO
 ## Dirección desde la Nacida hacia el mouse.
 var direction_metal: Vector2 = Vector2.ZERO
 
+var pivot_flipped = false
+
+
 
 func _ready() -> void:
 	Game.nacida = self
@@ -104,6 +104,7 @@ func _ready() -> void:
 	if health_component:
 		health_component.died.connect(_on_death)
 
+@onready var pivot: Node2D = $Pivot
 
 
 func _physics_process(_delta: float) -> void:
@@ -124,6 +125,12 @@ func _physics_process(_delta: float) -> void:
 	direction_metal = mouse_vec - pos
 	
 	if Input.is_action_just_pressed("fire"):
+		if pos.x < mouse_vec.x and pivot_flipped:
+			pivot.apply_scale(Vector2(-1,1))
+			pivot_flipped = false
+		elif pos.x > mouse_vec.x and not pivot_flipped:
+			pivot.apply_scale(Vector2(-1,1))
+			pivot_flipped = true
 		fire()
 
 	if Input.is_action_pressed("nacida_pull"):
@@ -161,6 +168,11 @@ func _increase_coin() -> void:
 	cantidad_monedas += 1
 	
 func fire() -> void:
+	if not cantidad_monedas:
+		Debug.log("No tienes monedas para disparar")
+		return
+	cantidad_monedas -= 1
+
 	if not bullet_scene:
 		Debug.log("ERROR: Me olvide poner la bala en el inspector")
 		return
@@ -170,12 +182,19 @@ func fire() -> void:
 	get_parent().add_child(bullet_inst)
 	
 	if not bullet_spawn_mark:
+		Debug.log("ERROR: Me olvide poner el BulletSpawnMark en la escena")
 		return
 		
 	bullet_inst.global_position = bullet_spawn_mark.global_position
 	
 	var mouse_direction = bullet_spawn_mark.global_position.direction_to(get_global_mouse_position())
 	bullet_inst.global_rotation = mouse_direction.angle()
+	
+	# Manejo de la bala encargado por la nacida
+	bullet_inst.nacida_instanciated = true
+	bullet_inst.metal.gravity_scale = 0
+	bullet_inst.metal.angular_velocity += 15
+	bullet_inst.metal.apply_impulse(mouse_direction.normalized() * 1000)
 
 
 ## Actualiza la orientación y animación del personaje.
@@ -184,6 +203,7 @@ func _set_animation(direction: float) -> void:
 		sprite_2d.flip_h = false
 	elif direction < 0:
 		sprite_2d.flip_h = true
+	
 
 	if not _on_floor():
 		# Animación de salto / aire.
