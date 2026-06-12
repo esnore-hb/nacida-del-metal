@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://de2hdgiqvd0wc"]
+
+[ext_resource type="Texture2D" uid="uid://d13l4eikvc0jn" path="res://assets/sprites/frasco_acero-hierro/frasco.png" id="1_1d2ti"]
+[ext_resource type="Script" uid="uid://dhc47bujkcyjp" path="res://scenes/vials/vial.gd" id="1_u7ugu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u7ugu"]
+radius = 17.0
+height = 88.0
+
+[sub_resource type="Animation" id="Animation_vvk8f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_1d2ti")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D/Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pdavf"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_1d2ti")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D/Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.21330124),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t23va"]
+_data = {
+&"RESET": SubResource("Animation_vvk8f"),
+&"idle": SubResource("Animation_pdavf")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p7tjo"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_67xjt"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_g65ds"]
+states/idle/node = SubResource("AnimationNodeAnimation_p7tjo")
+states/idle/position = Vector2(443, 102)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_67xjt")]
+
+[node name="Vial" type="Area2D" unique_id=2058280327]
+script = ExtResource("1_u7ugu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1285693193]
+shape = SubResource("CapsuleShape2D_u7ugu")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=2046018175]
+position = Vector2(1, 0)
+texture = ExtResource("1_1d2ti")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2102665322]
+libraries/ = SubResource("AnimationLibrary_t23va")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=773802248]
+tree_root = SubResource("AnimationNodeStateMachine_g65ds")
+anim_player = NodePath("../AnimationPlayer")
