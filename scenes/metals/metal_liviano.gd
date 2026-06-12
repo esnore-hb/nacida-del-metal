@@ -1,3 +1,4 @@
+class_name MetalLiviano
 extends Node2D
 
 @onready var anclaje: Area2D = $Metal/Anclaje
@@ -8,6 +9,7 @@ var pushing_active: bool = false
 var is_mouse = false
 var direc_nacida
 var posit_nacida
+var nacida_instanciated: bool = false
 
 signal pickup_coin
 
@@ -55,21 +57,29 @@ func _physics_process(delta: float) -> void:
 	pulling_active = Input.is_action_pressed("nacida_pull") and is_mouse
 	pushing_active = Input.is_action_pressed("nacida_push") and is_mouse
 
-	if pulling_active:
-		metal.gravity_scale = 0
-		metal.apply_impulse(-direc_nacida * PULLING_FORCE * delta)
-	elif pushing_active:
-		metal.gravity_scale = 0
-		metal.apply_impulse(direc_nacida * PUSHING_FORCE * delta)
-		if abs(metal.angular_velocity) < 0.01:
-			Game.nacida.gravity_scale = 0
-			Game.nacida.apply_impulse(-direc_nacida * PUSHING_REACTION_FORCE * delta)
+	# Si fue disparado por la nacida
+	if nacida_instanciated and not pulling_active and not pushing_active:
+		if metal.get_contact_count():
+			nacida_instanciated = false
+
+	# Ahora se puede manipular en el juego
 	else:
-		Game.nacida.gravity_scale = 1
-		metal.gravity_scale = 1
+		nacida_instanciated = false
+		if pulling_active:
+			metal.gravity_scale = 0
+			metal.apply_impulse(-direc_nacida * PULLING_FORCE * delta)
+		elif pushing_active:
+			metal.gravity_scale = 0
+			metal.apply_impulse(direc_nacida * PUSHING_FORCE * delta)
+			if abs(metal.angular_velocity) < 0.01:
+				Game.nacida.gravity_scale = 0
+				Game.nacida.apply_impulse(-direc_nacida * PUSHING_REACTION_FORCE * delta)
+		else:
+			Game.nacida.gravity_scale = 1
+			metal.gravity_scale = 1
 
-	print(anclaje.overlaps_area(Game.nacida.hurt_box_enemys))
-
-	if anclaje.overlaps_area(Game.nacida.hurt_box_enemys):
-		pickup_coin.emit()
-		queue_free()
+		# Si la nacida recoge la moneda
+		if anclaje.overlaps_area(Game.nacida.hurt_box_enemys):
+			Game.nacida._increase_coin()
+			pickup_coin.emit()
+			queue_free()

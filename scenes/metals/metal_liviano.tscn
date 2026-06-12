@@ -15,7 +15,8 @@ PUSHING_REACTION_FORCE = 2000
 
 [node name="Metal" type="RigidBody2D" parent="." unique_id=1349044579]
 mass = 0.5
-max_contacts_reported = 5
+contact_monitor = true
+max_contacts_reported = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Metal" unique_id=1771256471]
 shape = SubResource("CircleShape2D_uofkl")
