@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_6ayib"]
 [ext_resource type="PackedScene" uid="uid://bhunfd0178boo" path="res://scenes/metals/metal_liviano.tscn" id="2_wjk5u"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_65guy"]
-[ext_resource type="PackedScene" uid="uid://g17oxwuxh8kx" path="res://ui/ui_metales/ui_metales.tscn" id="4_65guy"]
 [ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="4_wjk5u"]
+[ext_resource type="PackedScene" uid="uid://b5lxra7g6ls4d" path="res://ui/ui_levels/hud.tscn" id="5_65guy"]
 [ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="5_xy1qu"]
 [ext_resource type="PackedScene" uid="uid://bpush45toq7yp" path="res://scenes/goals/goal.tscn" id="6_3mnpy"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_jjvta"]
@@ -61,17 +61,7 @@ tween_resource = SubResource("Resource_p6rmu")
 draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="UiMetales" parent="Player/PhantomCamera2D" unique_id=1965929021 instance=ExtResource("4_65guy")]
-z_index = 1
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = -1258.0
-offset_top = 633.0
-offset_right = -958.0
-offset_bottom = 705.0
-grow_vertical = 1
-metadata/_edit_use_anchors_ = true
+[node name="HUD" parent="Player/PhantomCamera2D" unique_id=1642216878 instance=ExtResource("5_65guy")]
 
 [node name="Path2D" type="Path2D" parent="." unique_id=843726514]
 position = Vector2(71, -56)
