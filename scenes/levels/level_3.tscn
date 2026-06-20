@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_0ljxa"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_0qepi"]
+[ext_resource type="PackedScene" uid="uid://5oamr728074d" path="res://ui/pause_menu/pause_menu.tscn" id="3_f6egh"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_fmg3e"]
 [ext_resource type="TileSet" uid="uid://ciyhviukoktot" path="res://resources/tile_set_pasto.tres" id="4_ftfob"]
 [ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="5_fmg3e"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="8_ugcn1"]
 [ext_resource type="PackedScene" uid="uid://bpush45toq7yp" path="res://scenes/goals/goal.tscn" id="9_pimnq"]
 [ext_resource type="PackedScene" uid="uid://cjk35mv4as3td" path="res://scenes/pips/pip.tscn" id="11_n6eey"]
+[ext_resource type="PackedScene" uid="uid://b5lxra7g6ls4d" path="res://ui/ui_levels/hud.tscn" id="13_t4txi"]
 
 [sub_resource type="Resource" id="Resource_ftfob"]
 script = ExtResource("3_fmg3e")
@@ -50,6 +52,11 @@ repeat_times = 8
 position = Vector2(585, 344)
 scale = Vector2(2, 2)
 texture = ExtResource("6_ftfob")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=782998413]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1973677921 instance=ExtResource("3_f6egh")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=978199593]
 physics_interpolation_mode = 1
@@ -189,6 +196,8 @@ position = Vector2(2197, 58)
 
 [node name="pip4" parent="." unique_id=1369757960 instance=ExtResource("11_n6eey")]
 position = Vector2(2821, 115)
+
+[node name="HUD" parent="." unique_id=1642216878 instance=ExtResource("13_t4txi")]
 
 [editable path="MetalPesado"]
 [editable path="MetalPesado2"]
