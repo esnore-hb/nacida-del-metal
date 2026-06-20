@@ -1,0 +1,124 @@
+[gd_scene format=4 uid="uid://dlkfq5tbqni3c"]
+
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_0ljxa"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_0qepi"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_fmg3e"]
+[ext_resource type="TileSet" uid="uid://ciyhviukoktot" path="res://resources/tile_set_pasto.tres" id="4_ftfob"]
+[ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="5_fmg3e"]
+[ext_resource type="Texture2D" uid="uid://vfsuo3kvl1u5" path="res://resources/Final/Grass_background_1.png" id="6_ftfob"]
+[ext_resource type="Texture2D" uid="uid://dberewe1lxx8x" path="res://resources/Final/Background_0.png" id="7_fkk1g"]
+[ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="8_ugcn1"]
+
+[sub_resource type="Resource" id="Resource_ftfob"]
+script = ExtResource("3_fmg3e")
+
+[sub_resource type="Curve2D" id="Curve2D_fkk1g"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 646, 343, 0, 0, 0, 0, 1985, 342)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftfob"]
+size = Vector2(165, 734)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkk1g"]
+size = Vector2(1336.25, 101)
+
+[node name="level_3" type="Node2D" unique_id=30670970]
+
+[node name="Background" type="Node2D" parent="." unique_id=2115577149]
+
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=2064705388]
+scroll_scale = Vector2(0.6, 0)
+repeat_size = Vector2(1536, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=1227524950]
+position = Vector2(6, -24)
+scale = Vector2(2, 2)
+texture = ExtResource("7_fkk1g")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=626434846]
+scroll_scale = Vector2(0.4, 0)
+repeat_size = Vector2(352, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=155515559]
+position = Vector2(585, 344)
+scale = Vector2(2, 2)
+texture = ExtResource("6_ftfob")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=978199593]
+physics_interpolation_mode = 1
+top_level = true
+position = Vector2(647, 343)
+editor_draw_limits = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=269141394]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("1_0ljxa")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=1455613390 node_paths=PackedStringArray("follow_target", "follow_path")]
+top_level = true
+position = Vector2(647, 343)
+script = ExtResource("2_0qepi")
+follow_mode = 4
+follow_target = NodePath("../Nacida")
+follow_path = NodePath("../Path2D")
+tween_resource = SubResource("Resource_ftfob")
+draw_limits = true
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Path2D" type="Path2D" parent="." unique_id=369028344]
+position = Vector2(1, 0)
+curve = SubResource("Curve2D_fkk1g")
+
+[node name="TileMapLayerFONDO" type="TileMapLayer" parent="." unique_id=1713476168]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAgAAwAAAAGAAEAAAAgAA0AAAAGAAIAAAAhAAwAAAACAAMAAAAhAA0AAAACAAQAAAAgAA4AAAAGAAMAAAAnAAoAAAADAAEAAAAnAAsAAAADAAIAAAAnAAwAAAADAAMAAAAoAAoAAAAEAAEAAAAoAAsAAAAEAAIAAAAoAAwAAAAEAAMAAAApAAoAAAAFAAEAAAApAAsAAAAFAAIAAAApAAwAAAAFAAMAAAAqAAoAAAAGAAEAAAAqAAsAAAAGAAIAAAAqAAwAAAAGAAMAAAArAAoAAAAHAAEAAAArAAsAAAAHAAIAAAArAAwAAAAHAAMAAAAmAAoAAAACAAEAAAAmAAsAAAACAAIAAAAmAAwAAAACAAQAAAAvAAoAAAAAAA8AAGAhAAoAAAACAAEAAAAhAAsAAAACAAIAAAAqAAAAAAADAA8AAFAqAAEAAAABAA8AAFAqAAIAAAACAA8AAFAqAAMAAAADAA8AAFAqAAQAAAAAAA8AAFAqAAUAAAABAA8AAFAqAAYAAAACAA8AAFAqAAcAAAADAA8AAFA=")
+tile_set = ExtResource("4_ftfob")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=288624402]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAAAAwAAAAKAAUAAAAAAA0AAAAKAAYAAAAAAA4AAAAKAAcAAAABAAwAAAALAAUAAAABAA0AAAALAAYAAAABAA4AAAALAAcAAAACAAwAAAAMAAUAAAACAA0AAAAMAAYAAAACAA4AAAAMAAcAAAADAAwAAAANAAUAAAADAA0AAAANAAYAAAADAA4AAAANAAcAAAAEAAwAAAAOAAUAAAAEAA0AAAAOAAYAAAAEAA4AAAAOAAcAAAAFAAwAAAAPAAUAAAAFAA0AAAAPAAYAAAAFAA4AAAAPAAcAAAAGAAwAAAAQAAUAAAAGAA0AAAAQAAYAAAAGAA4AAAAQAAcAAAAHAAwAAAARAAUAAAAHAA0AAAARAAYAAAAHAA4AAAARAAcAAAAIAAwAAAASAAUAAAAIAA0AAAASAAYAAAAIAA4AAAASAAcAAAAJAAwAAAATAAUAAAAJAA0AAAATAAYAAAAJAA4AAAATAAcAAAAEAAoAAAAOAAMAAAAEAAsAAAAOAAQAAAAFAAoAAAAPAAMAAAAFAAsAAAAPAAQAAAAGAAkAAAAQAAQAAAAGAAoAAAAQAAMAAAAGAAsAAAAQAAQAAAAHAAkAAAARAAQAAAAHAAoAAAARAAMAAAAHAAsAAAARAAQAAAALAAwAAAATAAUAAAAMAAwAAAAKAAEAAAANAAwAAAALAAEAAAAKAA0AAAASAAYAAAAKAA4AAAAIAAMAAAALAA0AAAATAAYAAAALAA4AAAAJAAMAAAAMAA0AAAAKAAIAAAAMAA4AAAAKAAMAAAANAA0AAAALAAIAAAANAA4AAAALAAMAAAAOAAwAAAASAAUAAAAOAA0AAAASAAYAAAAOAA4AAAAMAAMAAAAPAA0AAAATAAYAAAAPAA4AAAANAAMAAAAQAA0AAAAAAA8AAAAQAA4AAAAAABAAAAARAA0AAAABAA8AAAARAA4AAAABABAAAAASAA0AAAACAA8AAAASAA4AAAACABAAAAATAA0AAAADAA8AAAATAA4AAAADABAAAAAUAA0AAAAAAA8AAAAUAA4AAAAAABAAAAAVAA0AAAABAA8AAAAVAA4AAAABABAAAAAWAA0AAAACAA8AAAAWAA4AAAACABAAAAAXAA0AAAADAA8AAAAXAA4AAAADABAAAAAYAA0AAAAAAA8AAAAYAA4AAAAAABAAAAAZAA0AAAABAA8AAAAZAA4AAAABABAAAAAaAA0AAAACAA8AAAAaAA4AAAACABAAAAAbAA0AAAADAA8AAAAbAA4AAAADABAAAAAGAAcAAAAQAAIAAAAGAAgAAAAQAAMAAAAHAAcAAAARAAIAAAAHAAgAAAARAAMAAAAcAAwAAAACAAEAAAAcAA0AAAACAAIAAAAcAA4AAAACAAMAAAAdAAwAAAADAAEAAAAdAA0AAAADAAIAAAAdAA4AAAADAAMAAAAeAAwAAAAEAAEAAAAeAA0AAAAEAAIAAAAeAA4AAAAEAAMAAAAfAAwAAAAFAAEAAAAfAA0AAAAFAAIAAAAfAA4AAAAFAAMAAAAgAAwAAAAGAAEAAAAgAA0AAAAGAAIAAAAgAA4AAAAGAAMAAAAhAAwAAAAHAAEAAAAhAA0AAAAHAAIAAAAhAAoAAAACAAEAAAAhAAsAAAACAAIAAAAiAAoAAAADAAEAAAAiAAsAAAADAAIAAAAiAAwAAAADAAMAAAAjAAoAAAAEAAEAAAAjAAsAAAAEAAIAAAAjAAwAAAAEAAMAAAAkAAoAAAAFAAEAAAAkAAsAAAAFAAIAAAAkAAwAAAAFAAMAAAAlAAoAAAAGAAEAAAAlAAsAAAAGAAIAAAAlAAwAAAAGAAMAAAAmAAoAAAAHAAEAAAAmAAsAAAAHAAIAAAAmAAwAAAAHAAMAAAAiAA0AAAADAAQAAAAiAA4AAAAFAAQAAAAjAA0AAAAEAAQAAAAjAA4AAAAEAAUAAAAkAA0AAAAEAAQAAAAkAA4AAAAEAAUAAAAlAA0AAAAFAAQAAAAlAA4AAAAFAAUAAAAmAA0AAAAEAAQAAAAmAA4AAAAEAAUAAAArAAoAAAAEAAEAAAArAAsAAAAEAAIAAAArAAwAAAAEAAMAAAAsAAoAAAADAAEAAAAsAAsAAAADAAIAAAAsAAwAAAADAAMAAAAtAAoAAAAEAAEAAAAtAAsAAAAEAAIAAAAtAAwAAAAEAAMAAAAuAAoAAAAFAAEAAAAuAAsAAAAFAAIAAAAuAAwAAAAFAAMAAAAvAAoAAAAGAAEAAAAvAAsAAAAGAAIAAAAvAAwAAAAGAAMAAAAwAAoAAAALABAAAFAwAAsAAAAHAAIAAAAwAAwAAAAHAAMAAAAhAA4AAAAEAAQAAAApAAcAAAAEABAAAGApAAYAAAAFABAAAGApAAUAAAAGABAAAGApAAQAAAAHABAAAGApAAMAAAAIABAAAGApAAIAAAAJABAAAGApAAEAAAAKABAAAGAxAAIAAAAHAA8AAFAxAAMAAAAIAA8AAFAxAAQAAAAFAA8AAFAxAAUAAAAGAA8AAFAxAAYAAAAHAA8AAFAxAAcAAAAIAA8AAFAwAAIAAAAHABAAAFAwAAMAAAAIABAAAFAwAAQAAAAFABAAAFAwAAUAAAAGABAAAFAwAAYAAAAHABAAAFAwAAcAAAAIABAAAFAxAAgAAAAJAA8AAFAxAAkAAAAKAA8AAFAxAAoAAAALAA8AAFAwAAgAAAAJABAAAFAwAAkAAAAKABAAAFAKAAwAAAASAAUAAAAPAAwAAAAKAAUAAAApAAAAAAALABAAAGAoAAcAAAAEAA8AAGAoAAYAAAAFAA8AAGAoAAUAAAAGAA8AAGAoAAQAAAAHAA8AAGAoAAMAAAAIAA8AAGAoAAIAAAAJAA8AAGAoAAEAAAAKAA8AAGAoAAAAAAALAA8AAGApAP//AAALABAAAGAnAA0AAAAFAAQAAAAnAA4AAAAFAAUAAAAoAA0AAAAEAAQAAAAoAA4AAAAEAAUAAAApAA0AAAAFAAQAAAApAA4AAAAFAAUAAAAqAA0AAAAEAAQAAAAqAA4AAAAEAAUAAAArAA0AAAAFAAQAAAArAA4AAAAFAAUAAAAsAA0AAAAFAAQAAAAsAA4AAAAFAAUAAAAtAA0AAAAEAAQAAAAtAA4AAAAEAAUAAAAuAA0AAAAFAAQAAAAuAA4AAAAFAAUAAAAvAA0AAAAGAAQAAAAvAA4AAAAGAAUAAAAwAA0AAAAHAAQAAAAwAA4AAAAHAAUAAAAoAP//AAALAA8AAGAqAP//AAAFABAAADArAP//AAAKABAAADAsAP//AAAJABAAADAtAP//AAAIABAAADAuAP//AAAHABAAADAvAP//AAAGABAAADAwAP//AAAFABAAADAxAP//AAAEABAAADA=")
+tile_set = ExtResource("4_ftfob")
+
+[node name="Nacida" parent="." unique_id=1352471129 instance=ExtResource("5_fmg3e")]
+position = Vector2(33, 570)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=54135846]
+visible = false
+show_behind_parent = true
+position = Vector2(392, 304)
+scale = Vector2(2.195, 2)
+texture = ExtResource("6_ftfob")
+
+[node name="pared" type="StaticBody2D" parent="." unique_id=2081099971]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared" unique_id=1709949633]
+position = Vector2(-80, 347)
+shape = SubResource("RectangleShape2D_ftfob")
+
+[node name="Sprite2D" type="Sprite2D" parent="pared/CollisionShape2D" unique_id=944057904]
+
+[node name="techo" type="StaticBody2D" parent="." unique_id=2114655868]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="techo" unique_id=974322357]
+position = Vector2(637.875, -69)
+shape = SubResource("RectangleShape2D_fkk1g")
+
+[node name="Sprite2D" type="Sprite2D" parent="techo/CollisionShape2D" unique_id=1961870621]
+
+[node name="MetalPesado" parent="." unique_id=1273372991 instance=ExtResource("8_ugcn1")]
+position = Vector2(1060, 693)
+scale = Vector2(2.8, 2)
+
+[node name="MetalPesado2" parent="." unique_id=1998600114 instance=ExtResource("8_ugcn1")]
+position = Vector2(2219, 529)
+
+[node name="MetalPesado3" parent="." unique_id=1272007299 instance=ExtResource("8_ugcn1")]
+position = Vector2(2032, 186)
+rotation = 1.5707964
+scale = Vector2(1.8, 1)
