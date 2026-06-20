@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cvel7d0xiky61"]
+
+[ext_resource type="Script" uid="uid://b54nrn18lm7rv" path="res://scenes/characters/lord.gd" id="1_rcplr"]
+[ext_resource type="Texture2D" uid="uid://y67gb53dk1s6" path="res://assets/sprites/nacida_movements/idle/idle.png" id="1_yuivf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcplr"]
+size = Vector2(30, 50)
+
+[node name="Lord" type="RigidBody2D" unique_id=605933771]
+script = ExtResource("1_rcplr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1767715872]
+shape = SubResource("RectangleShape2D_rcplr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=581966165]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("1_yuivf")
+hframes = 5
+frame = 3
