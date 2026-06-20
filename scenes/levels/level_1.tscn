@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_mm8aj"]
 [ext_resource type="AudioStream" uid="uid://ci356i4pw12bl" path="res://music/08 - DavidKBD - Belmont Chronicles Pack - The Dungeons.ogg" id="7_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://b5lxra7g6ls4d" path="res://ui/ui_levels/hud.tscn" id="8_s8va5"]
-[ext_resource type="PackedScene" uid="uid://g17oxwuxh8kx" path="res://ui/ui_metales/ui_metales.tscn" id="8_wtwp4"]
 
 [sub_resource type="Resource" id="Resource_iwr0g"]
 script = ExtResource("7_mm8aj")
@@ -57,26 +56,15 @@ process_physics_priority = 300
 script = ExtResource("5_iav0o")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
-[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=390979811 node_paths=PackedStringArray("follow_path")]
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=390979811]
 position = Vector2(639, 359)
 script = ExtResource("6_dnkej")
-follow_path = NodePath("")
 snap_to_pixel = true
 tween_resource = SubResource("Resource_iwr0g")
 draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="UiMetales" parent="PhantomCamera2D" unique_id=1965929021 instance=ExtResource("8_wtwp4")]
-z_index = 1
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = -626.0
-offset_top = 275.0
-offset_right = -326.0
-offset_bottom = 347.0
-grow_vertical = 1
-metadata/_edit_use_anchors_ = true
+[node name="HUD" parent="PhantomCamera2D" unique_id=1642216878 instance=ExtResource("8_s8va5")]
 
 [node name="Goal" parent="." unique_id=670407063 instance=ExtResource("5_sk5k4")]
 position = Vector2(1241, 245)
@@ -121,5 +109,3 @@ position = Vector2(321, 219)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1340701065]
 stream = ExtResource("7_oc4kc")
 autoplay = true
-
-[node name="HUD" parent="." unique_id=1642216878 instance=ExtResource("8_s8va5")]
