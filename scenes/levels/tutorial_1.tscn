@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_it8fj"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_ry3ft"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_ko8to"]
-[ext_resource type="PackedScene" uid="uid://g17oxwuxh8kx" path="res://ui/ui_metales/ui_metales.tscn" id="8_wmwcy"]
+[ext_resource type="PackedScene" uid="uid://b5lxra7g6ls4d" path="res://ui/ui_levels/hud.tscn" id="8_it8fj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x51qp"]
 size = Vector2(1289.5, 101)
@@ -85,14 +85,4 @@ tween_resource = SubResource("Resource_7m4mt")
 draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="UiMetales" parent="PhantomCamera2D" unique_id=1965929021 instance=ExtResource("8_wmwcy")]
-z_index = 1
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = -630.0
-offset_top = 282.0
-offset_right = -330.0
-offset_bottom = 354.0
-grow_vertical = 1
-metadata/_edit_use_anchors_ = true
+[node name="HUD" parent="PhantomCamera2D" unique_id=1642216878 instance=ExtResource("8_it8fj")]

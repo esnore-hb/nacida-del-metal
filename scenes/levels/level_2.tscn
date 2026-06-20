@@ -12,7 +12,6 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="10_tv7cl"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="11_r88tb"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="12_1yj8c"]
-[ext_resource type="PackedScene" uid="uid://g17oxwuxh8kx" path="res://ui/ui_metales/ui_metales.tscn" id="13_ndlae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra442"]
 size = Vector2(165, 684)
@@ -107,10 +106,7 @@ scale = Vector2(4, 4)
 collision_layer = 5
 collision_mask = 0
 
-[node name="HUD" parent="." unique_id=1642216878 instance=ExtResource("9_3p04p")]
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1865229564]
-physics_interpolation_mode = 1
 top_level = true
 position = Vector2(581, 319)
 zoom = Vector2(1.125, 1.125)
@@ -131,16 +127,6 @@ tween_resource = SubResource("Resource_v8d84")
 draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="UiMetales" parent="PhantomCamera2D" unique_id=1965929021 instance=ExtResource("13_ndlae")]
-z_index = 1
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = -534.0
-offset_top = 225.0
-offset_right = -234.0
-offset_bottom = 297.0
-grow_vertical = 1
-metadata/_edit_use_anchors_ = true
+[node name="HUD" parent="PhantomCamera2D" unique_id=1642216878 instance=ExtResource("9_3p04p")]
 
 [editable path="MetalPesado"]

@@ -5,13 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://blh6h555y0adi" path="res://resources/Retro Inventory/Retro Inventory/Scaled 2x/Heart_Red_1.png" id="3_cwbvf"]
 [ext_resource type="Texture2D" uid="uid://c5kdptw26pjry" path="res://resources/Retro Inventory/Retro Inventory/Scaled 2x/Heart_Red_2.png" id="4_nrbj3"]
 [ext_resource type="Texture2D" uid="uid://exku8j2nupx1" path="res://resources/Retro Inventory/Retro Inventory/Scaled 2x/Heart_Red_3.png" id="5_he46c"]
+[ext_resource type="Script" uid="uid://bjogmnalcnew2" path="res://ui/ui_levels/ui_metales.gd" id="6_ha5mf"]
 
 [sub_resource type="Animation" id="Animation_7p3bx"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/heart3:stretch_mode")
+tracks/0/path = NodePath("Vidas/heart3:stretch_mode")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -23,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HBoxContainer/heart2:stretch_mode")
+tracks/1/path = NodePath("Vidas/heart2:stretch_mode")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -35,7 +36,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HBoxContainer/heart1:stretch_mode")
+tracks/2/path = NodePath("Vidas/heart1:stretch_mode")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -47,7 +48,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HBoxContainer/heart1:texture")
+tracks/3/path = NodePath("Vidas/heart1:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -59,7 +60,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("HBoxContainer/heart2:texture")
+tracks/4/path = NodePath("Vidas/heart2:texture")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -71,7 +72,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("HBoxContainer/heart3:texture")
+tracks/5/path = NodePath("Vidas/heart3:texture")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -88,7 +89,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/heart2:texture")
+tracks/0/path = NodePath("Vidas/heart2:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -100,7 +101,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HBoxContainer/heart1:texture")
+tracks/1/path = NodePath("Vidas/heart1:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -112,7 +113,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HBoxContainer/heart3:texture")
+tracks/2/path = NodePath("Vidas/heart3:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -129,7 +130,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/heart3:texture")
+tracks/0/path = NodePath("Vidas/heart3:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -141,7 +142,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HBoxContainer/heart1:texture")
+tracks/1/path = NodePath("Vidas/heart1:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -153,7 +154,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HBoxContainer/heart2:texture")
+tracks/2/path = NodePath("Vidas/heart2:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -170,7 +171,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/heart1:texture")
+tracks/0/path = NodePath("Vidas/heart1:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -182,7 +183,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HBoxContainer/heart2:texture")
+tracks/1/path = NodePath("Vidas/heart2:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -194,7 +195,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HBoxContainer/heart3:texture")
+tracks/2/path = NodePath("Vidas/heart3:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -211,7 +212,7 @@ step = 0.03
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/heart3:stretch_mode")
+tracks/0/path = NodePath("Vidas/heart3:stretch_mode")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -223,7 +224,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HBoxContainer/heart2:stretch_mode")
+tracks/1/path = NodePath("Vidas/heart2:stretch_mode")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -235,7 +236,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HBoxContainer/heart1:stretch_mode")
+tracks/2/path = NodePath("Vidas/heart1:stretch_mode")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -247,7 +248,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HBoxContainer/heart1:texture")
+tracks/3/path = NodePath("Vidas/heart1:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -259,7 +260,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("HBoxContainer/heart2:texture")
+tracks/4/path = NodePath("Vidas/heart2:texture")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -271,7 +272,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("HBoxContainer/heart3:texture")
+tracks/5/path = NodePath("Vidas/heart3:texture")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -290,31 +291,64 @@ _data = {
 &"reset": SubResource("Animation_b1jyr")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwbvf"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrbj3"]
+bg_color = Color(0, 0, 1, 1)
+
 [node name="HUD" type="CanvasLayer" unique_id=1642216878]
 script = ExtResource("1_lfhhm")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=152660960]
+[node name="Vidas" type="HBoxContainer" parent="." unique_id=152660960]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 64.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="heart1" type="TextureRect" parent="HBoxContainer" unique_id=2028086770]
+[node name="heart1" type="TextureRect" parent="Vidas" unique_id=2028086770]
 layout_mode = 2
 texture = ExtResource("2_ha5mf")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="heart2" type="TextureRect" parent="HBoxContainer" unique_id=804092844]
+[node name="heart2" type="TextureRect" parent="Vidas" unique_id=804092844]
 layout_mode = 2
 expand_mode = 2
 stretch_mode = 4
 
-[node name="heart3" type="TextureRect" parent="HBoxContainer" unique_id=298493273]
+[node name="heart3" type="TextureRect" parent="Vidas" unique_id=298493273]
 layout_mode = 2
 expand_mode = 2
 stretch_mode = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1951529158]
 libraries/ = SubResource("AnimationLibrary_h0i6f")
+
+[node name="Metales" type="VBoxContainer" parent="." unique_id=2105258125]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = -93.0
+offset_right = 273.0
+offset_bottom = -21.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+alignment = 1
+script = ExtResource("6_ha5mf")
+
+[node name="HierroDisponible" type="ProgressBar" parent="Metales" unique_id=2027491306]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.43133998, 0.4313402, 0.43134117, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_cwbvf")
+
+[node name="Control" type="Control" parent="Metales" unique_id=1949441803]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="AceroDisponible" type="ProgressBar" parent="Metales" unique_id=1088173024]
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_nrbj3")
