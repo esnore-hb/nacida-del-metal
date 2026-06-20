@@ -3,6 +3,9 @@ extends RigidBody2D
 
 @export var MOVE_SPEED: float = 150.0
 @export var MAX_SPEED: float = 200.0
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_tree: AnimationTree = $AnimationTree
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
