@@ -6,6 +6,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcplr"]
 size = Vector2(30, 50)
 
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_rcplr"]
+
+[sub_resource type="BTSequence" id="BTSequence_32sv7"]
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_g6hgr"]
+blackboard_plan = SubResource("BlackboardPlan_rcplr")
+root_task = SubResource("BTSequence_32sv7")
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_lmsrn"]
+
 [node name="Lord" type="RigidBody2D" unique_id=605933771]
 script = ExtResource("1_rcplr")
 
@@ -17,3 +27,7 @@ modulate = Color(1, 0, 0, 1)
 texture = ExtResource("1_yuivf")
 hframes = 5
 frame = 3
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=1819705617]
+behavior_tree = SubResource("BehaviorTree_g6hgr")
+blackboard_plan = SubResource("BlackboardPlan_lmsrn")
