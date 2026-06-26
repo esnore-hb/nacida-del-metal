@@ -4,6 +4,7 @@ class_name Nacida
 extends RigidBody2D
 
 @onready var animation_player = $AnimationPlayer
+@onready var footsteps: AudioStreamPlayer = $Footsteps
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
