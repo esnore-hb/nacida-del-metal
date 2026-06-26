@@ -327,16 +327,13 @@ stretch_mode = 4
 libraries/ = SubResource("AnimationLibrary_h0i6f")
 
 [node name="Metales" type="VBoxContainer" parent="." unique_id=2105258125]
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 26.0
-offset_top = -93.0
-offset_right = 273.0
-offset_bottom = -21.0
-grow_vertical = 0
+offset_right = 259.0
+offset_bottom = -611.0
+grow_vertical = 2
 size_flags_horizontal = 0
-size_flags_vertical = 8
+size_flags_vertical = 0
 alignment = 1
 script = ExtResource("6_ha5mf")
 
