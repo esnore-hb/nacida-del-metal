@@ -11,6 +11,7 @@ size = Vector2(208, 58)
 
 [node name="MetalPesado" type="Node2D" unique_id=1273372991]
 script = ExtResource("1_k8cew")
+PUSHING_FORCE = 1500
 
 [node name="Metal" type="StaticBody2D" parent="." unique_id=705056153]
 

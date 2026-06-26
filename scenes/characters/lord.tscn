@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b2mwsdf3k6mm1"]
 
-[ext_resource type="Script" path="res://scenes/characters/lord.gd" id="1_rcplr"]
+[ext_resource type="Script" uid="uid://b54nrn18lm7rv" path="res://scenes/characters/lord.gd" id="1_rcplr"]
 [ext_resource type="Texture2D" uid="uid://ulsc7ri20uyw" path="res://assets/sprites/villano/EVil Wizard 2/Sprites/Idle.png" id="2_5nogx"]
 [ext_resource type="Texture2D" uid="uid://b87f36heqe4og" path="res://assets/sprites/villano/EVil Wizard 2/Sprites/Attack1.png" id="3_4orp1"]
 [ext_resource type="Texture2D" uid="uid://bbowdkpthjeha" path="res://assets/sprites/villano/EVil Wizard 2/Sprites/Attack2.png" id="4_s02ed"]
@@ -10,8 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bjpttxo6tycji" path="res://assets/sprites/villano/EVil Wizard 2/Sprites/Run.png" id="8_54spg"]
 [ext_resource type="Texture2D" uid="uid://bd22l8u1fayyp" path="res://assets/sprites/villano/EVil Wizard 2/Sprites/Take hit.png" id="9_mp3fh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcplr"]
-size = Vector2(33, 54)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5nogx"]
+radius = 27.0
+height = 100.0
 
 [sub_resource type="Animation" id="Animation_e1sy1"]
 length = 0.001
@@ -481,25 +482,16 @@ states/take_hit/node = SubResource("AnimationNodeAnimation_gjr2f")
 states/take_hit/position = Vector2(614, 139)
 transitions = ["idle", "run", SubResource("AnimationNodeStateMachineTransition_0gu8l"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_lmbj5"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_ves7b"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_npigt"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_w3ks0"), "jump", "attack", SubResource("AnimationNodeStateMachineTransition_m8cl1"), "attack", "jump", SubResource("AnimationNodeStateMachineTransition_545n8"), "run", "attack", SubResource("AnimationNodeStateMachineTransition_orlgu"), "attack", "run", SubResource("AnimationNodeStateMachineTransition_gc80n"), "idle", "take_hit", SubResource("AnimationNodeStateMachineTransition_soooi"), "run", "take_hit", SubResource("AnimationNodeStateMachineTransition_x28mi"), "attack", "take_hit", SubResource("AnimationNodeStateMachineTransition_76y5d"), "take_hit", "death", SubResource("AnimationNodeStateMachineTransition_cpryc"), "take_hit", "idle", SubResource("AnimationNodeStateMachineTransition_0ep3k"), "take_hit", "attack", SubResource("AnimationNodeStateMachineTransition_anxhk"), "take_hit", "run", SubResource("AnimationNodeStateMachineTransition_ku0x1"), "take_hit", "jump", SubResource("AnimationNodeStateMachineTransition_tm6um"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_d3i5k")]
 
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_rcplr"]
-
-[sub_resource type="BTSequence" id="BTSequence_32sv7"]
-
-[sub_resource type="BehaviorTree" id="BehaviorTree_g6hgr"]
-blackboard_plan = SubResource("BlackboardPlan_rcplr")
-root_task = SubResource("BTSequence_32sv7")
-
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_lmsrn"]
-
 [node name="Lord" type="RigidBody2D" unique_id=605933771]
 script = ExtResource("1_rcplr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1767715872]
-position = Vector2(1.5, -2)
-shape = SubResource("RectangleShape2D_rcplr")
+position = Vector2(4, 17)
+shape = SubResource("CapsuleShape2D_5nogx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=581966165]
 position = Vector2(2, -17)
+scale = Vector2(2, 2)
 texture = ExtResource("2_5nogx")
 hframes = 8
 

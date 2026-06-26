@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="5_xy1qu"]
 [ext_resource type="PackedScene" uid="uid://bpush45toq7yp" path="res://scenes/goals/goal.tscn" id="6_3mnpy"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_jjvta"]
-[ext_resource type="PackedScene" uid="uid://cvel7d0xiky61" path="res://scenes/characters/lord.tscn" id="10_p6rmu"]
+[ext_resource type="PackedScene" uid="uid://b2mwsdf3k6mm1" path="res://scenes/characters/lord.tscn" id="10_p6rmu"]
 
 [sub_resource type="Resource" id="Resource_p6rmu"]
 script = ExtResource("3_65guy")
@@ -43,11 +43,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="Nacida" parent="Player" unique_id=1352471129 instance=ExtResource("4_wjk5u")]
 position = Vector2(140, 781)
-is_dead = null
 MAX_SPEED = 150.0
-JUMP_FORCE = null
-LIMITE_HIERRO = null
-LIMITE_ACERO = null
 
 [node name="PhantomCamera2D" type="Node2D" parent="Player" unique_id=1397083054 node_paths=PackedStringArray("follow_target", "follow_path")]
 top_level = true
@@ -164,4 +160,4 @@ texture = ExtResource("1_osc7o")
 position = Vector2(46, 786)
 
 [node name="Lord" parent="." unique_id=605933771 instance=ExtResource("10_p6rmu")]
-position = Vector2(240, 1334)
+position = Vector2(256, 1258)
