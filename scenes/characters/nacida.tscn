@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bhunfd0178boo" path="res://scenes/metals/metal_liviano.tscn" id="2_kn3so"]
 [ext_resource type="Texture2D" uid="uid://wphh8jpsxaq" path="res://resources/Enlaces metalicos/tirar_frame1.png" id="3_73vjx"]
 [ext_resource type="Texture2D" uid="uid://r5rhiqg5ebtb" path="res://resources/Enlaces metalicos/tirar_frame2.png" id="4_fprvp"]
+[ext_resource type="AudioStream" uid="uid://6gg3pp63b6y1" path="res://sounds/400 Sounds Pack/Human/cough_short.wav" id="4_u31nt"]
+[ext_resource type="AudioStream" uid="uid://cvtdmelo1h0gv" path="res://sounds/400 Sounds Pack/Other/snap.wav" id="5_5i06p"]
 [ext_resource type="PackedScene" uid="uid://bk80ngdotxkql" path="res://Damage/hurtbox/hurtbox_component.tscn" id="5_c3spl"]
 [ext_resource type="AudioStream" uid="uid://dreqw8ajym6b8" path="res://sounds/400 Sounds Pack/Footsteps/foley_footstep_concrete_4.wav" id="5_g33u0"]
 [ext_resource type="Texture2D" uid="uid://dec70s4fhku7e" path="res://resources/Enlaces metalicos/tirar_frame3.png" id="5_nmtds"]
@@ -96,6 +98,145 @@ tracks/5/keys = {
 "update": 0,
 "values": [-34.666]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hurt:stream")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_u31nt")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hurt:volume_db")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-12.48]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Hurt:autoplay")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sprite2D:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.9864221, 0.1555028, 0.18493155, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Hurt:pitch_scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.78]
+}
+
+[sub_resource type="Animation" id="Animation_5i06p"]
+resource_name = "hurt"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hurt:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_u31nt")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hurt:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-33.28]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hurt:autoplay")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hurt")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_5i06p")
+}],
+"times": PackedFloat32Array(0.0439)
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.9864221, 0.1555028, 0.18493155, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Hurt:pitch_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.78, 0.78]
+}
 
 [sub_resource type="Animation" id="Animation_g0rh5"]
 resource_name = "idle"
@@ -137,6 +278,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_c3spl"]
@@ -235,13 +388,29 @@ tracks/6/keys = {
 "update": 0,
 "values": [-34.666, -34.666]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_38nc8"]
 _data = {
 &"RESET": SubResource("Animation_bl2qp"),
+&"hurt": SubResource("Animation_5i06p"),
 &"idle": SubResource("Animation_g0rh5"),
 &"walk": SubResource("Animation_c3spl")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5i06p"]
+animation = &"hurt"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aqvq8"]
 animation = &"idle"
@@ -258,13 +427,25 @@ switch_mode = 1
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ucwl8"]
 switch_mode = 1
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s2mnx"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6hgo0"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cq3ak"]
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y8bdy"]
+switch_mode = 1
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_id3k6"]
 states/Start/position = Vector2(184, 107)
+states/hurt/node = SubResource("AnimationNodeAnimation_5i06p")
+states/hurt/position = Vector2(435, 89)
 states/idle/node = SubResource("AnimationNodeAnimation_aqvq8")
 states/idle/position = Vector2(326, 51)
 states/walk/node = SubResource("AnimationNodeAnimation_uvf7i")
 states/walk/position = Vector2(326, 127)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_bl2qp"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_of381"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_ucwl8")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_bl2qp"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_of381"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_ucwl8"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_s2mnx"), "walk", "hurt", SubResource("AnimationNodeStateMachineTransition_6hgo0"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_cq3ak"), "hurt", "walk", SubResource("AnimationNodeStateMachineTransition_y8bdy")]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_g33u0"]
 frames = 4
@@ -325,6 +506,7 @@ texture_mode = 2
 target_position = Vector2(0, 31)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2052855167]
+modulate = Color(0.9864221, 0.1555028, 0.18493155, 1)
 texture = ExtResource("1_jbv1q")
 hframes = 5
 
@@ -344,3 +526,9 @@ volume_db = -34.666
 pitch_scale = 1.95
 autoplay = true
 mix_target = 2
+
+[node name="Hurt" type="AudioStreamPlayer" parent="." unique_id=1403107997]
+stream = ExtResource("4_u31nt")
+volume_db = -12.48
+pitch_scale = 0.78
+autoplay = true

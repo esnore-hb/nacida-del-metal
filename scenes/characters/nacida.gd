@@ -236,6 +236,7 @@ func take_damage(amount: int = 1) -> void:
 	if is_dead: 
 		return
 	if health_component:
+		state_machine.travel("hurt")
 		health_component.take_damage(amount)
 
 func _on_death() -> void:
@@ -243,16 +244,11 @@ func _on_death() -> void:
 		return 
 		
 	is_dead = true
-	# Si tienes una animación de Nacida muriendo, actívala aquí (ej. die())
-	
-	# La MAGIA: Esperamos 1.5 segundos para que se alcance a reproducir 
-	
 	await get_tree().create_timer(0.3).timeout
-	
-	# Ahora sí, llamamos al Game Over y eliminamos a Nacida
 	LevelManager.game_over()
 	queue_free()
 
 func die() -> void:
+	state_machine.travel("hurt")
 	is_dead = true
 	LevelManager.game_over()
