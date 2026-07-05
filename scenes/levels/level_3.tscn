@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_0qepi"]
 [ext_resource type="PackedScene" uid="uid://5oamr728074d" path="res://ui/pause_menu/pause_menu.tscn" id="3_f6egh"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_fmg3e"]
-[ext_resource type="TileSet" uid="uid://ciyhviukoktot" path="res://resources/tile_set_pasto.tres" id="4_ftfob"]
+[ext_resource type="TileSet" uid="uid://cd7p1i2bhb5bg" path="res://resources/tile_set_pasto.tres" id="4_ftfob"]
 [ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="5_fmg3e"]
 [ext_resource type="Texture2D" uid="uid://vfsuo3kvl1u5" path="res://resources/Final/Grass_background_1.png" id="6_ftfob"]
 [ext_resource type="Texture2D" uid="uid://dberewe1lxx8x" path="res://resources/Final/Background_0.png" id="7_fkk1g"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bpush45toq7yp" path="res://scenes/goals/goal.tscn" id="9_pimnq"]
 [ext_resource type="PackedScene" uid="uid://cjk35mv4as3td" path="res://scenes/pips/pip.tscn" id="11_n6eey"]
 [ext_resource type="PackedScene" uid="uid://b5lxra7g6ls4d" path="res://ui/ui_levels/hud.tscn" id="13_t4txi"]
+[ext_resource type="PackedScene" uid="uid://2gdsaum6obw4" path="res://Damage/hitbox/hitbox_component.tscn" id="14_t4txi"]
 
 [sub_resource type="Resource" id="Resource_t4txi"]
 script = ExtResource("3_fmg3e")
@@ -75,6 +76,7 @@ texture = ExtResource("6_ftfob")
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=978199593]
+physics_interpolation_mode = 1
 top_level = true
 position = Vector2(644, 345)
 editor_draw_limits = true
@@ -168,6 +170,7 @@ tile_set = ExtResource("4_ftfob")
 
 [node name="Nacida" parent="." unique_id=1352471129 instance=ExtResource("5_fmg3e")]
 position = Vector2(47, 567)
+scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=54135846]
 visible = false
@@ -226,8 +229,8 @@ position = Vector2(2, 0)
 visible = false
 
 [node name="Goal" parent="." unique_id=670407063 instance=ExtResource("9_pimnq")]
-position = Vector2(3005, 338)
-scale = Vector2(2, 2)
+position = Vector2(3005, 319.00003)
+scale = Vector2(2.5, 2.5)
 
 [node name="pared2" type="StaticBody2D" parent="." unique_id=1237516630]
 
@@ -261,6 +264,32 @@ position = Vector2(2821, 115)
 [node name="Path2D" type="Path2D" parent="." unique_id=1671157439]
 position = Vector2(69, -43)
 curve = SubResource("Curve2D_f6egh")
+
+[node name="HitBoxEnemys" parent="." unique_id=219644280 instance=ExtResource("14_t4txi")]
+position = Vector2(822, 674)
+scale = Vector2(4.5, 4.5)
+
+[node name="HitBoxEnemys2" parent="." unique_id=2138583615 instance=ExtResource("14_t4txi")]
+position = Vector2(2310, 798)
+scale = Vector2(5, 5)
+
+[node name="HitBoxEnemys3" parent="." unique_id=900596663 instance=ExtResource("14_t4txi")]
+position = Vector2(2560, 18)
+scale = Vector2(0.7, 0.7)
+
+[node name="HitBoxEnemys4" parent="." unique_id=59821387 instance=ExtResource("14_t4txi")]
+position = Vector2(2143, 506.99994)
+scale = Vector2(1.7, 1.7)
+
+[node name="HitBoxEnemys5" parent="." unique_id=918950489 instance=ExtResource("14_t4txi")]
+position = Vector2(2050.0002, 24)
+rotation = 1.5707964
+scale = Vector2(3, 1.7)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=990285064]
+
+[node name="PauseMenu" parent="CanvasLayer2" unique_id=1120389137 instance=ExtResource("3_f6egh")]
+visible = false
 
 [editable path="MetalPesado"]
 [editable path="MetalPesado2"]

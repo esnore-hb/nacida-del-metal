@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_ry3ft"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_ko8to"]
 [ext_resource type="PackedScene" uid="uid://b5lxra7g6ls4d" path="res://ui/ui_levels/hud.tscn" id="8_it8fj"]
+[ext_resource type="PackedScene" uid="uid://5oamr728074d" path="res://ui/pause_menu/pause_menu.tscn" id="9_ry3ft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x51qp"]
 size = Vector2(1289.5, 101)
@@ -86,3 +87,8 @@ draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="HUD" parent="PhantomCamera2D" unique_id=1642216878 instance=ExtResource("8_it8fj")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=837178276]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1973677921 instance=ExtResource("9_ry3ft")]
+visible = false

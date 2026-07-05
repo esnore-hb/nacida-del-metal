@@ -124,4 +124,9 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="HUD" parent="PhantomCamera2D" unique_id=1642216878 instance=ExtResource("9_3p04p")]
 
+[node name="HitBoxEnemys3" parent="." unique_id=92254503 instance=ExtResource("8_8qukl")]
+position = Vector2(75, 739)
+scale = Vector2(10, 10)
+damage = 3
+
 [editable path="MetalPesado"]

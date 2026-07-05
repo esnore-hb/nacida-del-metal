@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cjk35mv4as3td" path="res://scenes/pips/pip.tscn" id="6_oc4kc"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://b5lxra7g6ls4d" path="res://ui/ui_levels/hud.tscn" id="8_s8va5"]
+[ext_resource type="PackedScene" uid="uid://2gdsaum6obw4" path="res://Damage/hitbox/hitbox_component.tscn" id="11_excbq"]
 
 [sub_resource type="Resource" id="Resource_iwr0g"]
 script = ExtResource("7_mm8aj")
@@ -104,3 +105,14 @@ shape = SubResource("RectangleShape2D_sk5k4")
 
 [node name="pip" parent="." unique_id=1848357944 instance=ExtResource("6_oc4kc")]
 position = Vector2(321, 219)
+
+[node name="HitBoxEnemys" parent="." unique_id=219644280 instance=ExtResource("11_excbq")]
+position = Vector2(167.00002, 860.00006)
+scale = Vector2(10, 10)
+damage = 3
+
+[node name="HitBoxEnemys2" parent="." unique_id=757592029 instance=ExtResource("11_excbq")]
+position = Vector2(1520, 432.99997)
+rotation = 1.5707964
+scale = Vector2(5, 5)
+damage = 3
