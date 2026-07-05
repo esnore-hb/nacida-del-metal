@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var sfx: AudioStream
 @onready var sprite_2D_goal: Sprite2D = $Sprite2D
 
 var can_exit: bool = false
@@ -17,6 +18,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if player:
 		if can_exit:
 			LevelManager.next_level()
+			AudioManager.play_sfx(sfx)
 		else:
 			print("Puerta bloqueada. Tienes: ", Game.pips, " / Necesitas: ", total_pips_in_level)
 

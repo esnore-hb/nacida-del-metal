@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bpush45toq7yp"]
 
-
 [ext_resource type="Script" uid="uid://bssnotdulq4as" path="res://scenes/goals/goal.gd" id="1_6oxqv"]
+[ext_resource type="AudioStream" uid="uid://dbe28r0614cft" path="res://sounds/400 Sounds Pack/Musical Effects/8_bit_positive_long.wav" id="2_m61db"]
 [ext_resource type="Texture2D" uid="uid://jpcbx2gn1vew" path="res://resources/Castle/puerta.png" id="2_p20yd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gcynx"]
@@ -10,6 +10,7 @@ height = 56.0
 
 [node name="Goal" type="Area2D" unique_id=670407063]
 script = ExtResource("1_6oxqv")
+sfx = ExtResource("2_m61db")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=55643129]
 shape = SubResource("CapsuleShape2D_gcynx")
