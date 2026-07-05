@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://co1pueack3n7k"]
+
+[ext_resource type="Script" uid="uid://eivdp8iolygr" path="res://autoload/audio_manager.gd" id="1_u6vuv"]
+[ext_resource type="AudioStream" uid="uid://c3lnup1cncdym" path="res://music/01 - DavidKBD - Belmont Chronicles Pack - Belmont Chronicles.ogg" id="2_kipf1"]
+[ext_resource type="AudioStream" uid="uid://cxhxbtivbq5xh" path="res://music/02 - DavidKBD - Belmont Chronicles Pack - The Mystic Forest.ogg" id="3_pp21f"]
+[ext_resource type="AudioStream" uid="uid://ex15pvdx36tg" path="res://music/04 - DavidKBD - Belmont Chronicles Pack - Awakening After the War.ogg" id="4_eg3rh"]
+[ext_resource type="AudioStream" uid="uid://gh3drre7l75w" path="res://music/05 - DavidKBD - Belmont Chronicles Pack - Abandoned Church.ogg" id="5_q0reb"]
+[ext_resource type="AudioStream" uid="uid://ci356i4pw12bl" path="res://music/08 - DavidKBD - Belmont Chronicles Pack - The Dungeons.ogg" id="6_iyo06"]
+[ext_resource type="AudioStream" uid="uid://d1mbo4gtd1gnj" path="res://music/09 - DavidKBD - Belmont Chronicles Pack - The Catacombs.ogg" id="7_hdpxa"]
+[ext_resource type="AudioStream" uid="uid://cmypj2y8vk3th" path="res://music/10 - DavidKBD - Belmont Chronicles Pack - Final Boss.ogg" id="8_khm0l"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_u6vuv"]
+stream_count = 7
+stream_0 = ExtResource("2_kipf1")
+stream_1 = ExtResource("3_pp21f")
+stream_2 = ExtResource("4_eg3rh")
+stream_3 = ExtResource("5_q0reb")
+stream_4 = ExtResource("6_iyo06")
+stream_5 = ExtResource("7_hdpxa")
+stream_6 = ExtResource("8_khm0l")
+
+[node name="AudioManager" type="Node" unique_id=894082867]
+script = ExtResource("1_u6vuv")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1527194740]
+stream = SubResource("AudioStreamPlaylist_u6vuv")
+bus = &"Music"

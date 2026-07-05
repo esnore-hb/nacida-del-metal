@@ -76,3 +76,4 @@ by David KBD
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=532820228]
 stream = ExtResource("3_g4wvt")
 autoplay = true
+bus = &"Music"

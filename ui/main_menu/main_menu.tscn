@@ -3,10 +3,9 @@
 [ext_resource type="Script" uid="uid://bg60qtny62y2e" path="res://ui/main_menu/main_menu.gd" id="1_mu8pm"]
 [ext_resource type="Theme" uid="uid://jrbc1cs3wk32" path="res://resources/theme.tres" id="2_omy8q"]
 [ext_resource type="Texture2D" uid="uid://dberewe1lxx8x" path="res://resources/Final/Background_0.png" id="2_u184e"]
-[ext_resource type="AudioStream" uid="uid://cxhxbtivbq5xh" path="res://music/02 - DavidKBD - Belmont Chronicles Pack - The Mystic Forest.ogg" id="3_omy8q"]
-[ext_resource type="StyleBox" uid="uid://ctv2d8ahy66h1" path="res://resources/normal_button.tres" id="3_u184e"]
-[ext_resource type="StyleBox" uid="uid://depgcfs80hmfc" path="res://resources/pressed_button.tres" id="4_6mijq"]
-[ext_resource type="StyleBox" uid="uid://c0jmrvg6jq3a7" path="res://resources/hover_button.tres" id="5_w2r0d"]
+[ext_resource type="StyleBox" path="res://resources/normal_button.tres" id="3_u184e"]
+[ext_resource type="StyleBox" path="res://resources/pressed_button.tres" id="4_6mijq"]
+[ext_resource type="StyleBox" path="res://resources/hover_button.tres" id="5_w2r0d"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mijq"]
 texture = ExtResource("2_u184e")
@@ -69,7 +68,3 @@ theme_override_styles/pressed = ExtResource("4_6mijq")
 theme_override_styles/hover = ExtResource("5_w2r0d")
 text = " Quit
 "
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=398846971]
-stream = ExtResource("3_omy8q")
-autoplay = true

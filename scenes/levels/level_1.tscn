@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_dnkej"]
 [ext_resource type="PackedScene" uid="uid://cjk35mv4as3td" path="res://scenes/pips/pip.tscn" id="6_oc4kc"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_mm8aj"]
-[ext_resource type="AudioStream" uid="uid://ci356i4pw12bl" path="res://music/08 - DavidKBD - Belmont Chronicles Pack - The Dungeons.ogg" id="7_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://b5lxra7g6ls4d" path="res://ui/ui_levels/hud.tscn" id="8_s8va5"]
 
 [sub_resource type="Resource" id="Resource_iwr0g"]
@@ -105,7 +104,3 @@ shape = SubResource("RectangleShape2D_sk5k4")
 
 [node name="pip" parent="." unique_id=1848357944 instance=ExtResource("6_oc4kc")]
 position = Vector2(321, 219)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1340701065]
-stream = ExtResource("7_oc4kc")
-autoplay = true
