@@ -2,7 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bg60qtny62y2e" path="res://ui/main_menu/main_menu.gd" id="1_mu8pm"]
 [ext_resource type="Theme" uid="uid://jrbc1cs3wk32" path="res://resources/theme.tres" id="2_omy8q"]
+[ext_resource type="Texture2D" uid="uid://dberewe1lxx8x" path="res://resources/Final/Background_0.png" id="2_u184e"]
 [ext_resource type="AudioStream" uid="uid://cxhxbtivbq5xh" path="res://music/02 - DavidKBD - Belmont Chronicles Pack - The Mystic Forest.ogg" id="3_omy8q"]
+[ext_resource type="StyleBox" uid="uid://ctv2d8ahy66h1" path="res://resources/normal_button.tres" id="3_u184e"]
+[ext_resource type="StyleBox" uid="uid://depgcfs80hmfc" path="res://resources/pressed_button.tres" id="4_6mijq"]
+[ext_resource type="StyleBox" uid="uid://c0jmrvg6jq3a7" path="res://resources/hover_button.tres" id="5_w2r0d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mijq"]
+texture = ExtResource("2_u184e")
 
 [node name="MainMenu" type="Control" unique_id=788497428]
 layout_mode = 3
@@ -14,12 +21,14 @@ grow_vertical = 2
 script = ExtResource("1_mu8pm")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1056144406]
+custom_minimum_size = Vector2(6, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6mijq")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=996757997]
 layout_mode = 2
@@ -29,6 +38,7 @@ theme = ExtResource("2_omy8q")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=769434277]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=13521552]
 layout_mode = 2
@@ -38,17 +48,27 @@ text = "Nacida del metal"
 [node name="Start" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1294192926]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = ExtResource("3_u184e")
+theme_override_styles/pressed = ExtResource("4_6mijq")
+theme_override_styles/hover = ExtResource("5_w2r0d")
 text = "Start"
 
 [node name="Credits" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1703088918]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Credits"
+theme_override_styles/normal = ExtResource("3_u184e")
+theme_override_styles/pressed = ExtResource("4_6mijq")
+theme_override_styles/hover = ExtResource("5_w2r0d")
+text = " Credits"
 
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1901140297]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Quit"
+theme_override_styles/normal = ExtResource("3_u184e")
+theme_override_styles/pressed = ExtResource("4_6mijq")
+theme_override_styles/hover = ExtResource("5_w2r0d")
+text = " Quit
+"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=398846971]
 stream = ExtResource("3_omy8q")

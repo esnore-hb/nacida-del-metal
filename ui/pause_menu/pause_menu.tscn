@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b8ru518cirtuv" path="res://ui/pause_menu/pause_menu.gd" id="1_jbgdu"]
 [ext_resource type="Theme" uid="uid://jrbc1cs3wk32" path="res://resources/theme.tres" id="1_mnjdh"]
+[ext_resource type="StyleBox" uid="uid://ctv2d8ahy66h1" path="res://resources/normal_button.tres" id="3_c3jo5"]
+[ext_resource type="StyleBox" uid="uid://depgcfs80hmfc" path="res://resources/pressed_button.tres" id="4_uraes"]
+[ext_resource type="StyleBox" uid="uid://c0jmrvg6jq3a7" path="res://resources/hover_button.tres" id="5_ihaig"]
 
 [node name="PauseMenu" type="Control" unique_id=1973677921]
 process_mode = 3
@@ -30,6 +33,7 @@ theme = ExtResource("1_mnjdh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=478835848]
 layout_mode = 2
+theme_override_constants/separation = 7
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=55140467]
 layout_mode = 2
@@ -39,14 +43,24 @@ text = "Pause"
 [node name="Resume" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1003194612]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = ExtResource("3_c3jo5")
+theme_override_styles/pressed = ExtResource("4_uraes")
+theme_override_styles/hover = ExtResource("5_ihaig")
 text = "Resume"
 
 [node name="Retry" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1706213379]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = ExtResource("3_c3jo5")
+theme_override_styles/pressed = ExtResource("4_uraes")
+theme_override_styles/hover = ExtResource("5_ihaig")
 text = "Retry"
 
 [node name="MainMenu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2086298243]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = ExtResource("3_c3jo5")
+theme_override_styles/pressed = ExtResource("4_uraes")
+theme_override_styles/hover = ExtResource("5_ihaig")
 text = "Main Menu"
