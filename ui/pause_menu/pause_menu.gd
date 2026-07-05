@@ -4,6 +4,7 @@ extends Control
 @onready var retry: Button = %Retry
 @onready var main_menu: Button = %MainMenu
 #@onready var quit: Button = %Quit
+@export var sfx: AudioStream
 
 func _ready() -> void:
 	hide()
@@ -19,15 +20,19 @@ func _input(event: InputEvent) -> void:
 
 func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
+	AudioManager.play_sfx(sfx)
 	LevelManager.main_menu()
 
 func _on_resume_pressed() -> void:
 	get_tree().paused = false
+	AudioManager.play_sfx(sfx)
 	hide()
 	
 func _on_retry_pressed() -> void:
 	get_tree().paused = false
+	AudioManager.play_sfx(sfx)
 	get_tree().reload_current_scene()
 
 func _on_quit_pressed() -> void:
+	AudioManager.play_sfx(sfx)
 	get_tree().quit()

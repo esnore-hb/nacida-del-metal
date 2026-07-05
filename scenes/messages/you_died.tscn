@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ba7dx6t7342qd" path="res://scenes/messages/you_died.gd" id="1_a0srs"]
 [ext_resource type="FontFile" uid="uid://ci3v1ex0htoyl" path="res://fonts/Cobblestone.ttf" id="1_bmmms"]
+[ext_resource type="AudioStream" uid="uid://clx1vkcpvpgel" path="res://sounds/400 Sounds Pack/Musical Effects/8_bit_negative.wav" id="2_5qo6s"]
 [ext_resource type="Theme" uid="uid://jrbc1cs3wk32" path="res://resources/theme.tres" id="3_c422a"]
 
 [sub_resource type="Theme" id="Theme_a0srs"]
@@ -16,6 +17,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_a0srs")
+sfx = ExtResource("2_5qo6s")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=81107842]
 visible = false

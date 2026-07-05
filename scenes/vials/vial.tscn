@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d13l4eikvc0jn" path="res://assets/sprites/frasco_acero-hierro/frasco.png" id="1_1d2ti"]
 [ext_resource type="Script" uid="uid://dhc47bujkcyjp" path="res://scenes/vials/vial.gd" id="1_u7ugu"]
+[ext_resource type="AudioStream" uid="uid://bgybw2usymiid" path="res://sounds/400 Sounds Pack/Materials/aluminium_can_pick_up.wav" id="2_vvk8f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u7ugu"]
 radius = 17.0
@@ -130,6 +131,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 
 [node name="Vial" type="Area2D" unique_id=2058280327]
 script = ExtResource("1_u7ugu")
+sfx = ExtResource("2_vvk8f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1285693193]
 shape = SubResource("CapsuleShape2D_u7ugu")

@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://bg60qtny62y2e" path="res://ui/main_menu/main_menu.gd" id="1_mu8pm"]
 [ext_resource type="Theme" uid="uid://jrbc1cs3wk32" path="res://resources/theme.tres" id="2_omy8q"]
 [ext_resource type="Texture2D" uid="uid://dberewe1lxx8x" path="res://resources/Final/Background_0.png" id="2_u184e"]
-[ext_resource type="StyleBox" path="res://resources/normal_button.tres" id="3_u184e"]
-[ext_resource type="StyleBox" path="res://resources/pressed_button.tres" id="4_6mijq"]
-[ext_resource type="StyleBox" path="res://resources/hover_button.tres" id="5_w2r0d"]
+[ext_resource type="AudioStream" uid="uid://rde670jd2uc4" path="res://sounds/400 Sounds Pack/Musical Effects/8_bit_chime_quick.wav" id="2_w2r0d"]
+[ext_resource type="AudioStream" uid="uid://drui1iqh2gm5i" path="res://sounds/400 Sounds Pack/UI/sci_fi_hover_high.wav" id="3_4e78x"]
+[ext_resource type="StyleBox" uid="uid://ctv2d8ahy66h1" path="res://resources/normal_button.tres" id="3_u184e"]
+[ext_resource type="StyleBox" uid="uid://depgcfs80hmfc" path="res://resources/pressed_button.tres" id="4_6mijq"]
+[ext_resource type="AudioStream" uid="uid://emke1p7knq1y" path="res://sounds/400 Sounds Pack/Musical Effects/8_bit_negative_quick.wav" id="4_w2r0d"]
+[ext_resource type="StyleBox" uid="uid://c0jmrvg6jq3a7" path="res://resources/hover_button.tres" id="5_w2r0d"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mijq"]
 texture = ExtResource("2_u184e")
@@ -18,6 +21,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mu8pm")
+sfx_start = ExtResource("2_w2r0d")
+sfx_credits = ExtResource("3_4e78x")
+sfx_quit = ExtResource("4_w2r0d")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1056144406]
 custom_minimum_size = Vector2(6, 0)

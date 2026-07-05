@@ -3,6 +3,7 @@ extends Area2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 #@onready var sprite_2d: Sprite2D = $Sprite2D
+@export var sfx: AudioStream
 
 func _ready() -> void:
 	add_to_group("pips")
@@ -19,6 +20,7 @@ func _on_body_entered(body: Node2D) -> void:
 		#pick_up_sound.play()
 		Game.pips += 1
 		var state_machine = animation_tree.get("parameters/playback")
+		AudioManager.play_sfx(sfx)
 		state_machine.travel("pick_up")
 		await get_tree().create_timer(0.20).timeout
 		queue_free()

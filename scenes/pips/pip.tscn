@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cweagsfey3gy2" path="res://scenes/pips/pip.gd" id="1_2foya"]
 [ext_resource type="Texture2D" uid="uid://bihvgpemo77n3" path="res://assets/sprites/moneda/moneda_1-sheet.png" id="2_46jm3"]
+[ext_resource type="AudioStream" uid="uid://xi0lose4x8xg" path="res://sounds/400 Sounds Pack/Items/gem_collect.wav" id="2_f8f18"]
 [ext_resource type="Texture2D" uid="uid://b237trprlbuau" path="res://assets/sprites/moneda/moneda_desaparece.png" id="3_6fdkq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6fdkq"]
@@ -191,6 +192,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 
 [node name="pip" type="Area2D" unique_id=1848357944]
 script = ExtResource("1_2foya")
+sfx = ExtResource("2_f8f18")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1566215452]
 shape = SubResource("CircleShape2D_6fdkq")

@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
+@export var sfx: AudioStream
 
 func _ready() -> void:
 	animation_tree.active = true
@@ -23,5 +24,6 @@ func _on_body_entered(body: Node2D) -> void:
 			player.hierro=1000
 		#var state_machine = animation_tree.get("parameters/playback")
 		#state_machine.travel("pick_up")
+		AudioManager.play_sfx(sfx)
 		#await get_tree().create_timer(0.20).timeout
 		queue_free()

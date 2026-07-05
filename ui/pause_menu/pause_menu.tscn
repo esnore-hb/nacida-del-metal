@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8ru518cirtuv" path="res://ui/pause_menu/pause_menu.gd" id="1_jbgdu"]
 [ext_resource type="Theme" uid="uid://jrbc1cs3wk32" path="res://resources/theme.tres" id="1_mnjdh"]
+[ext_resource type="AudioStream" uid="uid://dbqnsg3kuimgd" path="res://sounds/400 Sounds Pack/UI/select_4.wav" id="2_uraes"]
 [ext_resource type="StyleBox" uid="uid://ctv2d8ahy66h1" path="res://resources/normal_button.tres" id="3_c3jo5"]
 [ext_resource type="StyleBox" uid="uid://depgcfs80hmfc" path="res://resources/pressed_button.tres" id="4_uraes"]
 [ext_resource type="StyleBox" uid="uid://c0jmrvg6jq3a7" path="res://resources/hover_button.tres" id="5_ihaig"]
@@ -15,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jbgdu")
+sfx = ExtResource("2_uraes")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=143029326]
 layout_mode = 1
