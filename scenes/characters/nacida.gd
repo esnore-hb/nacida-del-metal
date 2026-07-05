@@ -54,11 +54,15 @@ extends RigidBody2D
 ## Escena guardada para las balas(monedas)
 @export var bullet_scene = load("res://scenes/metals/metal_liviano.tscn")
 
+@export var sfx: AudioStream
+
 ## Cantidad de metal de Hierro (para tirar)
 var hierro = LIMITE_HIERRO
 
 ## Cantidad de metal de Acero (para empujar)
 var acero = LIMITE_ACERO
+
+var taking_damage = false
 
 
 ## Señal emitida al tirar de un metal.
@@ -187,6 +191,7 @@ func fire() -> void:
 		return
 		
 	bullet_inst.global_position = bullet_spawn_mark.global_position
+	AudioManager.play_sfx(sfx)
 	
 	var mouse_direction = bullet_spawn_mark.global_position.direction_to(get_global_mouse_position())
 	bullet_inst.global_rotation = mouse_direction.angle()
@@ -209,6 +214,10 @@ func _set_animation(direction: float) -> void:
 	if not _on_floor():
 		# Animación de salto / aire.
 		# sprite_2d.play("jump")
+		if not taking_damage:
+			state_machine.travel("idle")
+		if taking_damage:
+			state_machine.travel("hurt")
 		pass
 
 	elif abs(linear_velocity.x) > 0.1:
@@ -236,9 +245,11 @@ func take_damage(amount: int = 1) -> void:
 	if is_dead: 
 		return
 	if health_component:
+		taking_damage = true
 		state_machine.travel("hurt")
 		health_component.take_damage(amount)
-
+		taking_damage = false
+		
 func _on_death() -> void:
 	if is_dead: 
 		return 
