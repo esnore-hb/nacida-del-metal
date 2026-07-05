@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cjk35mv4as3td" path="res://scenes/pips/pip.tscn" id="11_n6eey"]
 [ext_resource type="PackedScene" uid="uid://b5lxra7g6ls4d" path="res://ui/ui_levels/hud.tscn" id="13_t4txi"]
 [ext_resource type="PackedScene" uid="uid://2gdsaum6obw4" path="res://Damage/hitbox/hitbox_component.tscn" id="14_t4txi"]
+[ext_resource type="PackedScene" uid="uid://de2hdgiqvd0wc" path="res://scenes/vials/vial.tscn" id="15_apo5x"]
 
 [sub_resource type="Resource" id="Resource_t4txi"]
 script = ExtResource("3_fmg3e")
@@ -290,6 +291,9 @@ scale = Vector2(3, 1.7)
 
 [node name="PauseMenu" parent="CanvasLayer2" unique_id=1120389137 instance=ExtResource("3_f6egh")]
 visible = false
+
+[node name="Vial" parent="." unique_id=2058280327 instance=ExtResource("15_apo5x")]
+position = Vector2(1656, 506)
 
 [editable path="MetalPesado"]
 [editable path="MetalPesado2"]
