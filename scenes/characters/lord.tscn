@@ -747,46 +747,13 @@ animation = &"death"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m4jhl"]
 animation = &"idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j7ssd"]
-animation = &"jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pey1w"]
-animation = &"run"
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gjr2f"]
 animation = &"take_hit"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0gu8l"]
-switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lmbj5"]
 switch_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ves7b"]
-switch_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_npigt"]
-switch_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w3ks0"]
-switch_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m8cl1"]
-switch_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_545n8"]
-switch_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_orlgu"]
-switch_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gc80n"]
-switch_mode = 1
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_soooi"]
-switch_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x28mi"]
 switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_76y5d"]
@@ -801,13 +768,16 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_anxhk"]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ku0x1"]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tm6um"]
-switch_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d3i5k"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mp3fh"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e1sy1"]
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bd8if"]
+switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_t4d5k"]
 states/attack/node = SubResource("AnimationNodeAnimation_lhhui")
@@ -816,13 +786,9 @@ states/death/node = SubResource("AnimationNodeAnimation_6h2uu")
 states/death/position = Vector2(730, 92)
 states/idle/node = SubResource("AnimationNodeAnimation_m4jhl")
 states/idle/position = Vector2(316, 92)
-states/jump/node = SubResource("AnimationNodeAnimation_j7ssd")
-states/jump/position = Vector2(403, 180)
-states/run/node = SubResource("AnimationNodeAnimation_pey1w")
-states/run/position = Vector2(478, 100)
 states/take_hit/node = SubResource("AnimationNodeAnimation_gjr2f")
 states/take_hit/position = Vector2(614, 139)
-transitions = ["idle", "run", SubResource("AnimationNodeStateMachineTransition_0gu8l"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_lmbj5"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_ves7b"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_npigt"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_w3ks0"), "jump", "attack", SubResource("AnimationNodeStateMachineTransition_m8cl1"), "attack", "jump", SubResource("AnimationNodeStateMachineTransition_545n8"), "run", "attack", SubResource("AnimationNodeStateMachineTransition_orlgu"), "attack", "run", SubResource("AnimationNodeStateMachineTransition_gc80n"), "idle", "take_hit", SubResource("AnimationNodeStateMachineTransition_soooi"), "run", "take_hit", SubResource("AnimationNodeStateMachineTransition_x28mi"), "attack", "take_hit", SubResource("AnimationNodeStateMachineTransition_76y5d"), "take_hit", "death", SubResource("AnimationNodeStateMachineTransition_cpryc"), "take_hit", "idle", SubResource("AnimationNodeStateMachineTransition_0ep3k"), "take_hit", "attack", SubResource("AnimationNodeStateMachineTransition_anxhk"), "take_hit", "run", SubResource("AnimationNodeStateMachineTransition_ku0x1"), "take_hit", "jump", SubResource("AnimationNodeStateMachineTransition_tm6um"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_d3i5k")]
+transitions = ["idle", "attack", SubResource("AnimationNodeStateMachineTransition_lmbj5"), "idle", "take_hit", SubResource("AnimationNodeStateMachineTransition_soooi"), "attack", "take_hit", SubResource("AnimationNodeStateMachineTransition_76y5d"), "take_hit", "death", SubResource("AnimationNodeStateMachineTransition_cpryc"), "take_hit", "idle", SubResource("AnimationNodeStateMachineTransition_0ep3k"), "take_hit", "attack", SubResource("AnimationNodeStateMachineTransition_anxhk"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_d3i5k"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_mp3fh"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_e1sy1"), "attack", "death", SubResource("AnimationNodeStateMachineTransition_bd8if")]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_5nogx"]
 

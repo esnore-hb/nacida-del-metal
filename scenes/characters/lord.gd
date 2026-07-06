@@ -22,7 +22,6 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	_recive_damage()
-	print(global_position)
 
 
 # Funcion fallback que se asegura que la nacida esta en el nivel
@@ -36,16 +35,36 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 
 func _recive_damage():
 	var state_machine = animation_tree.get("parameters/playback")
-	if hitbox_lord.get_overlapping_areas() and \
-		hitbox_lord.get_overlapping_areas()[0].get_parent().get_parent() is MetalLiviano:
-
-		hitbox_lord.get_overlapping_areas()[0].get_parent().get_parent().queue_free()
-		if health < 0:
-			state_machine.start("death")
-			await get_tree().create_timer(0.5).timeout
-			LevelManager.win()
-			return
-		state_machine.travel("hurt")
-		health -= 1
-		print("lord recive damage")
-		print("health: ", health)
+	var areas = hitbox_lord.get_overlapping_areas()
+	
+	if areas:
+		var area_detectada = areas[0]
+		
+		if not (area_detectada.get_parent() is Nacida) and area_detectada.name != "HitboxNacida":
+			
+			hitbox_lord.set_deferred("monitoring", false)
+			
+			area_detectada.get_parent().get_parent().queue_free()
+			
+			health -= 1
+			print("lord recive damage")
+			print("health: ", health)
+			
+			if health <= 0:
+				state_machine.start("death")
+				set_process(false) 
+				await get_tree().create_timer(0.5).timeout
+				LevelManager.win()
+				return
+			
+			# Iniciamos la animación de golpe
+			state_machine.start("take_hit")
+			
+			# NOTA: Ajusta este 0.3 al tiempo real en segundos que dure tu animación de take_hit
+			await get_tree().create_timer(0.3).timeout
+			
+			if health > 0:
+				# FORZAMOS el regreso a la animación de reposo o movimiento
+				state_machine.travel("idle") 
+				# Reactivamos la hitbox para el siguiente golpe
+				hitbox_lord.set_deferred("monitoring", true)
