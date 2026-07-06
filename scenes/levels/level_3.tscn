@@ -43,7 +43,7 @@ size = Vector2(1130, 469)
 size = Vector2(165, 734)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkk1g"]
-size = Vector2(3106.25, 101)
+size = Vector2(4800.25, 101)
 
 [sub_resource type="Curve2D" id="Curve2D_f6egh"]
 _data = {
@@ -214,7 +214,7 @@ shape = SubResource("RectangleShape2D_ftfob")
 [node name="techo" type="StaticBody2D" parent="." unique_id=2114655868]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="techo" unique_id=974322357]
-position = Vector2(1522.875, -69)
+position = Vector2(2369.875, -69)
 shape = SubResource("RectangleShape2D_fkk1g")
 
 [node name="Sprite2D" type="Sprite2D" parent="techo/CollisionShape2D" unique_id=1961870621]
@@ -315,6 +315,14 @@ position = Vector2(3327, 344)
 
 [node name="Lord" parent="." unique_id=605933771 instance=ExtResource("9_josfm")]
 position = Vector2(3433, 434)
+
+[node name="pared2" type="StaticBody2D" parent="." unique_id=1292136306]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared2" unique_id=158158761]
+position = Vector2(4694, 259)
+shape = SubResource("RectangleShape2D_ftfob")
+
+[node name="Sprite2D" type="Sprite2D" parent="pared2/CollisionShape2D" unique_id=1655080516]
 
 [editable path="MetalPesado"]
 [editable path="MetalPesado2"]
