@@ -6,6 +6,8 @@ extends RigidBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var hitbox_lord: Area2D = $HitboxLord
+# CAMBIO: Asegúrate de que el nombre coincida con tu nodo de sprite (ej: $Sprite2D o $AnimatedSprite2D)
+@onready var sprite: Sprite2D = $Sprite2D 
 
 var nacida: Nacida
 var health: int = 3
@@ -22,6 +24,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	_recive_damage()
+	_flip_towards_player() # CAMBIO: Llamamos a la función de volteo
 
 
 # Funcion fallback que se asegura que la nacida esta en el nivel
@@ -31,6 +34,16 @@ func _nacida_generada():
 
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	rotation_degrees = 0.0
+
+
+func _flip_towards_player() -> void:
+	if nacida and sprite:
+		var direction: float = nacida.global_position.x - global_position.x
+		
+		if direction < 0:
+			sprite.flip_h = true
+		elif direction > 0:
+			sprite.flip_h = false
 
 
 func _recive_damage():
@@ -57,14 +70,10 @@ func _recive_damage():
 				LevelManager.win()
 				return
 			
-			# Iniciamos la animación de golpe
 			state_machine.start("take_hit")
 			
-			# NOTA: Ajusta este 0.3 al tiempo real en segundos que dure tu animación de take_hit
 			await get_tree().create_timer(0.3).timeout
 			
 			if health > 0:
-				# FORZAMOS el regreso a la animación de reposo o movimiento
 				state_machine.travel("idle") 
-				# Reactivamos la hitbox para el siguiente golpe
 				hitbox_lord.set_deferred("monitoring", true)
