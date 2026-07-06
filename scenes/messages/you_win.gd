@@ -4,6 +4,6 @@ extends Control
 
 func _ready() -> void:
 	AudioManager.play_sfx(sfx)
-	await get_tree().create_timer(1.0).timeout
-	LevelManager.restart_level()
+	await get_tree().create_timer(3.0).timeout
+	LevelManager.credits()
 	
