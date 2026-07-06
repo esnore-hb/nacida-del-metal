@@ -6,11 +6,15 @@ extends RigidBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var hitbox_lord: Area2D = $HitboxLord
-# CAMBIO: Asegúrate de que el nombre coincida con tu nodo de sprite (ej: $Sprite2D o $AnimatedSprite2D)
 @onready var sprite: Sprite2D = $Sprite2D 
+
+@onready var bullet_spawn_mark: Marker2D = $Marker2D
+
+@export var bullet_scene: PackedScene
 
 var nacida: Nacida
 var health: int = 3
+@onready var timer: Timer = $Timer
 
 func _ready() -> void:
 	animation_tree.active = true
@@ -20,12 +24,17 @@ func _ready() -> void:
 		nacida = Game.nacida
 	else:
 		Game.nacida_set.connect(_nacida_generada)
+	timer.start(2)
+
 
 
 func _process(_delta: float) -> void:
 	_recive_damage()
 	_flip_towards_player() # CAMBIO: Llamamos a la función de volteo
 
+	if timer.time_left < 1:
+		fire()
+		timer.start(2)
 
 # Funcion fallback que se asegura que la nacida esta en el nivel
 func _nacida_generada():
@@ -77,3 +86,23 @@ func _recive_damage():
 			if health > 0:
 				state_machine.travel("idle") 
 				hitbox_lord.set_deferred("monitoring", true)
+
+func attack():
+	pass
+	
+func fire() -> void:
+	if not bullet_scene:
+		Debug.log("ERROR: Me olvide poner la bala en el inspector")
+		return
+		
+	var bullet_inst = bullet_scene.instantiate()
+	
+	get_parent().add_child(bullet_inst)
+	
+	if not bullet_spawn_mark:
+		return
+		
+	bullet_inst.global_position = bullet_spawn_mark.global_position
+	
+	var mouse_direction = bullet_spawn_mark.global_position.direction_to(nacida.global_position)
+	bullet_inst.global_rotation = mouse_direction.angle()

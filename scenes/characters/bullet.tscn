@@ -1,15 +1,14 @@
 [gd_scene format=3 uid="uid://b0xu0enlvmmbi"]
 
-[ext_resource type="Script" path="res://scenes/characters/bullet.gd" id="1_8cp68"]
-[ext_resource type="AudioStream" uid="uid://cnr4u8v12too0" path="res://sounds/400 Sounds Pack/Combat and Gore/swipe.wav" id="2_1c3xc"]
+[ext_resource type="Script" uid="uid://cbuwdrltk1qyg" path="res://scenes/characters/bullet.gd" id="1_8cp68"]
 [ext_resource type="Texture2D" uid="uid://c4pbqk1jhr632" path="res://resources/Free - Raven Fantasy Icons (1)/Free - Raven Fantasy Icons/Separated Files/64x64/fc130.png" id="2_8cp68"]
+[ext_resource type="PackedScene" uid="uid://2gdsaum6obw4" path="res://Damage/hitbox/hitbox_component.tscn" id="3_1c3xc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8cp68"]
 radius = 14.035668
 
 [node name="bullet" type="Area2D" unique_id=1143340184]
 script = ExtResource("1_8cp68")
-sfx = ExtResource("2_1c3xc")
 metadata/_custom_type_script = "uid://dfh2cujfr072y"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2140656077]
@@ -18,3 +17,7 @@ texture = ExtResource("2_8cp68")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2086917862]
 shape = SubResource("CircleShape2D_8cp68")
+
+[node name="HitBoxEnemys" parent="." unique_id=219644280 instance=ExtResource("3_1c3xc")]
+position = Vector2(-8, -5.9999995)
+scale = Vector2(0.14363125, 0.34549683)
