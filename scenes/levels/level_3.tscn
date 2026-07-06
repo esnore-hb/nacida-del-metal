@@ -195,7 +195,6 @@ tile_set = ExtResource("4_ftfob")
 
 [node name="Nacida" parent="." unique_id=1352471129 instance=ExtResource("5_fmg3e")]
 position = Vector2(86, 596)
-scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=54135846]
 visible = false

@@ -53,8 +53,8 @@ func _on_mouse_exit() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	pulling_active = Input.is_action_pressed("nacida_pull") and is_mouse
-	pushing_active = Input.is_action_pressed("nacida_push") and is_mouse
+	pulling_active = Input.is_action_pressed("nacida_pull") and is_mouse and Game.nacida.hierro > 0
+	pushing_active = Input.is_action_pressed("nacida_push") and is_mouse and Game.nacida.acero > 0
 
 	if pulling_active:
 		Game.nacida.gravity_scale = 0
