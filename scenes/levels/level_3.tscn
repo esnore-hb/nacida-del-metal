@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="5_fmg3e"]
 [ext_resource type="Texture2D" uid="uid://vfsuo3kvl1u5" path="res://resources/Final/Grass_background_1.png" id="6_ftfob"]
 [ext_resource type="Texture2D" uid="uid://dberewe1lxx8x" path="res://resources/Final/Background_0.png" id="7_fkk1g"]
-[ext_resource type="Script" uid="uid://bmr3ne4ctjvw7" path="res://scenes/levels/etapa_1.gd" id="8_f6egh"]
+[ext_resource type="Script" uid="uid://bmr3ne4ctjvw7" path="res://scenes/levels/tutorial/etapa_1.gd" id="8_f6egh"]
 [ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="8_ugcn1"]
 [ext_resource type="PackedScene" uid="uid://bpush45toq7yp" path="res://scenes/goals/goal.tscn" id="9_pimnq"]
 [ext_resource type="PackedScene" uid="uid://cjk35mv4as3td" path="res://scenes/pips/pip.tscn" id="11_n6eey"]
