@@ -82,7 +82,6 @@ visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=978199593]
 physics_interpolation_mode = 1
-top_level = true
 position = Vector2(3513, 345)
 editor_draw_limits = true
 
@@ -190,7 +189,7 @@ tile_set = ExtResource("4_ftfob")
 
 [node name="TileMapLayerFONDO" type="TileMapLayer" parent="." unique_id=1713476168]
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAgAAwAAAAGAAEAAAAgAA0AAAAGAAIAAAAhAAwAAAACAAMAAAAhAA0AAAACAAQAAAAgAA4AAAAGAAMAAAAnAAoAAAADAAEAAAAnAAsAAAADAAIAAAAnAAwAAAADAAMAAAAoAAoAAAAEAAEAAAAoAAsAAAAEAAIAAAAoAAwAAAAEAAMAAAApAAoAAAAFAAEAAAApAAsAAAAFAAIAAAApAAwAAAAFAAMAAAAqAAoAAAAGAAEAAAAqAAsAAAAGAAIAAAAqAAwAAAAGAAMAAAArAAoAAAAHAAEAAAArAAsAAAAHAAIAAAArAAwAAAAHAAMAAAAmAAoAAAACAAEAAAAmAAsAAAACAAIAAAAmAAwAAAACAAQAAAAvAAoAAAADAA8AAAAhAAoAAAACAAEAAAAhAAsAAAACAAIAAAAqAAAAAAADAA8AAFAqAAEAAAABAA8AAFAqAAIAAAACAA8AAFAqAAMAAAADAA8AAFAqAAQAAAAAAA8AAFAqAAUAAAABAA8AAFAqAAYAAAACAA8AAFAqAAcAAAADAA8AAFAsAAoAAAAAAA8AAAAtAAoAAAABAA8AAAAuAAoAAAACAA8AAAA1AAAAAAABAA8AADA2AAAAAAAAAA8AADA=")
+tile_map_data = PackedByteArray("AAAgAAwAAAAGAAEAAAAgAA0AAAAGAAIAAAAhAAwAAAACAAMAAAAhAA0AAAACAAQAAAAgAA4AAAAGAAMAAAAnAAoAAAADAAEAAAAnAAsAAAADAAIAAAAnAAwAAAADAAMAAAAoAAoAAAAEAAEAAAAoAAsAAAAEAAIAAAAoAAwAAAAEAAMAAAApAAoAAAAFAAEAAAApAAsAAAAFAAIAAAApAAwAAAAFAAMAAAAqAAoAAAAGAAEAAAAqAAsAAAAGAAIAAAAqAAwAAAAGAAMAAAArAAoAAAAHAAEAAAArAAsAAAAHAAIAAAArAAwAAAAHAAMAAAAmAAoAAAACAAEAAAAmAAsAAAACAAIAAAAmAAwAAAACAAQAAAAvAAoAAAADAA8AAAAhAAoAAAACAAEAAAAhAAsAAAACAAIAAAAqAAAAAAADAA8AAFAqAAEAAAABAA8AAFAqAAIAAAACAA8AAFAqAAMAAAADAA8AAFAqAAQAAAAAAA8AAFAqAAUAAAABAA8AAFAqAAYAAAACAA8AAFAqAAcAAAADAA8AAFAsAAoAAAAAAA8AAAAtAAoAAAABAA8AAAAuAAoAAAACAA8AAAA1AAAAAAABAA8AADA2AAAAAAAAAA8AADBLAAAAAAABABAAADBLAAEAAAABAA8AADBMAAAAAAAAABAAADBMAAEAAAAAAA8AADBZAAAAAAAAABAAADBZAAEAAAAAAA8AADBYAAAAAAABABAAADBYAAEAAAABAA8AADA=")
 tile_set = ExtResource("4_ftfob")
 
 [node name="Nacida" parent="." unique_id=1352471129 instance=ExtResource("5_fmg3e")]
@@ -250,6 +249,28 @@ PULLING_FORCE = 1000
 position = Vector2(2, 0)
 
 [node name="Sprite2D" parent="MetalPesado4/Metal" parent_id_path=PackedInt32Array(630041848, 705056153) index="2" unique_id=2001825010]
+visible = false
+
+[node name="MetalPesado5" parent="." unique_id=644207433 instance=ExtResource("8_ugcn1")]
+position = Vector2(3657, 47)
+scale = Vector2(0.5, 1)
+PULLING_FORCE = 1300
+
+[node name="CollisionShape2D" parent="MetalPesado5/Metal" parent_id_path=PackedInt32Array(644207433, 705056153) index="0" unique_id=2142775643]
+position = Vector2(2, 0)
+
+[node name="Sprite2D" parent="MetalPesado5/Metal" parent_id_path=PackedInt32Array(644207433, 705056153) index="2" unique_id=2001825010]
+visible = false
+
+[node name="MetalPesado6" parent="." unique_id=1166038349 instance=ExtResource("8_ugcn1")]
+position = Vector2(4283, 47)
+scale = Vector2(0.5, 1)
+PULLING_FORCE = 1300
+
+[node name="CollisionShape2D" parent="MetalPesado6/Metal" parent_id_path=PackedInt32Array(1166038349, 705056153) index="0" unique_id=2142775643]
+position = Vector2(2, 0)
+
+[node name="Sprite2D" parent="MetalPesado6/Metal" parent_id_path=PackedInt32Array(1166038349, 705056153) index="2" unique_id=2001825010]
 visible = false
 
 [node name="Goal" parent="." unique_id=670407063 instance=ExtResource("9_pimnq")]
@@ -314,9 +335,11 @@ position = Vector2(1656, 506)
 position = Vector2(3327, 344)
 
 [node name="Lord" parent="." unique_id=605933771 instance=ExtResource("9_josfm")]
-position = Vector2(3433, 434)
+position = Vector2(4349, 409)
 
 [editable path="MetalPesado"]
 [editable path="MetalPesado2"]
 [editable path="MetalPesado3"]
 [editable path="MetalPesado4"]
+[editable path="MetalPesado5"]
+[editable path="MetalPesado6"]
