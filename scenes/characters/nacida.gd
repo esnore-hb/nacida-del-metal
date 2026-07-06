@@ -204,34 +204,26 @@ func fire() -> void:
 
 
 ## Actualiza la orientación y animación del personaje.
+## Actualiza la orientación y animación del personaje.
 func _set_animation(direction: float) -> void:
+	if taking_damage:
+		return
+
 	if direction > 0:
 		sprite_2d.flip_h = false
 	elif direction < 0:
 		sprite_2d.flip_h = true
 	
-
 	if not _on_floor():
-		# Animación de salto / aire.
-		# sprite_2d.play("jump")
-		if not taking_damage:
-			state_machine.travel("idle")
-		if taking_damage:
-			state_machine.travel("hurt")
-		pass
-
+		state_machine.travel("idle")
+		
 	elif abs(linear_velocity.x) > 0.1:
 		# Animación de caminar.
-		#animation_player.play("walk")
 		state_machine.travel("walk")
-		pass
 
 	else:
 		# Animación idle.
-		# sprite_2d.play("idle")
 		state_machine.travel("idle")
-		pass
-
 
 ## Retorna true si el personaje está tocando el suelo.
 func _on_floor() -> bool:
@@ -246,8 +238,10 @@ func take_damage(amount: int = 1) -> void:
 		return
 	if health_component:
 		taking_damage = true
-		state_machine.travel("hurt")
+		state_machine.start("hurt") 
 		health_component.take_damage(amount)
+		
+		await get_tree().create_timer(0.4).timeout 
 		taking_damage = false
 		
 func _on_death() -> void:
@@ -255,6 +249,8 @@ func _on_death() -> void:
 		return 
 		
 	is_dead = true
+	taking_damage = true 
+	state_machine.start("hurt")
 	await get_tree().create_timer(0.3).timeout
 	LevelManager.game_over()
 	queue_free()

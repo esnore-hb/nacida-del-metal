@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://wphh8jpsxaq" path="res://resources/Enlaces metalicos/tirar_frame1.png" id="3_73vjx"]
 [ext_resource type="AudioStream" uid="uid://cnr4u8v12too0" path="res://sounds/400 Sounds Pack/Combat and Gore/swipe.wav" id="3_s2mnx"]
 [ext_resource type="Texture2D" uid="uid://r5rhiqg5ebtb" path="res://resources/Enlaces metalicos/tirar_frame2.png" id="4_fprvp"]
-[ext_resource type="AudioStream" uid="uid://6gg3pp63b6y1" path="res://sounds/400 Sounds Pack/Human/cough_short.wav" id="4_u31nt"]
-[ext_resource type="AudioStream" uid="uid://cvtdmelo1h0gv" path="res://sounds/400 Sounds Pack/Other/snap.wav" id="5_5i06p"]
 [ext_resource type="PackedScene" uid="uid://bk80ngdotxkql" path="res://Damage/hurtbox/hurtbox_component.tscn" id="5_c3spl"]
 [ext_resource type="AudioStream" uid="uid://dreqw8ajym6b8" path="res://sounds/400 Sounds Pack/Footsteps/foley_footstep_concrete_4.wav" id="5_g33u0"]
 [ext_resource type="Texture2D" uid="uid://dec70s4fhku7e" path="res://resources/Enlaces metalicos/tirar_frame3.png" id="5_nmtds"]
@@ -90,62 +88,62 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Hurt:stream")
+tracks/5/path = NodePath("Hurt:autoplay")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_u31nt")]
+"values": [true]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Hurt:autoplay")
+tracks/6/path = NodePath("Sprite2D:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprite2D:modulate")
+tracks/7/path = NodePath("Hurt:pitch_scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.9864221, 0.1555028, 0.18493155, 1)]
+"values": [0.78]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Hurt:pitch_scale")
+tracks/8/path = NodePath("Hurt:bus")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.78]
+"update": 1,
+"values": [&"SFX"]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Hurt:bus")
+tracks/9/path = NodePath("Hurt:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"SFX"]
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_5i06p"]
@@ -154,61 +152,49 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Hurt:stream")
+tracks/0/path = NodePath("Hurt:autoplay")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_u31nt")]
+"values": [true]
 }
-tracks/1/type = "value"
+tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Hurt:autoplay")
+tracks/1/path = NodePath("Hurt")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "audio"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hurt")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_5i06p")
+"stream": ExtResource("3_s2mnx")
 }],
 "times": PackedFloat32Array(0.0439)
 }
-tracks/2/use_blend = true
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.9864221, 0.1555028, 0.18493155, 1), Color(1, 1, 1, 1)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Hurt:pitch_scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hurt:pitch_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -472,7 +458,6 @@ texture_mode = 2
 target_position = Vector2(0, 31)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2052855167]
-modulate = Color(0.9864221, 0.1555028, 0.18493155, 1)
 texture = ExtResource("1_jbv1q")
 hframes = 5
 
@@ -495,8 +480,6 @@ mix_target = 2
 bus = &"SFX"
 
 [node name="Hurt" type="AudioStreamPlayer" parent="." unique_id=1403107997]
-stream = ExtResource("4_u31nt")
-volume_db = -6.933
 pitch_scale = 0.78
 autoplay = true
 bus = &"SFX"
