@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dberewe1lxx8x" path="res://resources/Final/Background_0.png" id="7_fkk1g"]
 [ext_resource type="Script" uid="uid://bmr3ne4ctjvw7" path="res://scenes/levels/tutorial/etapa_1.gd" id="8_f6egh"]
 [ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="8_ugcn1"]
+[ext_resource type="PackedScene" uid="uid://b2mwsdf3k6mm1" path="res://scenes/characters/lord.tscn" id="9_josfm"]
 [ext_resource type="PackedScene" uid="uid://bpush45toq7yp" path="res://scenes/goals/goal.tscn" id="9_pimnq"]
 [ext_resource type="PackedScene" uid="uid://cjk35mv4as3td" path="res://scenes/pips/pip.tscn" id="11_n6eey"]
 [ext_resource type="PackedScene" uid="uid://b5lxra7g6ls4d" path="res://ui/ui_levels/hud.tscn" id="13_t4txi"]
@@ -30,10 +31,10 @@ script = ExtResource("3_fmg3e")
 transition = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6egh"]
-size = Vector2(544, 521)
+size = Vector2(538, 521)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apo5x"]
-size = Vector2(718, 728)
+size = Vector2(735, 728)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_josfm"]
 size = Vector2(1130, 469)
@@ -46,7 +47,7 @@ size = Vector2(3106.25, 101)
 
 [sub_resource type="Curve2D" id="Curve2D_f6egh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 575, 388, 0, 0, 0, 0, 4615, 388)
+"points": PackedVector2Array(0, 0, 0, 0, 575, 388, 0, 0, 0, 0, 3938, 388)
 }
 point_count = 2
 
@@ -82,7 +83,7 @@ visible = false
 [node name="Camera2D" type="Camera2D" parent="." unique_id=978199593]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(644, 345)
+position = Vector2(3603, 345)
 editor_draw_limits = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=269141394]
@@ -93,7 +94,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." unique_id=1455613390 node_paths=PackedStringArray("follow_target", "follow_path")]
 top_level = true
-position = Vector2(644, 345)
+position = Vector2(3603, 345)
 script = ExtResource("2_0qepi")
 priority = 5
 follow_mode = 4
@@ -132,7 +133,7 @@ script = ExtResource("8_f6egh")
 area_pcam = NodePath("PhantomCamera2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Etapa2" unique_id=51855595]
-position = Vector2(681, -115.5)
+position = Vector2(678, -115.5)
 shape = SubResource("RectangleShape2D_f6egh")
 debug_color = Color(0.7019608, 0, 0, 0.41960785)
 
@@ -151,12 +152,13 @@ script = ExtResource("8_f6egh")
 area_pcam = NodePath("PhantomCamera2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Etapa3" unique_id=863632632]
-position = Vector2(775, -12)
+unique_name_in_owner = true
+position = Vector2(766.5, -12)
 shape = SubResource("RectangleShape2D_apo5x")
 debug_color = Color(0.7019608, 0, 0, 0.41960785)
 
 [node name="PhantomCamera2D" type="Node2D" parent="Etapa3" unique_id=546775988]
-position = Vector2(824, -50)
+position = Vector2(726, -50)
 script = ExtResource("2_0qepi")
 tween_resource = SubResource("Resource_f6egh")
 draw_limits = true
@@ -164,8 +166,8 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="Etapa4" type="Area2D" parent="." unique_id=1303900807 node_paths=PackedStringArray("area_pcam")]
 position = Vector2(1920, 396)
-collision_layer = 6
-collision_mask = 6
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("8_f6egh")
 area_pcam = NodePath("PhantomCamera2D")
 
@@ -175,7 +177,7 @@ shape = SubResource("RectangleShape2D_josfm")
 debug_color = Color(0.7019608, 0, 0, 0.41960785)
 
 [node name="PhantomCamera2D" type="Node2D" parent="Etapa4" unique_id=1831824208]
-position = Vector2(2083, -35)
+position = Vector2(2054, -8)
 script = ExtResource("2_0qepi")
 tween_resource = SubResource("Resource_f6egh")
 draw_limits = true
@@ -192,7 +194,7 @@ tile_map_data = PackedByteArray("AAAgAAwAAAAGAAEAAAAgAA0AAAAGAAIAAAAhAAwAAAACAAM
 tile_set = ExtResource("4_ftfob")
 
 [node name="Nacida" parent="." unique_id=1352471129 instance=ExtResource("5_fmg3e")]
-position = Vector2(79.00001, 551)
+position = Vector2(3603, 435)
 scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=54135846]
@@ -308,6 +310,9 @@ visible = false
 
 [node name="Vial" parent="." unique_id=2058280327 instance=ExtResource("15_apo5x")]
 position = Vector2(1656, 506)
+
+[node name="Lord" parent="." unique_id=605933771 instance=ExtResource("9_josfm")]
+position = Vector2(4123, 384)
 
 [editable path="MetalPesado"]
 [editable path="MetalPesado2"]

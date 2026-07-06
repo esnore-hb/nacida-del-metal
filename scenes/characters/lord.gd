@@ -7,8 +7,6 @@ extends RigidBody2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var hitbox_lord: Area2D = $HitboxLord
 
-signal lord_defeat
-
 var nacida: Nacida
 var health: int = 3
 
@@ -36,7 +34,7 @@ func _recive_damage():
 	if hitbox_lord.get_overlapping_areas():
 		hitbox_lord.get_overlapping_areas()[0].get_parent().get_parent().queue_free()
 		if health < 0:
-			lord_defeat.emit()
+			LevelManager.win()
 			return
 		health -= 1
 		print("lord recive damage")

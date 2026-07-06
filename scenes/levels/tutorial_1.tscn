@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cqdatw6c808ta"]
+[gd_scene format=4 uid="uid://b8ewjnsjx7jv5"]
 
 [ext_resource type="TileSet" uid="uid://bwe1j5ivaryd5" path="res://resources/tile_set.tres" id="1_x51qp"]
 [ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="2_x0p0q"]
