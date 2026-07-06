@@ -5,6 +5,7 @@ extends Node
 @export var you_died_scene: PackedScene
 @export var levels: Array[PackedScene]
 @export var tutorial: PackedScene
+@export var you_win_scene: PackedScene
 
 var current_level: int = 0
 
@@ -33,7 +34,6 @@ func credits() -> void:
 	get_tree().change_scene_to_packed.call_deferred(credits_scene)
 
 func game_over() -> void:
-	# Llama a esto cuando Nacida muera
 	if you_died_scene:
 		get_tree().change_scene_to_packed.call_deferred(you_died_scene)
 
@@ -41,3 +41,8 @@ func restart_level() -> void:
 	Game.pips = 0
 	if current_level < levels.size():
 		get_tree().change_scene_to_packed.call_deferred(levels[current_level])
+
+func win() -> void:
+	if you_win_scene:
+		get_tree().change_scene_to_packed.call_deferred(you_win_scene)
+		
