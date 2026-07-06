@@ -83,7 +83,7 @@ visible = false
 [node name="Camera2D" type="Camera2D" parent="." unique_id=978199593]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(644, 345)
+position = Vector2(3513, 345)
 editor_draw_limits = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=269141394]
@@ -94,7 +94,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." unique_id=1455613390 node_paths=PackedStringArray("follow_target", "follow_path")]
 top_level = true
-position = Vector2(644, 345)
+position = Vector2(3513, 345)
 script = ExtResource("2_0qepi")
 priority = 5
 follow_mode = 4
@@ -194,7 +194,7 @@ tile_map_data = PackedByteArray("AAAgAAwAAAAGAAEAAAAgAA0AAAAGAAIAAAAhAAwAAAACAAM
 tile_set = ExtResource("4_ftfob")
 
 [node name="Nacida" parent="." unique_id=1352471129 instance=ExtResource("5_fmg3e")]
-position = Vector2(86, 596)
+position = Vector2(3513, 470)
 scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=54135846]
