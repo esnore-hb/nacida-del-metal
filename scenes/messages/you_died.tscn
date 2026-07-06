@@ -58,4 +58,4 @@ theme = ExtResource("3_c422a")
 [node name="Message" type="Label" parent="PanelContainer/MarginContainer" unique_id=1359058663]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "You died"
+text = "Has muerto"

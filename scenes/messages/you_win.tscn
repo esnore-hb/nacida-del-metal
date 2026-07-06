@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://d38x2xknip2f8"]
+
+[ext_resource type="Script" uid="uid://dnjpslmrd5aiq" path="res://scenes/messages/you_win.gd" id="1_v684b"]
+[ext_resource type="AudioStream" uid="uid://27llrkue7oil" path="res://sounds/400 Sounds Pack/Musical Effects/8_bit_level_complete.wav" id="2_v684b"]
+[ext_resource type="FontFile" uid="uid://ci3v1ex0htoyl" path="res://fonts/Cobblestone.ttf" id="3_o7mbm"]
+[ext_resource type="Theme" uid="uid://jrbc1cs3wk32" path="res://resources/theme.tres" id="4_yeri1"]
+
+[sub_resource type="Theme" id="Theme_53tpr"]
+
+[node name="YouWin" type="Control" unique_id=1683565116]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_v684b")
+sfx = ExtResource("2_v684b")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=456902860]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_53tpr")
+theme_override_fonts/normal_font = ExtResource("3_o7mbm")
+theme_override_fonts/bold_font = ExtResource("3_o7mbm")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+bbcode_enabled = true
+text = "[center][font_size=1000]
+You died[center]"
+scroll_active = false
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1540802755]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_yeri1")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=533260688]
+layout_mode = 2
+theme = ExtResource("4_yeri1")
+
+[node name="Message" type="Label" parent="PanelContainer/MarginContainer" unique_id=1904148376]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Has ganado🎉
+
+¡Felicitaciones!"
