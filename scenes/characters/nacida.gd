@@ -138,23 +138,23 @@ func _physics_process(_delta: float) -> void:
 			pivot_flipped = true
 		fire()
 
-	if Input.is_action_pressed("nacida_pull"):
+	if Input.is_action_pressed("nacida_pull") and Game.nacida.hierro > 0:
 		# Hierro: tirar del metal.
 		pulling.emit(direction_metal.normalized(), pos)
 
 		enlace_metalico_tirar.points[1] = direction_metal
 		enlace_metalico_tirar.show()
 		
-		hierro -= 1 if hierro else 0
+		hierro -= 1
 
-	elif Input.is_action_pressed("nacida_push"):
+	elif Input.is_action_pressed("nacida_push") and Game.nacida.acero > 0:
 		# Acero: empujar metal.
 		pushing.emit(direction_metal.normalized(), pos)
 
 		enlace_metalico_empujar.points[1] = direction_metal
 		enlace_metalico_empujar.show()
 		
-		acero -= 1 if acero else 0
+		acero -= 1
 
 	else:
 		enlace_metalico_tirar.hide()
@@ -203,7 +203,6 @@ func fire() -> void:
 	bullet_inst.metal.apply_impulse(mouse_direction.normalized() * 1000)
 
 
-## Actualiza la orientación y animación del personaje.
 ## Actualiza la orientación y animación del personaje.
 func _set_animation(direction: float) -> void:
 	if taking_damage:
