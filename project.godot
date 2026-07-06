@@ -37,7 +37,11 @@ directories/dch_directory={
 "hoid": "res://dialogues/characters/hoid.dch"
 }
 directories/dtl_directory={
-"intro": "res://dialogues/timelines/intro.dtl"
+"intro": "res://dialogues/timelines/intro.dtl",
+"pips": "res://dialogues/timelines/pips.dtl",
+"push": "res://dialogues/timelines/push.dtl",
+"tutorial_01": "res://dialogues/timelines/tutorial_01.dtl",
+"vial": "res://dialogues/timelines/vial.dtl"
 }
 layout/style_directory={
 "": "res://dialogues/styles/style01.tres",

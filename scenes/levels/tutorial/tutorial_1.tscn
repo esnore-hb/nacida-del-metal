@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cqdatw6c808ta"]
 
-[ext_resource type="Script" uid="uid://bmr3ne4ctjvw7" path="res://scenes/levels/tutorial/etapa_1.gd" id="1_kthyp"]
+[ext_resource type="Script" uid="uid://cgcjugw1lbbtu" path="res://scenes/levels/tutorial/tutorial_1.gd" id="1_kthyp"]
 [ext_resource type="TileSet" uid="uid://bwe1j5ivaryd5" path="res://resources/tile_set.tres" id="1_x51qp"]
 [ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="2_x0p0q"]
 [ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="3_sbawd"]
@@ -25,6 +25,7 @@ size = Vector2(165, 684)
 script = ExtResource("7_ko8to")
 
 [node name="tutorial_1" type="Node2D" unique_id=1311959549]
+process_mode = 1
 script = ExtResource("1_kthyp")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=900604272]
@@ -104,3 +105,23 @@ position = Vector2(1162, 405)
 
 [node name="pip3" parent="." unique_id=780858871 instance=ExtResource("10_ko8to")]
 position = Vector2(752, 109)
+
+[node name="pipDialogueArea" type="Area2D" parent="." unique_id=663708236]
+position = Vector2(514, 596)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipDialogueArea" unique_id=695636612]
+position = Vector2(-36.83944, 5.2321835)
+scale = Vector2(0.8199542, 1.09623)
+polygon = PackedVector2Array(-97, 38, -80, -79, 82, -81, 121, 45)
+
+[node name="pushDialogueArea" type="Area2D" parent="." unique_id=1379898016]
+position = Vector2(1162, 569)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pushDialogueArea" unique_id=1872999859]
+polygon = PackedVector2Array(-62, 42, -64, -69, 73, -67, 75, 44)
+
+[node name="vialDialogueArea" type="Area2D" parent="." unique_id=1087449161]
+position = Vector2(302, 364)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="vialDialogueArea" unique_id=780904067]
+polygon = PackedVector2Array(24, 83, 103, -63, -120, -65, -120, 89)

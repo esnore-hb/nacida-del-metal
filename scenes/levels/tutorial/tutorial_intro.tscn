@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://de4x7vaet33sj" path="res://scenes/levels/tutorial/tutorial_intro.gd" id="1_ii16k"]
 
 [node name="TutorialIntro" type="Node2D" unique_id=1111839611]
+process_mode = 3
 script = ExtResource("1_ii16k")
