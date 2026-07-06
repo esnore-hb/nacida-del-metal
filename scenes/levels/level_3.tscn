@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="5_fmg3e"]
 [ext_resource type="Texture2D" uid="uid://vfsuo3kvl1u5" path="res://resources/Final/Grass_background_1.png" id="6_ftfob"]
 [ext_resource type="Texture2D" uid="uid://dberewe1lxx8x" path="res://resources/Final/Background_0.png" id="7_fkk1g"]
-[ext_resource type="Script" uid="uid://bmr3ne4ctjvw7" path="res://scenes/levels/etapa_1.gd" id="8_f6egh"]
+[ext_resource type="Script" uid="uid://bmr3ne4ctjvw7" path="res://scenes/levels/tutorial/etapa_1.gd" id="8_f6egh"]
 [ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="8_ugcn1"]
 [ext_resource type="PackedScene" uid="uid://b2mwsdf3k6mm1" path="res://scenes/characters/lord.tscn" id="9_josfm"]
 [ext_resource type="PackedScene" uid="uid://bpush45toq7yp" path="res://scenes/goals/goal.tscn" id="9_pimnq"]
@@ -310,11 +310,11 @@ visible = false
 [node name="Vial" parent="." unique_id=2058280327 instance=ExtResource("15_apo5x")]
 position = Vector2(1656, 506)
 
-[node name="Lord" parent="." unique_id=605933771 instance=ExtResource("9_josfm")]
-position = Vector2(4123, 384)
-
 [node name="Vial2" parent="." unique_id=1766091514 instance=ExtResource("15_apo5x")]
 position = Vector2(3327, 344)
+
+[node name="Lord" parent="." unique_id=605933771 instance=ExtResource("9_josfm")]
+position = Vector2(3433, 434)
 
 [editable path="MetalPesado"]
 [editable path="MetalPesado2"]

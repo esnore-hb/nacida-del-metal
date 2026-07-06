@@ -22,6 +22,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	_recive_damage()
+	print(global_position)
 
 
 # Funcion fallback que se asegura que la nacida esta en el nivel
@@ -35,7 +36,9 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 
 func _recive_damage():
 	var state_machine = animation_tree.get("parameters/playback")
-	if hitbox_lord.get_overlapping_areas():
+	if hitbox_lord.get_overlapping_areas() and \
+		hitbox_lord.get_overlapping_areas()[0].get_parent().get_parent() is MetalLiviano:
+
 		hitbox_lord.get_overlapping_areas()[0].get_parent().get_parent().queue_free()
 		if health < 0:
 			state_machine.start("death")

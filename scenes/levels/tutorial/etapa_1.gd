@@ -11,7 +11,6 @@ func _ready() -> void:
 	connect("area_exited", _exited_area)
 
 func _entered_area(area_2d: Area2D) -> void:
-	print(area_2d)
 	if area_2d.get_parent() is Nacida:
 		area_pcam.set_priority(20)
 
