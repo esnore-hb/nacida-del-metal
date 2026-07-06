@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0hwyqge8clpn" path="res://scenes/characters/nacida.tscn" id="5_fmg3e"]
 [ext_resource type="Texture2D" uid="uid://vfsuo3kvl1u5" path="res://resources/Final/Grass_background_1.png" id="6_ftfob"]
 [ext_resource type="Texture2D" uid="uid://dberewe1lxx8x" path="res://resources/Final/Background_0.png" id="7_fkk1g"]
-[ext_resource type="Script" uid="uid://bmr3ne4ctjvw7" path="res://scenes/levels/etapa_1.gd" id="8_f6egh"]
+[ext_resource type="Script" uid="uid://bmr3ne4ctjvw7" path="res://scenes/levels/tutorial/etapa_1.gd" id="8_f6egh"]
 [ext_resource type="PackedScene" uid="uid://coub6p5tbcxk" path="res://scenes/metals/metal_pesado.tscn" id="8_ugcn1"]
 [ext_resource type="PackedScene" uid="uid://bpush45toq7yp" path="res://scenes/goals/goal.tscn" id="9_pimnq"]
 [ext_resource type="PackedScene" uid="uid://cjk35mv4as3td" path="res://scenes/pips/pip.tscn" id="11_n6eey"]
@@ -46,7 +46,7 @@ size = Vector2(3106.25, 101)
 
 [sub_resource type="Curve2D" id="Curve2D_f6egh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 575, 388, 0, 0, 0, 0, 2571, 388)
+"points": PackedVector2Array(0, 0, 0, 0, 575, 388, 0, 0, 0, 0, 4615, 388)
 }
 point_count = 2
 
@@ -151,13 +151,12 @@ script = ExtResource("8_f6egh")
 area_pcam = NodePath("PhantomCamera2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Etapa3" unique_id=863632632]
-unique_name_in_owner = true
 position = Vector2(775, -12)
 shape = SubResource("RectangleShape2D_apo5x")
 debug_color = Color(0.7019608, 0, 0, 0.41960785)
 
 [node name="PhantomCamera2D" type="Node2D" parent="Etapa3" unique_id=546775988]
-position = Vector2(501, -54)
+position = Vector2(824, -50)
 script = ExtResource("2_0qepi")
 tween_resource = SubResource("Resource_f6egh")
 draw_limits = true
@@ -176,7 +175,7 @@ shape = SubResource("RectangleShape2D_josfm")
 debug_color = Color(0.7019608, 0, 0, 0.41960785)
 
 [node name="PhantomCamera2D" type="Node2D" parent="Etapa4" unique_id=1831824208]
-position = Vector2(501, -54)
+position = Vector2(2083, -35)
 script = ExtResource("2_0qepi")
 tween_resource = SubResource("Resource_f6egh")
 draw_limits = true
@@ -193,7 +192,7 @@ tile_map_data = PackedByteArray("AAAgAAwAAAAGAAEAAAAgAA0AAAAGAAIAAAAhAAwAAAACAAM
 tile_set = ExtResource("4_ftfob")
 
 [node name="Nacida" parent="." unique_id=1352471129 instance=ExtResource("5_fmg3e")]
-position = Vector2(47, 567)
+position = Vector2(79.00001, 551)
 scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=54135846]
@@ -244,7 +243,7 @@ visible = false
 [node name="MetalPesado4" parent="." unique_id=630041848 instance=ExtResource("8_ugcn1")]
 position = Vector2(2595, 16)
 scale = Vector2(0.5, 1)
-PULLING_FORCE = 500
+PULLING_FORCE = 1000
 
 [node name="CollisionShape2D" parent="MetalPesado4/Metal" parent_id_path=PackedInt32Array(630041848, 705056153) index="0" unique_id=2142775643]
 position = Vector2(2, 0)

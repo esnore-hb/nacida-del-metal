@@ -79,7 +79,7 @@ func _physics_process(delta: float) -> void:
 			metal.gravity_scale = 1
 
 		# Si la nacida recoge la moneda
-		if anclaje.overlaps_area(Game.nacida.hurt_box_enemys):
+		if anclaje and anclaje.overlaps_area(Game.nacida.hurt_box_enemys):
 			Game.nacida._increase_coin()
 			pickup_coin.emit()
 			queue_free()

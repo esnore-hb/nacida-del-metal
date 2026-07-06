@@ -9,10 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://blb56wol0aqgm" path="res://assets/sprites/villano/EVil Wizard 2/Sprites/Fall.png" id="7_6ag4o"]
 [ext_resource type="Texture2D" uid="uid://bjpttxo6tycji" path="res://assets/sprites/villano/EVil Wizard 2/Sprites/Run.png" id="8_54spg"]
 [ext_resource type="Texture2D" uid="uid://bd22l8u1fayyp" path="res://assets/sprites/villano/EVil Wizard 2/Sprites/Take hit.png" id="9_mp3fh"]
+[ext_resource type="Script" uid="uid://cwfyom54ogsxp" path="res://ai/tasks/run_away.gd" id="10_4orp1"]
+[ext_resource type="Script" uid="uid://uflgw8rqqy1c" path="res://ai/tasks/teleport.gd" id="11_s02ed"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5nogx"]
-radius = 27.0
-height = 100.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4orp1"]
+size = Vector2(38, 100)
 
 [sub_resource type="Animation" id="Animation_e1sy1"]
 length = 0.001
@@ -482,12 +483,32 @@ states/take_hit/node = SubResource("AnimationNodeAnimation_gjr2f")
 states/take_hit/position = Vector2(614, 139)
 transitions = ["idle", "run", SubResource("AnimationNodeStateMachineTransition_0gu8l"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_lmbj5"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_ves7b"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_npigt"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_w3ks0"), "jump", "attack", SubResource("AnimationNodeStateMachineTransition_m8cl1"), "attack", "jump", SubResource("AnimationNodeStateMachineTransition_545n8"), "run", "attack", SubResource("AnimationNodeStateMachineTransition_orlgu"), "attack", "run", SubResource("AnimationNodeStateMachineTransition_gc80n"), "idle", "take_hit", SubResource("AnimationNodeStateMachineTransition_soooi"), "run", "take_hit", SubResource("AnimationNodeStateMachineTransition_x28mi"), "attack", "take_hit", SubResource("AnimationNodeStateMachineTransition_76y5d"), "take_hit", "death", SubResource("AnimationNodeStateMachineTransition_cpryc"), "take_hit", "idle", SubResource("AnimationNodeStateMachineTransition_0ep3k"), "take_hit", "attack", SubResource("AnimationNodeStateMachineTransition_anxhk"), "take_hit", "run", SubResource("AnimationNodeStateMachineTransition_ku0x1"), "take_hit", "jump", SubResource("AnimationNodeStateMachineTransition_tm6um"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_d3i5k")]
 
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_5nogx"]
+
+[sub_resource type="BTAction" id="BTAction_s02ed"]
+script = ExtResource("10_4orp1")
+
+[sub_resource type="BTAction" id="BTAction_n8i4o"]
+script = ExtResource("11_s02ed")
+
+[sub_resource type="BTSelector" id="BTSelector_mp3fh"]
+children = [SubResource("BTAction_s02ed"), SubResource("BTAction_n8i4o")]
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_4orp1"]
+blackboard_plan = SubResource("BlackboardPlan_5nogx")
+root_task = SubResource("BTSelector_mp3fh")
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_s02ed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s02ed"]
+size = Vector2(44, 106)
+
 [node name="Lord" type="RigidBody2D" unique_id=605933771]
 script = ExtResource("1_rcplr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1767715872]
-position = Vector2(4, 17)
-shape = SubResource("CapsuleShape2D_5nogx")
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_4orp1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=581966165]
 position = Vector2(2, -17)
@@ -501,3 +522,16 @@ libraries/ = SubResource("AnimationLibrary_x4vbd")
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1855806585]
 tree_root = SubResource("AnimationNodeStateMachine_t4d5k")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=1415991419]
+behavior_tree = SubResource("BehaviorTree_4orp1")
+blackboard_plan = SubResource("BlackboardPlan_s02ed")
+
+[node name="HitboxLord" type="Area2D" parent="." unique_id=1708368372]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxLord" unique_id=790083008]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_s02ed")
+debug_color = Color(0.7, 0, 0, 0.41960785)

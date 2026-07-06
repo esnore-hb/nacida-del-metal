@@ -30,7 +30,7 @@ size = Vector2(152, 16)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1260281776]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(575, 694)
+position = Vector2(1728, 694)
 zoom = Vector2(0.5, 0.5)
 editor_draw_limits = true
 
@@ -43,12 +43,12 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 [node name="Player" type="Node" parent="." unique_id=1480103217]
 
 [node name="Nacida" parent="Player" unique_id=1352471129 instance=ExtResource("4_wjk5u")]
-position = Vector2(140, 781)
+position = Vector2(1728, 1324)
 MAX_SPEED = 150.0
 
 [node name="PhantomCamera2D" type="Node2D" parent="Player" unique_id=1397083054 node_paths=PackedStringArray("follow_target", "follow_path")]
 top_level = true
-position = Vector2(575, 694)
+position = Vector2(1728, 694)
 script = ExtResource("2_6ayib")
 follow_mode = 4
 follow_target = NodePath("../Nacida")
@@ -112,7 +112,7 @@ scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Terreno" unique_id=1357681725]
-position = Vector2(1679, 1909)
+position = Vector2(2592, 795)
 rotation = -1.5707964
 scale = Vector2(8, 8)
 
@@ -120,18 +120,6 @@ scale = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_6iamk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Terreno/StaticBody2D5" unique_id=784294383]
-scale = Vector2(1.1875001, 0.12499999)
-texture = ExtResource("1_osc7o")
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="Terreno" unique_id=1899246887]
-position = Vector2(1502, 1908)
-rotation = -1.5707964
-scale = Vector2(8, 8)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terreno/StaticBody2D6" unique_id=884514794]
-shape = SubResource("RectangleShape2D_6iamk")
-
-[node name="Sprite2D" type="Sprite2D" parent="Terreno/StaticBody2D6" unique_id=2087365154]
 scale = Vector2(1.1875001, 0.12499999)
 texture = ExtResource("1_osc7o")
 
