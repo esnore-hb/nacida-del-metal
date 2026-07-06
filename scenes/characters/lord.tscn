@@ -526,6 +526,7 @@ anim_player = NodePath("../AnimationPlayer")
 [node name="BTPlayer" type="BTPlayer" parent="." unique_id=1415991419]
 behavior_tree = SubResource("BehaviorTree_4orp1")
 blackboard_plan = SubResource("BlackboardPlan_s02ed")
+monitor_performance = true
 
 [node name="HitboxLord" type="Area2D" parent="." unique_id=1708368372]
 collision_layer = 4
