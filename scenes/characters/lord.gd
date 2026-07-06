@@ -11,6 +11,9 @@ var nacida: Nacida
 var health: int = 3
 
 func _ready() -> void:
+	animation_tree.active = true
+	var state_machine = animation_tree.get("parameters/playback")
+	state_machine.travel("idle")
 	if Game.nacida:
 		nacida = Game.nacida
 	else:
@@ -31,11 +34,15 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 
 
 func _recive_damage():
+	var state_machine = animation_tree.get("parameters/playback")
 	if hitbox_lord.get_overlapping_areas():
 		hitbox_lord.get_overlapping_areas()[0].get_parent().get_parent().queue_free()
 		if health < 0:
+			state_machine.start("death")
+			await get_tree().create_timer(0.5).timeout
 			LevelManager.win()
 			return
+		state_machine.travel("hurt")
 		health -= 1
 		print("lord recive damage")
 		print("health: ", health)
